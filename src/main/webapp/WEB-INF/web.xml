@@ -34,10 +34,10 @@
   <servlet-mapping>
     <servlet-name>mvc-dispatcher</servlet-name>
     <!-- 默认匹配所有的静态资源,此处配置出错,会产生错误500 -->
-    <url-pattern>/js/*</url-pattern>
-    <url-pattern>/css/*</url-pattern>
-    <url-pattern>/images/*</url-pattern>
-    <url-pattern>/fonts/*</url-pattern>
+    <url-pattern>/js/</url-pattern>
+    <url-pattern>/css/</url-pattern>
+    <url-pattern>/imgs/</url-pattern>
+    <url-pattern>/fonts/</url-pattern>
   </servlet-mapping>
 
   <!--druid ==> WEB方式监控配置-->

@@ -38,6 +38,7 @@
     <url-pattern>/css/</url-pattern>
     <url-pattern>/imgs/</url-pattern>
     <url-pattern>/fonts/</url-pattern>
+    <url-pattern>/views/</url-pattern>
   </servlet-mapping>
 
   <!--druid ==> WEB方式监控配置-->

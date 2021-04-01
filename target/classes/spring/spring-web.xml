@@ -9,4 +9,5 @@
     <mvc:resources location="/imgs/" mapping="/imgs/**"/> <!-- 图片 -->
     <mvc:resources location="/js/" mapping="/js/**"/> <!-- javascript -->
     <mvc:resources location="/fonts/" mapping="/fonts/**"/> <!-- 字体 -->
+    <mvc:resources location="/views/" mapping="/views/**"/> <!-- 字体 -->
 </beans>

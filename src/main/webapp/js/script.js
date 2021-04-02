@@ -337,7 +337,6 @@ jQuery(function($) {
         arrows: false,
         autoplay: true,
         autoplaySpeed: 2000,
-        speed: 500
     });
     $('.back-page').on("click",
     function() {

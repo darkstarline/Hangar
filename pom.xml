@@ -37,6 +37,22 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+<!--    Paoding Rose-->
+    <dependency>
+    <groupId>com.54chen</groupId>
+    <artifactId>paoding-rose</artifactId>
+    <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.54chen</groupId>
+      <artifactId>paoding-rose-jade</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.54chen</groupId>
+      <artifactId>paoding-rose-scanning</artifactId>
+      <version>1.0</version>
+    </dependency>
     <!-- 1.日志 -->
     <!--&lt;!&ndash; 实现slf4j接口并整合 &ndash;&gt;-->
     <!--<dependency>-->
@@ -140,6 +156,11 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
       <version>${org.springframework.version}</version>
     </dependency>
     <!-- 2)Spring DAO层 -->

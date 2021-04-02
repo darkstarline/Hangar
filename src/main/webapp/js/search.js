@@ -8,3 +8,6 @@ searchBox.forEach(function (elm) {
 		elm.previousElementSibling.value = '';
 	});
 });*/
+$(".text").click(function (){
+    window.location.href="views/travel.html";
+})

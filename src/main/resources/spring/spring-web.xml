@@ -5,9 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                             http://www.springframework.org/schema/mvc  http://www.springframework.org/schema/mvc/spring-mvc.xsd ">
     <!--告诉前端控制器，哪些静态资源不拦截-->
-    <mvc:resources location="/css/" mapping="/css/**"/> <!-- 样式 -->
-    <mvc:resources location="/imgs/" mapping="/imgs/**"/> <!-- 图片 -->
-    <mvc:resources location="/js/" mapping="/js/**"/> <!-- javascript -->
-    <mvc:resources location="/fonts/" mapping="/fonts/**"/> <!-- 字体 -->
-    <mvc:resources location="/views/" mapping="/views/**"/> <!-- 字体 -->
+    <!--<mvc:resources location="/css/" mapping="/css/**"/> &lt;!&ndash; 样式 &ndash;&gt;
+    <mvc:resources location="/imgs/" mapping="/imgs/**"/> &lt;!&ndash; 图片 &ndash;&gt;
+    <mvc:resources location="/js/" mapping="/js/**"/> &lt;!&ndash; javascript &ndash;&gt;
+    <mvc:resources location="/fonts/" mapping="/fonts/**"/> &lt;!&ndash; 字体 &ndash;&gt;
+    <mvc:resources location="/views/" mapping="/views/**"/> &lt;!&ndash; 字体 &ndash;&gt;-->
 </beans>

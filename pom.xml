@@ -38,21 +38,7 @@
       <scope>test</scope>
     </dependency>
 <!--    Paoding Rose-->
-    <dependency>
-    <groupId>com.54chen</groupId>
-    <artifactId>paoding-rose</artifactId>
-    <version>1.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.54chen</groupId>
-      <artifactId>paoding-rose-jade</artifactId>
-      <version>1.1</version>
-    </dependency>
-    <dependency>
-      <groupId>com.54chen</groupId>
-      <artifactId>paoding-rose-scanning</artifactId>
-      <version>1.0</version>
-    </dependency>
+
     <!-- 1.日志 -->
     <!--&lt;!&ndash; 实现slf4j接口并整合 &ndash;&gt;-->
     <!--<dependency>-->
@@ -82,18 +68,18 @@
       <version>1.7.25</version>
     </dependency>
     <!-- 2.数据库 -->
-    <dependency>
+    <!--<dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>${mysql.version}</version>
       <scope>runtime</scope>
-    </dependency>
+    </dependency>-->
     <!--druid==>阿里巴巴数据库连接池-->
-    <dependency>
+    <!--<dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>druid</artifactId>
       <version>${com.alibaba.druid.version}</version>
-    </dependency>
+    </dependency>-->
     <!--<dependency>-->
     <!--<groupId>c3p0</groupId>-->
     <!--<artifactId>c3p0</artifactId>-->
@@ -101,7 +87,7 @@
     <!--</dependency>-->
 
     <!-- DAO: MyBatis -->
-    <dependency>
+    <!--<dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis</artifactId>
       <version>${com.mybatis.mybatis.version}</version>
@@ -110,7 +96,7 @@
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis-spring</artifactId>
       <version>${com.mybatis.mybatis_spring.version}</version>
-    </dependency>
+    </dependency>-->
 
     <!-- 3.Servlet web -->
     <dependency>
@@ -208,14 +194,14 @@
     </dependency>
 
     <!-- Map工具类 -->
-    <dependency>
+   <!-- <dependency>
       <groupId>commons-collections</groupId>
       <artifactId>commons-collections</artifactId>
       <version>3.2.2</version>
-    </dependency>
+    </dependency>-->
 
     <!--文件上传工具-->
-    <dependency>
+    <!--<dependency>
       <groupId>commons-fileupload</groupId>
       <artifactId>commons-fileupload</artifactId>
       <version>1.3.2</version>
@@ -224,7 +210,7 @@
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
       <version>2.5</version>
-    </dependency>
+    </dependency>-->
   </dependencies>
 
   <build>

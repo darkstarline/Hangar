@@ -12,15 +12,15 @@
 
     <!-- 扫描service包下所有使用注解的类型 -->
     <!-- cn.acheng1314为我们应用的包名,当然也是我们前面提到过的GroupId -->
-    <!--<context:component-scan base-package="gundam" />
+    <context:component-scan base-package="gundam" />
 
-    &lt;!&ndash; 配置事务管理器 &ndash;&gt;
-    <bean id="transactionManager"
+    <!-- 配置事务管理器 -->
+    <!--<bean id="transactionManager"
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         &lt;!&ndash; 注入数据库连接池 &ndash;&gt;
         <property name="dataSource" ref="dataSource" />
-    </bean>
+    </bean>-->
 
-    &lt;!&ndash; 配置基于注解的声明式事务 &ndash;&gt;
-    <tx:annotation-driven transaction-manager="transactionManager" />-->
+    <!-- 配置基于注解的声明式事务 -->
+<!--    <tx:annotation-driven transaction-manager="transactionManager" />-->
 </beans>

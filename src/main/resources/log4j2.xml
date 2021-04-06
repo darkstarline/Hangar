@@ -59,6 +59,7 @@
         <root level="DEBUG">
             <appender-ref ref="DevLog"/>
             <appender-ref ref="Console"/>
+            <appender-ref ref="InfoLog"/>
         </root>
     </loggers>
 </configuration>

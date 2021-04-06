@@ -4055,7 +4055,7 @@ button:focus,button:active {
 	background-repeat: no-repeat
 }
 
-.news-card-grid-item .news-card-thumb.news-thumb-bg-1 {
+/*.news-card-grid-item .news-card-thumb.news-thumb-bg-1 {
 	background-image: url(../imgs/travel/travel-lg-1.jpg)
 }
 
@@ -4141,7 +4141,7 @@ button:focus,button:active {
 
 .news-card-grid-item .news-card-thumb.news-thumb-bg-22 {
 	background-image: url(../imgs/men/men-xl-3.jpg)
-}
+}*/
 
 .news-card-grid-item .news-grid-header {
 	display: -webkit-box;
@@ -8898,6 +8898,7 @@ button:focus,button:active {
 	background-repeat: no-repeat
 }
 
+/*
 .news-card-grid-item-2 .news-card-thumb.news-thumb-bg-1 {
 	background-image: url(../imgs/travel/travel-lg-1.jpg)
 }
@@ -8984,4 +8985,4 @@ button:focus,button:active {
 
 .news-card-grid-item-2 .news-card-thumb.news-thumb-bg-22 {
 	background-image: url(../imgs/men/men-xl-3.jpg)
-}
+}*/

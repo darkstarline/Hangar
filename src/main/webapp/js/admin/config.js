@@ -2,7 +2,7 @@
 window.CONF = {
 
 
-    localPort: '8888',
+    localPort: '8000',
 
 
     seajsVersion: null,

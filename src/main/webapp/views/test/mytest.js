@@ -7,7 +7,7 @@ define(function(require, exports, module) {
     // 引入jQuery插件，用于信提示等;
     require('utils/jqPlugin');
     // 查询
-    API.add("fileList", "test/t3", "test/t3");
+    API.add("fileList", "js/json/travel.json", "test/t3");
     // API.add("catalogList", "fileList.json", "upass/fileBrowse/getCatalogs");
     // API.add("fileList", "fileList.json", "upass/fileBrowse/getFiles");
     // API.add("viewerPic", "../assets/images/1900x1200_img_7.png", "upass/download/downloadNoToken");
@@ -32,10 +32,11 @@ define(function(require, exports, module) {
         // 查询所有列表接口
         queryList: function() {
             Ajax.postJson(API.get('fileList'), null, function (json, state) {
-                if (state) {
-                    console.log(json);
-                } else {
-                    console.log(state);
+                var organismList=eval('json.'+"organismList");
+                console.log(organismList);
+                for(var i=0;i<organismList.length;i++){
+                    var organism=organismList[i];
+                    console.log(organism);
                 }
             })
         },

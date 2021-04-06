@@ -1,7 +1,7 @@
 define(function(require, exports, module) {
 
-    require('lib/jquery/jquery-ajax-upload/2.0.2/jquery.ajaxupload.js');
-    require('utils/jqPlugin');
+    /*require('lib/jquery/jquery-ajax-upload/2.0.2/jquery.ajaxupload.js');
+    require('utils/jqPlugin');*/
     /**
      * @desc: 通过 HTTP 请求加载远程数据，底层依赖jQuery的AJAX实现。当前接口实现了对jQuery AJAX接口的进一步封装。
      */

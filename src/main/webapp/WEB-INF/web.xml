@@ -17,14 +17,16 @@
 
     <!--  appliciationContext.xml-->
     <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:applicationContext.xml</param-value>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>classpath:log4j2.xml</param-value>
     </context-param>
-    <listener>
+    <!--<listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
-
+    </listener>-->
     <!--  Paoding rose -->
+    <listener>
+        <listener-class>gundam.filter.RoseListener</listener-class>
+    </listener>
     <filter>
         <filter-name>roseFilter</filter-name>
         <filter-class>net.paoding.rose.RoseFilter</filter-class>

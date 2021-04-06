@@ -2,8 +2,8 @@ define(function (require, exports, module) {
 
 
     // 引入Bootstrap-treeview树结构插件
-    require('lib/jquery/jquery-ztree/3.5.30/css/zTreeStyle/zTreeStyle.css');
-    require('lib/jquery/jquery-ztree/3.5.30/js/jquery.ztree.all.min.js');
+    /*require('lib/jquery/jquery-ztree/3.5.30/css/zTreeStyle/zTreeStyle.css');
+    require('lib/jquery/jquery-ztree/3.5.30/js/jquery.ztree.all.min.js');*/
 
     // API接口注册工具
     var requireAPI = require('utils/api');

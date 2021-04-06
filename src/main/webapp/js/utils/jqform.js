@@ -1,7 +1,7 @@
 define(function(require, exports, module) {
 
     // 引入jQuery Validation插件
-    require.async('lib/jquery/jquery-validation/1.17.0/jquery.validate.js', function() {
+    /*require.async('lib/jquery/jquery-validation/1.17.0/jquery.validate.js', function() {
         $.extend($.validator.messages, {
             required: "这是必填字段",
             remote: "请修正此字段",
@@ -26,7 +26,7 @@ define(function(require, exports, module) {
     // 引入jQuery Form插件
     require('lib/jquery/jquery-form/4.2.2/jquery.form.min.js');
     // 引入jQuery插件，用于信提示等;
-    require('utils/jqPlugin');
+    require('utils/jqPlugin');*/
 
     // API接口注册工具
     var requireAPI = require('utils/api');

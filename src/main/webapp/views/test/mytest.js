@@ -7,7 +7,7 @@ define(function(require, exports, module) {
     // 引入jQuery插件，用于信提示等;
     require('utils/jqPlugin');
     // 查询
-    API.add("fileList", "js/json/travel.json", "test/t3");
+    API.add("fileList", "travel.json", "test/t3");
     // API.add("catalogList", "fileList.json", "upass/fileBrowse/getCatalogs");
     // API.add("fileList", "fileList.json", "upass/fileBrowse/getFiles");
     // API.add("viewerPic", "../assets/images/1900x1200_img_7.png", "upass/download/downloadNoToken");

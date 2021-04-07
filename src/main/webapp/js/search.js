@@ -9,5 +9,5 @@ searchBox.forEach(function (elm) {
 	});
 });*/
 $(".text").click(function (){
-    window.location.href="views/travel.html";
+    window.location.href="views/travel/travel.html";
 })

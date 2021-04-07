@@ -10,7 +10,7 @@ window.CONF = {
     base: ["/", "/"],
 
 
-    APIBase: ["/", "/"],
+    APIBase: ["/js/json/", "/"],
 
 
 

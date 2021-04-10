@@ -2,7 +2,7 @@
 <html lang="zxx">
 <head>
  <meta charset="utf-8">
- <meta name="description" content="Abaz">
+ <meta name="description" content="Jexi">
  <meta name="keywords" content="HTML,CSS,JavaScript">
  <meta name="author" content="HiBootstrap">
  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,8 +30,6 @@
  <link rel='stylesheet' href='../../css/settings.css' type="text/css" media="all" />
  <link rel='stylesheet' href='../../css/layers.css' type="text/css" media="all" />
  <link rel='stylesheet' href='../../css/navigation.css' type="text/css" media="all" />
-
- <link rel="stylesheet" href="../../css/nice-select.css" type="text/css" media="all" />
 
  <link rel="stylesheet" href="../../css/style.css" type="text/css" media="all" />
 
@@ -85,7 +83,7 @@
           <i class="flaticon-magnifying-glass"></i>
          </div>
         </div>
-        <input type="text" class="form-control" placeholder="Search Article"/>
+        <input type="text" class="form-control" placeholder="Search Article">
        </div>
       </form>
      </div>
@@ -102,6 +100,11 @@
       <ul class="navbar-nav mx-auto">
        <li class="nav-item">
         <a href="#" class="nav-link dropdown-toggle">Home</a>
+        <ul class="dropdown-menu">
+         <li class="nav-item">
+          <a href="../../index.html" class="nav-link">Home Demo 1</a>
+         </li>
+        </ul>
        </li>
        <li class="nav-item">
         <a href="#" class="nav-link dropdown-toggle">Post</a>
@@ -115,7 +118,7 @@
         </ul>
        </li>
        <li class="nav-item">
-        <a href="travel.html" class="nav-link active">Travel</a>
+        <a href="../travel/travel.html" class="nav-link">Travel</a>
        </li>
        <li class="nav-item">
         <a href="../fashion.html" class="nav-link">Fashion</a>
@@ -124,7 +127,7 @@
         <a href="../about.html" class="nav-link">About</a>
        </li>
        <li class="nav-item">
-        <a href="#" class="nav-link dropdown-toggle">Pages</a>
+        <a href="#" class="nav-link dropdown-toggle active">Pages</a>
         <ul class="dropdown-menu">
          <li class="nav-item">
           <a href="../products.html" class="nav-link">Products</a>
@@ -139,7 +142,7 @@
           <a href="../wishlist.html" class="nav-link">Wishlist</a>
          </li>
          <li class="nav-item">
-          <a href="../checkin/checkout.html" class="nav-link">Checkout</a>
+          <a href="checkout.html" class="nav-link active">Checkout</a>
          </li>
          <li class="nav-item">
           <a href="#" class="nav-link dropdown-toggle">Features</a>
@@ -229,7 +232,7 @@
            <i class="flaticon-magnifying-glass"></i>
           </div>
          </div>
-         <input type="text" class="form-control" placeholder="Search Article"/>
+         <input type="text" class="form-control" placeholder="Search Article">
         </div>
        </form>
       </div>
@@ -251,17 +254,18 @@
 
 
 <header>
- <div class="inner-page-header inner-header-bg-1">
+ <div class="inner-page-header inner-header-bg-3">
   <div class="container">
    <div class="inner-header-content inner-header-content-white">
     <div class="header-content-text">
      <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
        <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
-       <li class="breadcrumb-item active" aria-current="page">About</li>
+       <li class="breadcrumb-item"><a href="../products.html">Products</a></li>
+       <li class="breadcrumb-item active" aria-current="page">Checkout</li>
       </ol>
      </nav>
-     <h1>Welcome To <span>Travel</span> Blog</h1>
+     <h1><span>Checkout</span></h1>
     </div>
    </div>
   </div>
@@ -269,172 +273,137 @@
 </header>
 
 
-<section class="news-section bg-dark pt-80">
+<div class="checkout-section pt-100 bg-dark">
  <div class="container">
-  <div class="border-bottom pb-100">
+  <div class="border-bottom pb-70">
    <div class="row">
-    <div class="col-12">
-
-     <!--     这里面是内容-->
-
-     <div class="news-category" id="news-category" name="news-category">
-      <div class="news-title news-title-dark">
-       <h2 id="dplink" name="dplink">Travel</h2>
+    <div class="col-sm-12 col-md-6 col-lg-8 pb-30">
+     <div class="checkout-item checkout-item-white desk-pad-right-30">
+      <div class="sub-section-title mt-0">
+       <h3 class="sub-section-title-heading">Billing Details</h3>
       </div>
-      <!--<div class="row" id="row0" name="row0">
-       <div class="col-lg-5">
-        <div class="news-card-grid-item-2">
-         <a href="../single-post-1.html"><div class="news-card-thumb news-thumb-bg-1">这里的背景是图片</div></a>
-        </div>
-       </div>
-       <div class="col-lg-7">
-        <div class="news-card-grid-item-2 news-card-grid-dark">
-         <h3><a href="../single-post-1.html">这是标题</a></h3>
-         <p>这是简介</p>
-         <div class="news-grid-action">
-          <p class="news-author  author-name">by- <span>这是操作员</span></p>
-          <p class="news-card-link">
-           <a href="../single-post-1.html">这是跳转详细界面链接</a>
-          </p>
+      <div class="checkout-form">
+       <form>
+        <div class="row">
+         <div class="col-12 col-md-6">
+          <div class="form-group mb-20">
+           <input type="text" name="name" class="form-control" required placeholder="First name*">
+          </div>
+         </div>
+         <div class="col-12 col-md-6">
+          <div class="form-group mb-20">
+           <input type="text" name="name" class="form-control" required placeholder="Last name*">
+          </div>
+         </div>
+         <div class="col-12 col-md-6">
+          <div class="form-group mb-20">
+           <input type="text" name="email" class="form-control" required placeholder="Email*">
+          </div>
+         </div>
+         <div class="col-12 col-md-6">
+          <div class="form-group mb-20">
+           <input type="text" name="phone" class="form-control" required placeholder="Phone no*">
+          </div>
+         </div>
+         <div class="col-12">
+          <div class="form-group mb-20">
+           <input type="text" name="address" class="form-control" required placeholder="Address*">
+          </div>
+         </div>
+         <div class="col-12">
+          <div class="form-group mb-20">
+           <input type="text" name="state" class="form-control" required placeholder="State*">
+          </div>
+         </div>
+         <div class="col-12">
+          <div class="form-group mb-20">
+           <input type="text" name="country" class="form-control" required placeholder="Country*">
+          </div>
+         </div>
+         <div class="col-12">
+          <div class="form-group mb-20">
+           <textarea name="order" class="form-control" rows="11" placeholder="Order notes (Optional)"></textarea>
+          </div>
+         </div>
+         <div class="col-12">
+          <div class="input-checkbox mb-20">
+           <input type="checkbox" id="check1">
+           <label for="check1" class="weight-600">Ship to a different address?</label>
+          </div>
+         </div>
+         <div class="col-12">
+          <button  class="btn main-btn full-width">Place Order</button>
          </div>
         </div>
-       </div>
+       </form>
       </div>
-      <div class="divider divider-lg"></div>
-      <div class="row" id="row1" name="row1">
-       <div class="col-lg-5 order-lg-2">
-        <div class="news-card-grid-item-2">
-         <a href="../single-post-1.html"><div class="news-card-thumb news-thumb-bg-2"></div></a>
-        </div>
-       </div>
-       <div class="col-lg-7 order-lg-1">
-        <div class="news-card-grid-item-2 news-card-grid-dark text-lg-end">
-         <h3><a href="../single-post-1.html">The Most Amazing Places To Visit By <span>Train</span> Throughout The World</a></h3>
-         <ul class="news-card-entry justify-content-lg-end">
-          <li><i class="flaticon-calendar"></i> 15 Dec, 2020</li>
-         </ul>
-         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam non umy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea re bum. Stet clita kasd gubergren, no sea takimata san ctus est Lorem ips um dolor sit amet. Lorem ipsum dolor sit amet, con sete tur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
-         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam non umy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea re bum. Stet clita kasd gubergren, no sea takimata san ctus est Lorem ips um dolor sit amet. Lorem ipsum dolor sit amet, con sete tur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore ma</p>
-         <div class="news-grid-action">
-          <p class="news-author  author-name">by- <span>Mark Robbert</span></p>
-          <p class="news-card-link">
-           <a href="../single-post-1.html">Read The Article</a>
-          </p>
-         </div>
-        </div>
-       </div>
-      </div>
-      <div class="divider divider-lg"></div>
-      <div class="row" id="row2" name="row2">
-       <div class="col-lg-5">
-        <div class="news-card-grid-item-2">
-         <a href="../single-post-1.html"><div class="news-card-thumb news-thumb-bg-1">这里的背景是图片</div></a>
-        </div>
-       </div>
-       <div class="col-lg-7">
-        <div class="news-card-grid-item-2 news-card-grid-dark">
-         <h3><a href="../single-post-1.html">这是标题</a></h3>
-         <p>这是简介</p>
-         <div class="news-grid-action">
-          <p class="news-author  author-name">by- <span>这是操作员</span></p>
-          <p class="news-card-link">
-           <a href="../single-post-1.html">这是跳转详细界面链接</a>
-          </p>
-         </div>
-        </div>
-       </div>
-      </div>
-      <div class="divider divider-lg"></div>
-      <div class="row" id="row3" name="row3">
-       <div class="col-lg-5 order-lg-2">
-        <div class="news-card-grid-item-2">
-         <a href="../single-post-1.html"><div class="news-card-thumb news-thumb-bg-12"></div></a>
-        </div>
-       </div>
-       <div class="col-lg-7 order-lg-1">
-        <div class="news-card-grid-item-2 news-card-grid-dark text-lg-end">
-         <h3><a href="../single-post-1.html">How To Choose The Best Place For <span>Couple</span></a></h3>
-         <ul class="news-card-entry justify-content-lg-end">
-          <li><i class="flaticon-calendar"></i> 14 Dec, 2020</li>
-         </ul>
-         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam non umy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea re bum. Stet clita kasd gubergren, no sea takimata san ctus est Lorem ips um dolor sit amet. Lorem ipsum dolor sit amet, con sete tur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
-         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam non umy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea re bum. Stet clita kasd gubergren, no sea takimata san ctus est Lorem ips um dolor sit amet. Lorem ipsum dolor sit amet, con sete tur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore ma</p>
-         <div class="news-grid-action">
-          <p class="news-author  author-name">by- <span>Alena Disuza</span></p>
-          <p class="news-card-link">
-           <a href="../single-post-1.html">Read The Article</a>
-          </p>
-         </div>
-        </div>
-       </div>
-      </div>
-      <div class="divider divider-lg"></div>
-      <div class="row" id="row4" name="row4">
-       <div class="col-lg-5">
-        <div class="news-card-grid-item-2">
-         <a href="../single-post-1.html"><div class="news-card-thumb news-thumb-bg-15"></div></a>
-        </div>
-       </div>
-       <div class="col-lg-7">
-        <div class="news-card-grid-item-2 news-card-grid-dark">
-         <h3><a href="../single-post-1.html">The Best Place In Amazon To Visit In <span>Summer</span></a></h3>
-         <ul class="news-card-entry">
-          <li><i class="flaticon-calendar"></i> 13 Dec, 2020</li>
-         </ul>
-         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam non umy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea re bum. Stet clita kasd gubergren, no sea takimata san ctus est Lorem ips um dolor sit amet. Lorem ipsum dolor sit amet, con sete tur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
-         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam non umy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea re bum. Stet clita kasd gubergren, no sea takimata san ctus est Lorem ips um dolor sit amet. Lorem ipsum dolor sit amet, con sete tur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore ma</p>
-         <div class="news-grid-action">
-          <p class="news-author  author-name">by- <span>David Watson</span></p>
-          <p class="news-card-link">
-           <a href="../single-post-1.html">Read The Article</a>
-          </p>
-         </div>
-        </div>
-       </div>
-      </div>
-      <div class="divider divider-lg"></div>
-      <div class="row" id="row5" name="row5">
-       <div class="col-lg-5 order-lg-2">
-        <div class="news-card-grid-item-2">
-         <a href="../single-post-1.html"><div class="news-card-thumb news-thumb-bg-16"></div></a>
-        </div>
-       </div>
-       <div class="col-lg-7 order-lg-1">
-        <div class="news-card-grid-item-2 news-card-grid-dark text-lg-end">
-         <h3><a href="../single-post-1.html">Everybody Mistakes To Visit The Place In <span>Hills</span> Throughout The World</a></h3>
-         <ul class="news-card-entry">
-          <li><i class="flaticon-calendar"></i> 13 Dec, 2020</li>
-         </ul>
-         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam non umy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea re bum. Stet clita kasd gubergren, no sea takimata san ctus est Lorem ips um dolor sit amet. Lorem ipsum dolor sit amet, con sete tur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
-         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam non umy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea re bum. Stet clita kasd gubergren, no sea takimata san ctus est Lorem ips um dolor sit amet. Lorem ipsum dolor sit amet, con sete tur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore ma</p>
-         <div class="news-grid-action">
-          <p class="news-author  author-name">by- <span>Alena Disuza</span></p>
-          <p class="news-card-link">
-           <a href="../single-post-1.html">Read The Article</a>
-          </p>
-         </div>
-        </div>
-       </div>
-      </div>-->
      </div>
-
-
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-4 pb-30">
+     <div class="checkout-item">
+      <div class="checkout-payment-area checkout-payment-area-white">
+       <div class="sub-section-title">
+        <h2 class="sub-section-title-heading">Show Time</h2>
+       </div>
+       <div class="checkout-payment-form">
+        <form enctype="multipart/form-data">
+         <div class="checkout-payment-list">
+          <div>
+           <input class="form-control form-control-lg" id="formFileLg" type="file">
+          </div>
+          <!--          <div class="checkout-payment-text">
+                     <h3>Direct Bank Transfer</h3>
+                     <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have been cleared in your account.</p>
+                    </div>-->
+         </div>
+        </form>
+       </div>
+      </div>
+     </div>
+     <div class="checkout-item">
+      <div class="checkout-payment-area checkout-payment-area-white">
+       <div class="sub-section-title">
+        <h2 class="sub-section-title-heading">Payment Method</h2>
+       </div>
+       <div class="checkout-payment-form">
+        <form>
+         <div class="checkout-payment-list">
+          <div class="input-radio">
+           <input type="radio" id="radio1" name="payment">
+           <label for="radio1"></label>
+          </div>
+          <div class="checkout-payment-text">
+           <h3>Direct Bank Transfer</h3>
+           <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have been cleared in your account.</p>
+          </div>
+         </div>
+         <div class="checkout-payment-list">
+          <div class="input-radio">
+           <input type="radio" id="radio2" name="payment">
+           <label for="radio2"></label>
+          </div>
+          <div class="checkout-payment-text">
+           <h3>Cash On Delivery</h3>
+          </div>
+         </div>
+         <div class="checkout-payment-list">
+          <div class="input-radio">
+           <input type="radio" id="radio3" name="payment">
+           <label for="radio3"></label>
+          </div>
+          <div class="checkout-payment-text">
+           <h3>Paypal</h3>
+          </div>
+         </div>
+        </form>
+       </div>
+      </div>
+     </div>
     </div>
    </div>
-   <nav aria-label="Page navigation example" class="page-pagination page-pagination-dark mt-30">
-    <ul class="pagination">
-     <li class="page-item disabled"><a class="page-link" href="#"><i class="flaticon-back"></i></a></li>
-     <li class="page-item active" aria-current="page">
-      <a class="page-link" href="#">1</a>
-     </li>
-     <li class="page-item"><a class="page-link" href="#">2</a></li>
-     <li class="page-item"><a class="page-link" href="#">3</a></li>
-     <li class="page-item"><a class="page-link" href="#"><i class="flaticon-next"></i></a></li>
-    </ul>
-   </nav>
   </div>
  </div>
-</section>
+</div>
 
 
 <footer class="bg-dark">
@@ -444,7 +413,7 @@
     <div class="footer-content">
      <div class="footer-content-item">
       <ul class="footer-list footer-list-white">
-       <li><a href="travel.html">Travel</a></li>
+       <li><a href="../travel/travel.html">Travel</a></li>
        <li><a href="../fashion.html">Fashion</a></li>
        <li><a href="../about.html">About</a></li>
        <li><a href="../contact.html">Contact</a></li>
@@ -524,12 +493,11 @@
 <script src="../../js/jquery.meanmenu.min.js"></script>
 
 <script src="../../js/script.js"></script>
-
 <script src="../../js/seajs/3.0.0/sea.js"></script>
 <script src="../../js/seajs/3.0.0/sea-plugins.js" id="seajsnode"></script>
 <script src="../../js/admin/config.js"></script>
 <script>
- seajs.use("./travel",function (a){
+ seajs.use("./checkout",function (a){
   a.init();
  });
 </script>

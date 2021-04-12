@@ -7,13 +7,14 @@ import net.paoding.rose.web.annotation.rest.Post;
 
 public class GundamStorageController {
     @Post("save")
-    public String saveBaseInfo(Invocation inv, GundamVo gundamVo) throws Exception{
+    public Gson saveBaseInfo(Invocation inv, GundamVo gundamVo) throws Exception{
         gundamVo.toString();
         System.out.println("ttttt");
-        return "test outside";
+        return null;
     }
     @Post("cover")
-    public Gson saveCover(){
+    public Gson saveCover(Invocation inv){
+
         Gson json=new Gson();
         return null;
     }

@@ -17,7 +17,7 @@ define(function(require, exports, module) {
     require('utils/jqPlugin');
     // 查询
     API.add("gundamStorageController", "travel.json", "gundamStorage/save");
-    // API.add("catalogList", "fileList.json", "upass/fileBrowse/getCatalogs");
+    API.add("gundamCover", "travel.json", "upass/fileBrowse/cover");
     // API.add("fileList", "fileList.json", "upass/fileBrowse/getFiles");
     // API.add("viewerPic", "../assets/images/1900x1200_img_7.png", "upass/download/downloadNoToken");
     // 获取信息
@@ -46,7 +46,6 @@ define(function(require, exports, module) {
             })
         },
         checkin: function (cmd){
-            $.message({ message: "操作中", type: "loading", time: 99999 });
             Ajax.postJson(API.get('gundamStorageController'), cmd, function(json, state) {
                 if (json.success) {
                     console.log("success");
@@ -57,6 +56,9 @@ define(function(require, exports, module) {
                     $.message({message:json.message,type:"error"});
                 }
             })
+        },
+        checkinCover:function(cover){
+
         }
     };
 
@@ -80,18 +82,47 @@ define(function(require, exports, module) {
         justiceWatching: function (organism){
             
         },
+        img2base64:function(img){
+            //TODO 增加文件类型的判断
+            var img64;
+            var reader=new FileReader()
+            reader.readAsDataURL(img);
+            reader.onload =function (e){
+                console.log(e.target.result);
+                img64=e.target.result;
+            }
+            return img64;
+        },
         // 鉴权参数处理
         getSaveParam: function() {
-            var authData = this.getObjectData($("#baseInfo"), true);
+            var authData = this.getObjectData($("#baseInfo"));
+            var coverData=this.getCoverData($("#coverImg"));
             //合并多个数据
-            return $.extend(true,{},authData);
+            return $.extend(true,{},authData,coverData);
         },
         // 表单获取数据 json对象数据
-        getObjectData: function(obj, authFlag, callback) {
+        getObjectData: function(obj,callback) {
             var data = {};
             $(obj).find("input,select,textarea").each(function(index, el) {
                 var _key = $(el).attr('name');
                 var _value = $(el).val();
+                data[_key] = _value;
+            });
+            if (callback) {
+                callback(data);
+            }
+            return data;
+        },
+        getCoverData:function(obj,callback){
+            var data = {};
+            $(obj).find("input,select,textarea").each(function(index, el) {
+                if ('file' == $(el).attr('type')) {
+                    var _key = $(el).attr('name');
+                    var _value = Utils.img2base64($(el).files[0]);
+                } else {
+                    var _key = $(el).attr('name');
+                    var _value = $(el).val();
+                }
                 data[_key] = _value;
             });
             if (callback) {

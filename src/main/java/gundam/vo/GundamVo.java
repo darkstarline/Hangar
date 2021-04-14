@@ -41,7 +41,6 @@ public class GundamVo {
     private String cover;
     private String state;
     private String op_id;
-
     public Integer getOrganismId() {
         return organismId;
     }

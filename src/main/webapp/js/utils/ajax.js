@@ -60,7 +60,8 @@ define(function(require, exports, module) {
              * @type {Object}
              * @property JSON
              */
-            JSON: "application/json"
+            JSON: "application/json",
+            FILE: false
         },
         /**
          * 超时,默认超时30000ms
@@ -177,6 +178,11 @@ define(function(require, exports, module) {
                 }
             });
         },
+        postInfoAndFile: function (url,cmd,callback){
+            if (arguments.length !== 3)
+                callback = cmd, cmd = '';
+            this.ajaxBase(url, 'POST', cmd, this.dataType.JSON, this.contentType.FILE, callback, false,false,false);
+        },
         /**
          * 基于jQuery ajax的封装，可配置化
          *
@@ -194,12 +200,12 @@ define(function(require, exports, module) {
          * @param {Function}
          *            callback [optional,default=undefined] 请求成功回调函数,返回数据data和isSuc
          */
-        ajaxBase: function(url, type, cmd, dataType, contentType, callback, sync, cache) {
+        ajaxBase: function(url, type, cmd, dataType, contentType, callback, sync, cache,processData) {
             var thiz = this;
-            if (typeof(cmd) == "object" && type == "POST") {
+            /*if (typeof(cmd) == "object" && type == "POST") {
                 cmd = JSON.stringify(cmd);
                 contentType = thiz.contentType.JSON;
-            }
+            }*/
             $.ajax({
                 url: url,
                 type: type,
@@ -209,6 +215,7 @@ define(function(require, exports, module) {
                 contentType: contentType,
                 async: sync ? false : true,
                 timeout: thiz.TIME_OUT,
+                processData: processData? true:false,
                 success: function(data) {
                     if (!data) {
                         return;

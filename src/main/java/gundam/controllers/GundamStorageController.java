@@ -1,21 +1,23 @@
 package gundam.controllers;
 
-import com.google.gson.Gson;
+import com.alibaba.fastjson.JSON;
 import gundam.vo.GundamVo;
 import net.paoding.rose.web.Invocation;
+import net.paoding.rose.web.annotation.rest.Get;
 import net.paoding.rose.web.annotation.rest.Post;
+import org.springframework.web.multipart.MultipartFile;
 
 public class GundamStorageController {
+    @Get("save")
     @Post("save")
-    public Gson saveBaseInfo(Invocation inv, GundamVo gundamVo) throws Exception{
-        gundamVo.toString();
-        System.out.println("ttttt");
+    public JSON saveBaseInfo(Invocation inv, GundamVo gundamVo, MultipartFile file) throws Exception{
+
         return null;
     }
     @Post("cover")
-    public Gson saveCover(Invocation inv){
+    public JSON saveCover(Invocation inv){
 
-        Gson json=new Gson();
+
         return null;
     }
 }

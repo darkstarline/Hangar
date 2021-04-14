@@ -31,14 +31,16 @@ define(function(require, exports, module) {
     Page.action = {
         // 查询所有列表接口
         queryList: function() {
-            Ajax.postJson(API.get('fileList'), null, function (json, state) {
-                var organismList=eval('json.'+"organismList");
-                console.log(organismList);
-                for(var i=0;i<organismList.length;i++){
-                    var organism=organismList[i];
-                    console.log(organism);
-                }
-            })
+            var file=document.getElementById('formFileLg').files[0]
+            var formdata = new FormData();
+            formdata.append("file",file);
+            formdata.append("organismId","12345");
+            //创建xhr，使用ajax进行文件上传
+            var xhr = new XMLHttpRequest();
+            xhr.open("post","/Hanger/gundamStorage/save");
+            //回调
+            //将formdata上传
+            xhr.send(formdata);
         },
     };
 

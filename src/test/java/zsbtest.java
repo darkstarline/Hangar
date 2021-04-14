@@ -1,4 +1,4 @@
-import com.google.gson.Gson;
+
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -14,8 +14,8 @@ public class zsbtest {
         list.add(one);
         list.add(two);
         list.add(three);
-        Gson gson=new Gson();
-        String getList=gson.toJson(list);
-        System.out.println(getList);
+//        Gson gson=new Gson();
+//        String getList=gson.toJson(list);
+//        System.out.println(getList);
     }
 }

@@ -9,11 +9,11 @@
     <!-- 配置整合mybatis过程 -->
     <!-- 1.配置数据库相关参数properties的属性：${url} -->
     <!-- 使用数据库配置文件解耦 -->
-    <!--<context:property-placeholder location="classpath:jdbc.properties"/>
+    <context:property-placeholder location="classpath:jdbc.properties"/>
 
-    &lt;!&ndash; 下面的druid配置都是基本配置,具体优化设置可以上网查询,也可以去github上面直接搜索druid &ndash;&gt;
-    &lt;!&ndash; 2.数据库连接池 &ndash;&gt;
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+    <!-- 下面的druid配置都是基本配置,具体优化设置可以上网查询,也可以去github上面直接搜索druid -->
+    <!-- 2.数据库连接池 -->
+    <!--<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
           init-method="init" destroy-method="close">
         &lt;!&ndash; 配置连接池属性 &ndash;&gt;
         <property name="driverClassName" value="${jdbc.driver}"/>

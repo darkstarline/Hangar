@@ -68,13 +68,13 @@
       <url-pattern>/imgs/</url-pattern>
       <url-pattern>/fonts/</url-pattern>
       <url-pattern>/views/</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>-->
 
 
 
 
-    &lt;!&ndash;druid ==> WEB方式监控配置&ndash;&gt;
-    <servlet>
+    <!--druid ==> WEB方式监控配置-->
+    <!--<servlet>
       <servlet-name>DruidStatView</servlet-name>
       <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
     </servlet>

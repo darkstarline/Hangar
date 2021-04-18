@@ -42,6 +42,13 @@ define(function(require, exports, module) {
             //将formdata上传
             xhr.send(formdata);
         },
+        testService: function() {
+            Ajax.postJson(API.get('fileList'), null, function (json, state) {
+                if(state=='200'){
+                    console.log("test service success");
+                }
+            })
+        }
     };
 
     // 定义页面所有的操作方法
@@ -54,7 +61,7 @@ define(function(require, exports, module) {
             console.log("tt");
             $("#submitLogin").on('click', function(event) {
                 console.log("tt click");
-                Page.action.queryList();
+                Page.action.testService();
             });
         },
     }

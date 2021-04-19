@@ -2,7 +2,7 @@
 <html lang="zxx">
 <head>
  <meta charset="utf-8">
- <meta name="description" content="Jexi">
+ <meta name="description" content="Abaz">
  <meta name="keywords" content="HTML,CSS,JavaScript">
  <meta name="author" content="HiBootstrap">
  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,9 +31,12 @@
  <link rel='stylesheet' href='../../css/layers.css' type="text/css" media="all" />
  <link rel='stylesheet' href='../../css/navigation.css' type="text/css" media="all" />
 
+ <link rel="stylesheet" href="../../css/nice-select.css" type="text/css" media="all" />
+
  <link rel="stylesheet" href="../../css/style.css" type="text/css" media="all" />
 
  <link rel="stylesheet" href="../../css/responsive.css" type="text/css" media="all" />
+
 </head>
 <body>
 
@@ -83,7 +86,7 @@
           <i class="flaticon-magnifying-glass"></i>
          </div>
         </div>
-        <input type="text" class="form-control" placeholder="Search Article"/>
+        <input type="text" class="form-control" placeholder="Search Article">
        </div>
       </form>
      </div>
@@ -118,7 +121,7 @@
         </ul>
        </li>
        <li class="nav-item">
-        <a href="../travel/travel.html" class="nav-link">Travel</a>
+        <a href="travel.html" class="nav-link">Travel</a>
        </li>
        <li class="nav-item">
         <a href="../fashion.html" class="nav-link">Fashion</a>
@@ -142,7 +145,7 @@
           <a href="../wishlist.html" class="nav-link">Wishlist</a>
          </li>
          <li class="nav-item">
-          <a href="checkout.html" class="nav-link active">Checkout</a>
+          <a href="../checkin/checkout.html" class="nav-link">Checkout</a>
          </li>
          <li class="nav-item">
           <a href="#" class="nav-link dropdown-toggle">Features</a>
@@ -174,10 +177,10 @@
           </ul>
          </li>
          <li class="nav-item">
-          <a href="#" class="nav-link dropdown-toggle">Users</a>
+          <a href="#" class="nav-link dropdown-toggle active">Users</a>
           <ul class="dropdown-menu">
            <li class="nav-item">
-            <a href="../login/login.html" class="nav-link">Log In</a>
+            <a href="login.html" class="nav-link active">Log In</a>
            </li>
            <li class="nav-item">
             <a href="../signup.html" class="nav-link">Sign Up</a>
@@ -261,11 +264,10 @@
      <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
        <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
-       <li class="breadcrumb-item"><a href="../products.html">Products</a></li>
-       <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+       <li class="breadcrumb-item active" aria-current="page">Log In</li>
       </ol>
      </nav>
-     <h1><span>Checkout</span></h1>
+     <h1><span>Log In</span></h1>
     </div>
    </div>
   </div>
@@ -273,214 +275,39 @@
 </header>
 
 
-<div class="checkout-section pt-100 bg-dark">
+<div class="authentication-section pt-100 bg-dark">
  <div class="container">
-  <div class="border-bottom pb-70">
-   <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-8 pb-30">
-     <div class="checkout-item checkout-item-white desk-pad-right-30">
-      <div class="sub-section-title mt-0">
-       <h3 class="sub-section-title-heading">基础属性</h3>
-      </div>
-      <div class="checkout-form">
-       <form id="baseInfo" name="baseInfo">
-        <div class="row">
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="organismNumber" class="form-control" required placeholder="机体番号*"/>
+  <div class="border-bottom pb-100">
+   <div class="row justify-content-center">
+    <div class="col-12 col-md-10">
+     <div class="authentication-item authentication-item-white">
+      <h2>Log In</h2>
+      <div class="authentication-form">
+       <form id="loginForm" name="loginForm">
+        <div class="form-group mb-20">
+         <input type="text" name="user" class="form-control form-control-white" required placeholder="Username/Email address*"/>
+        </div>
+        <div class="form-group mb-20">
+         <input type="password" name="password" class="form-control form-control-white" required placeholder="Password*"/>
+        </div>
+        <div class="authentication-account-access mb-20">
+         <div class="authentication-account-access-item">
+          <div class="input-checkbox">
+           <input type="checkbox" id="check1">
+           <label for="check1">Remember me!</label>
           </div>
          </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="organismCodeName" class="form-control" required placeholder="机体代号*"/>
+         <div class="authentication-account-access-item">
+          <div class="authentication-link">
+           <a href="../forget-password.html">Forget password?</a>
           </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="jpnName" class="form-control" required placeholder="日文*"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="enName" class="form-control" required placeholder="英文*"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="cnName" class="form-control" required placeholder="中文*"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="animation" class="form-control" required placeholder="出现作品*"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="organismType" class="form-control" required placeholder="机体类型*"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="belong" class="form-control" required placeholder="所属*"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="manufacturer" class="form-control" required placeholder="制造商*"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="organismSize" class="form-control" required placeholder="尺寸*"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="netWeight" class="form-control" placeholder="裸机重量"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="fullWeight" class="form-control" placeholder="全装重量"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="armoredStructure" class="form-control" placeholder="装甲材料及结构"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="output" class="form-control"  placeholder="发电机出力*"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="propulsion" class="form-control"  placeholder="推进力"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="acceleration" class="form-control"  placeholder="加速度"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="sensorRadius" class="form-control"  placeholder="传感器有效探测半径"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="fixedArmed" class="form-control"  placeholder="固定武装"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="debut" class="form-control"  placeholder="初次配备"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="cockpit" class="form-control"  placeholder="内部环境">
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="pilot" class="form-control"  placeholder="机师"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="degreeTime" class="form-control"  placeholder="180度姿势变换所需时间"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="groundSpeed" class="form-control"  placeholder="速度"/>
-          </div>
-         </div>
-         <div class="col-12 col-md-6">
-          <div class="form-group mb-20">
-           <input type="text" name="waterSpeed" class="form-control"  placeholder="水中速度"/>
-          </div>
-         </div>
-         <div class="col-12">
-          <div class="form-group mb-20">
-           <input type="text" name="chooseWeapons" class="form-control"  placeholder="选用武器"/>
-          </div>
-         </div>
-         <div class="col-12">
-          <div class="form-group mb-20">
-           <textarea name="introduction" class="form-control" rows="11" placeholder="简介*"></textarea>
-          </div>
-         </div>
-         <div class="col-12">
-          <button  class="btn main-btn full-width">Place Order</button>
          </div>
         </div>
+        <button class="btn main-btn full-width mb-20" type="submit">Log In</button>
+<!--        <button class="btn main-btn full-width mb-20" id="login" name="login">Log In</button>-->
        </form>
-      </div>
-     </div>
-    </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 pb-30">
-     <div class="checkout-item">
-      <div class="checkout-payment-area checkout-payment-area-white">
-       <div class="sub-section-title">
-        <h2 class="sub-section-title-heading">封绘</h2>
-       </div>
-       <div class="checkout-payment-form">
-        <form id="coverImg" name="coverImg">
-         <div class="checkout-payment-list">
-          <div>
-           <input class="form-control form-control-lg" id="cover" name="cover" type="file">
-<!--           <input class="form-control form-control-lg" id="formFileLg64" name="formFileLg64" type="hidden">-->
-          </div>
-          <!--          <div class="checkout-payment-text">
-                     <h3>Direct Bank Transfer</h3>
-                     <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have been cleared in your account.</p>
-                    </div>-->
-         </div>
-        </form>
-       </div>
-      </div>
-     </div>
-     <div class="checkout-item">
-      <div class="checkout-payment-area checkout-payment-area-white">
-       <div class="sub-section-title">
-        <h2 class="sub-section-title-heading">注意事项</h2>
-       </div>
-       <div class="checkout-payment-form">
-        <form>
-         <div class="checkout-payment-list">
-          <div class="input-radio">
-           <input type="radio" id="radio1" name="payment">
-           <label for="radio1"></label>
-          </div>
-          <div class="checkout-payment-text">
-           <h3>Direct Bank Transfer</h3>
-           <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have been cleared in your account.</p>
-          </div>
-         </div>
-         <div class="checkout-payment-list">
-          <div class="input-radio">
-           <input type="radio" id="radio2" name="payment">
-           <label for="radio2"></label>
-          </div>
-          <div class="checkout-payment-text">
-           <h3>Cash On Delivery</h3>
-          </div>
-         </div>
-         <div class="checkout-payment-list">
-          <div class="input-radio">
-           <input type="radio" id="radio3" name="payment">
-           <label for="radio3"></label>
-          </div>
-          <div class="checkout-payment-text">
-           <h3>Paypal</h3>
-          </div>
-         </div>
-        </form>
+       <div class="text-center">
+        <p class="auth-info">Don't have an account? <strong><a href="../signup.html">Sign Up</a></strong></p>
        </div>
       </div>
      </div>
@@ -506,7 +333,7 @@
      </div>
      <div class="footer-content-item">
       <div class="footer-logo">
-       <a href="../../index.html"><img src="../../imgs/logo.png" alt="logo"></a>
+       <a href="index.html"><img src="../../imgs/logo.png" alt="logo"></a>
       </div>
      </div>
      <div class="footer-content-item">
@@ -578,11 +405,12 @@
 <script src="../../js/jquery.meanmenu.min.js"></script>
 
 <script src="../../js/script.js"></script>
+
 <script src="../../js/seajs/3.0.0/sea.js"></script>
 <script src="../../js/seajs/3.0.0/sea-plugins.js" id="seajsnode"></script>
 <script src="../../js/admin/config.js"></script>
 <script>
- seajs.use("./checkout",function (a){
+ seajs.use("./login",function (a){
   a.init();
  });
 </script>

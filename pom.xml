@@ -25,7 +25,7 @@
     <com.google.gson.version>2.7</com.google.gson.version>
     <javax.servlet.version>3.1.0</javax.servlet.version>
     <org.springframework.version>4.3.29.RELEASE</org.springframework.version>
-    <redis.clients.version>2.7.3</redis.clients.version>
+    <redis.clients.version>2.9.0</redis.clients.version>
     <com.dyuproject.protostuff.version>1.0.8</com.dyuproject.protostuff.version>
     <developer.organization><![CDATA[scengine]]></developer.organization>
   </properties>
@@ -44,7 +44,17 @@
       <version>7.10.1</version>
     </dependency>
 <!--    Paoding Rose-->
-
+    <!--    spring-session-->
+    <dependency>
+      <groupId>org.springframework.session</groupId>
+      <artifactId>spring-session</artifactId>
+      <version>1.2.2.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-redis</artifactId>
+      <version>1.8.0.RELEASE</version>
+    </dependency>
     <!-- 1.日志 -->
     <!--&lt;!&ndash; 实现slf4j接口并整合 &ndash;&gt;-->
     <!--<dependency>-->

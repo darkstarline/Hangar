@@ -16,12 +16,7 @@ define(function(require, exports, module) {
     // 引入jQuery插件，用于信提示等;
     require('utils/jqPlugin');
     // 查询
-    API.add("gundamStorageController", "travel.json", "gundamStorage/save");
-    API.add("gundamCover", "travel.json", "upass/fileBrowse/cover");
-    // API.add("fileList", "fileList.json", "upass/fileBrowse/getFiles");
-    // API.add("viewerPic", "../assets/images/1900x1200_img_7.png", "upass/download/downloadNoToken");
-    // 获取信息
-    // API.add("getUserInfo", "userInfo.json", "userInfo");
+    API.add("login", "retMessage.json", "login");
     // 定义当前页面对象
     var Page = {
         init: function() {
@@ -37,10 +32,13 @@ define(function(require, exports, module) {
 
     Page.action = {
         login: function (cmd){
-            Ajax.postJson(API.get('gundamStorageController'), null, function (json, state) {
+            Ajax.postJson(API.get('login'), cmd, function (json, state) {
                 console.log(json);
                 if(state){
                     $(window).attr('location','../../index.html');
+                }else{
+                    //TODO 失败信息提示
+                    // Page.operate.showLogginErro(json.message);
                 }
             })
         },
@@ -54,9 +52,8 @@ define(function(require, exports, module) {
         // 路径点击跳转事件
         login: function() {
             $("#loginForm").on("submit",function(event) {
-                // var cmd = Utils.getSaveParam();
-                // cmd = Utils.jsonToStr(cmd);
-                var cmd = "Hanger";
+                var cmd = Utils.getObjectData($("#loginForm"));
+                cmd = Utils.jsonToStr(cmd);
                 console.log(cmd);
                 Page.action.login(cmd);
                 event.preventDefault();
@@ -64,11 +61,37 @@ define(function(require, exports, module) {
         },
         aotu2base64save: function (){
 
+        },
+        showLogginErro: function (msg) {
+            Login.login.find(".login-error-info span").html(msg);
+            Login.login.find(".login-error-info").show();
         }
     }
     var Utils = {
         justiceWatching: function (organism){
 
+        },
+        getObjectData: function(obj,callback) {
+            var data = {};
+            $(obj).find("input,select,textarea").each(function(index, el) {
+                var _key = $(el).attr('name');
+                var _value = $(el).val();
+                data[_key]=_value;
+            });
+            if (callback) {
+                callback(data);
+            }
+            return data;
+        },
+        // json转string
+        jsonToStr: function(json) {
+            var str = "";
+            for (var key in json) {
+                if (typeof(json[key]) == "object") {} else {
+                    str += "&" + key + "=" + json[key];
+                }
+            }
+            return str.substring(1);;
         },
     }
     module.exports = Page;

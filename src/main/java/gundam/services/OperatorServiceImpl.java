@@ -26,7 +26,7 @@ public class OperatorServiceImpl implements IOperatorService{
                 json.setMessage("该用户已经被锁定了, 无法登陆!", null);
             }
 
-            if(ResourceConstans.OPERATOR.STATE_USED != beanFind.getState()){
+            if(!ResourceConstans.OPERATOR.STATE_USED.equals(beanFind.getState())){
                 json.setSuccess(false);
                 json.setMessage("该用户已经失效, 无法登陆!", null);
             }

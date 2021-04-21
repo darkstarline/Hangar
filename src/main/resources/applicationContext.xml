@@ -9,7 +9,7 @@
     http://www.springframework.org/schema/context/spring-context.xsd
     http://www.springframework.org/schema/tx
     http://www.springframework.org/schema/tx/spring-tx.xsd">
-
+    <context:property-placeholder  location="classpath:applicationContext.properties,classpath:jdbc.properties" />
     <import resource="classpath:spring/spring-dao.xml"/>
     <import resource="classpath:spring/spring-service.xml"/>
     <import resource="classpath:spring/spring-web.xml"/>

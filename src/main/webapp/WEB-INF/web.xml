@@ -23,10 +23,38 @@
     <!--<listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>-->
+    <!--    spring-session-->
+    <filter>
+        <filter-name>springSessionRepositoryFilter</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>springSessionRepositoryFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+<!--    encoding-->
+    <filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
     <!--  Paoding rose -->
     <listener>
         <listener-class>gundam.filter.RoseListener</listener-class>
     </listener>
+<!--    rose-->
     <filter>
         <filter-name>roseFilter</filter-name>
         <filter-class>net.paoding.rose.RoseFilter</filter-class>

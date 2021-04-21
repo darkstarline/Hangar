@@ -9,7 +9,7 @@
     <!-- 配置整合mybatis过程 -->
     <!-- 1.配置数据库相关参数properties的属性：${url} -->
     <!-- 使用数据库配置文件解耦 -->
-    <context:property-placeholder location="classpath:jdbc.properties"/>
+<!--    <context:property-placeholder location="classpath:jdbc.properties"/>-->
 
     <!-- 下面的druid配置都是基本配置,具体优化设置可以上网查询,也可以去github上面直接搜索druid -->
     <!-- 2.数据库连接池 -->

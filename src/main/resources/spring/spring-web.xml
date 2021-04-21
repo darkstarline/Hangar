@@ -2,7 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd
                             http://www.springframework.org/schema/mvc  http://www.springframework.org/schema/mvc/spring-mvc.xsd ">
     <!--告诉前端控制器，哪些静态资源不拦截-->
     <!--<mvc:resources location="/css/" mapping="/css/**"/> &lt;!&ndash; 样式 &ndash;&gt;
@@ -10,4 +12,52 @@
     <mvc:resources location="/js/" mapping="/js/**"/> &lt;!&ndash; javascript &ndash;&gt;
     <mvc:resources location="/fonts/" mapping="/fonts/**"/> &lt;!&ndash; 字体 &ndash;&gt;
     <mvc:resources location="/views/" mapping="/views/**"/> &lt;!&ndash; 字体 &ndash;&gt;-->
+
+<!--    <context:property-placeholder  location="classpath:applicationContext.properties" />-->
+
+    <context:annotation-config/>
+<!--    spring-session-->
+<!--    <bean id="redisHttpSessionConfiguration" class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration"/>-->
+<!--    redis单例-->
+    <!--<bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <property name="hostName" value="${redis.ip}"/>
+        <property name="port" value="${redis.port}"/>
+        <property name="password" value="${redis.password}"/>
+    </bean>&ndash;&gt;-->
+<!--    redis集群-->
+    <!--	<bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+            <constructor-arg index="0" ref="redisClusterConfig"/>
+            <property name="password" value="zsb6263127" />
+        </bean>
+        <bean id="redisClusterConfig" class="org.springframework.data.redis.connection.RedisClusterConfiguration">
+            <property name="maxRedirects" value="${redis.cluster.maxRedirects}"/>
+            <property name="clusterNodes">
+                <set>
+                    <bean id="cluster0" class="org.springframework.data.redis.connection.RedisNode">
+                        <constructor-arg name="host" value="${redis.cluster0.host}"/>
+                        <constructor-arg name="port" value="${redis.cluster0.port}"/>
+                    </bean>
+                    <bean id="cluster1" class="org.springframework.data.redis.connection.RedisNode">
+                        <constructor-arg name="host" value="${redis.cluster1.host}"/>
+                        <constructor-arg name="port" value="${redis.cluster1.port}"/>
+                    </bean>
+                    <bean id="cluster2" class="org.springframework.data.redis.connection.RedisNode">
+                        <constructor-arg name="host" value="${redis.cluster2.host}"/>
+                        <constructor-arg name="port" value="${redis.cluster2.port}"/>
+                    </bean>
+                    <bean id="cluster3" class="org.springframework.data.redis.connection.RedisNode">
+                        <constructor-arg name="host" value="${redis.cluster3.host}"/>
+                        <constructor-arg name="port" value="${redis.cluster3.port}"/>
+                    </bean>
+                    <bean id="cluster4" class="org.springframework.data.redis.connection.RedisNode">
+                        <constructor-arg name="host" value="${redis.cluster4.host}"/>
+                        <constructor-arg name="port" value="${redis.cluster4.port}"/>
+                    </bean>
+                    <bean id="cluster5" class="org.springframework.data.redis.connection.RedisNode">
+                        <constructor-arg name="host" value="${redis.cluster5.host}"/>
+                        <constructor-arg name="port" value="${redis.cluster5.port}"/>
+                    </bean>
+                </set>
+            </property>
+        </bean>-->
 </beans>

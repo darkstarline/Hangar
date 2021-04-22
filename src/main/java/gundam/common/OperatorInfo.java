@@ -4,7 +4,17 @@ import java.io.Serializable;
 
 public class OperatorInfo implements Serializable {
     //TODO 暂时先这么多，有需要再补
+    private Integer id;
     private String code;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     private String isAdmin;
     private String createDate;
 
@@ -35,7 +45,8 @@ public class OperatorInfo implements Serializable {
     @Override
     public String toString() {
         return "OperatorInfo{" +
-                "code='" + code + '\'' +
+                "id=" + id +
+                ", code='" + code + '\'' +
                 ", isAdmin='" + isAdmin + '\'' +
                 ", createDate='" + createDate + '\'' +
                 '}';

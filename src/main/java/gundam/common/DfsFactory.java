@@ -1,8 +1,16 @@
 package gundam.common;
 
+import org.csource.fastdfs.ClientGlobal;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+
+import java.text.DecimalFormat;
+
 public class DfsFactory {
     //TODO 修改成自己的
-    /*private Logger log = LoggerFactory.getLogger(this.getClass());
+    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     private static DfsFactory instance = null;
 
@@ -38,7 +46,7 @@ public class DfsFactory {
         }
     }
 
-    public ICmsFileInfoValue doUpload(MultipartFile file, ICmsFileInfoValue fileInfo, String encryptType, String strDefaultKey) throws Exception{
+   /* public ICmsFileInfoValue doUpload(MultipartFile file, ICmsFileInfoValue fileInfo, String encryptType, String strDefaultKey) throws Exception{
         init();
         ICmsFileInfoValue attrInfo = this.prepareAttachmentInfo(file, fileInfo);
         TrackerServer trackerServer = null;
@@ -89,9 +97,9 @@ public class DfsFactory {
             }
         }
         return attrInfo;
-    }
+    }*/
 
-    public String doUpload(byte[] data, ICmsFileInfoValue fileInfo, String encryptType, String strDefaultKey) throws Exception{
+    /*public String doUpload(byte[] data, ICmsFileInfoValue fileInfo, String encryptType, String strDefaultKey) throws Exception{
 
         TrackerServer trackerServer = null;
 
@@ -132,9 +140,9 @@ public class DfsFactory {
                 log.error(" tracker server close error:", e);
             }
         }
-    }
+    }*/
 
-    public String doUpload(String encodeTassKey, String fileName)throws Exception{
+    /*public String doUpload(String encodeTassKey, String fileName)throws Exception{
         init();
 //		TrackerClient tracker = new TrackerClient();
 //		TrackerServer trackerServer = tracker.getConnection();
@@ -145,9 +153,9 @@ public class DfsFactory {
         String[] results = client.upload_file(null, encodeTassKey.getBytes(), Files.getFileExtension(fileName), null);
         TrackerClientRouter.instance().releaseTrackerClientToPool(trackerServer);  //连接池回收
         return results[0] + "/" + results[1];
-    }
+    }*/
 
-    public byte[] doDownload(Long routerId, String dfsId, String encryptType, String strDefaultKey) throws Exception {
+    /*public byte[] doDownload(Long routerId, String dfsId, String encryptType, String strDefaultKey) throws Exception {
         init();
         TrackerServer trackerServer = null;
 
@@ -189,9 +197,9 @@ public class DfsFactory {
                 log.error(" tracker server close error:", e);
             }
         }
-    }
+    }*/
 
-    public byte[] doDownload(String dfsId)throws Exception{
+   /* public byte[] doDownload(String dfsId)throws Exception{
         init();
 //		TrackerClient tracker = new TrackerClient();
 //		TrackerServer trackerServer = tracker.getConnection();
@@ -203,21 +211,21 @@ public class DfsFactory {
         byte[] data = client.download_file(groupName, dfsId.substring(groupName.length()+1));
         TrackerClientRouter.instance().releaseTrackerClientToPool(trackerServer);  //连接池回收
         return data;
-    }
+    }*/
 
-    public ICmsFileInfoValue prepareAttachmentInfo(MultipartFile file, ICmsFileInfoValue fileInfo) throws Exception{
+   /* public ICmsFileInfoValue prepareAttachmentInfo(MultipartFile file, ICmsFileInfoValue fileInfo) throws Exception{
         String fullName = file.getOriginalFilename();
         fileInfo.setFileName(URLDecoder.decode(fullName, "UTF-8"));
         fileInfo.setContentType(file.getContentType());
         fileInfo.setFileSize(file.getSize());
         fileInfo.setSizeDesc(readableFileSize(file.getSize()));
         return fileInfo;
-    }
+    }*/
 
     public static String readableFileSize(long size) {
         if(size <= 0) return "0";
         final String[] units = new String[] { "B", "KB", "MB", "GB", "TB" };
         int digitGroups = (int) (Math.log10(size)/Math.log10(1024));
         return new DecimalFormat("#,##0.#").format(size/Math.pow(1024, digitGroups)) + " " + units[digitGroups];
-    }*/
+    }
 }

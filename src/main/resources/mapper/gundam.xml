@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gundam">
+    <insert id="save" parameterType="GundamBean">
+        replace into gundam (
+        <include refid="key"/>
+        ) values (
+        <include refid="value"/>
+        )
+    </insert>
+    <sql id="gundamList"></sql>
+    <sql id="key">
+        <trim suffixOverrides=",">
+            <if test="orgamismId!=null and orgamismId!=''">
+                orgamismId,
+            </if>
+            <if test="organismNumber!=null and organismNumber!=''">
+                organismNumber,
+            </if>
+            <if test="organismCodeName!=null and organismCodeName!=''">
+                organismCodeName,
+            </if>
+            <if test="jpnName!=null and jpnName!=''">
+                jpnName,
+            </if>
+            <if test="enName!=null and enName!=''">
+                enName,
+            </if>
+            <if test="cnName!=null and cnName!=''">
+                cnName,
+            </if>
+            <if test="animation!=null and animation!=''">
+                animation,
+            </if>
+            <if test="organismType!=null and organismType!=''">
+                organismType,
+            </if>
+            <if test="belong!=null and belong!=''">
+                belong,
+            </if>
+            <if test="manufacturer!=null and manufacturer!=''">
+                manufacturer,
+            </if>
+            <if test="organismSieze!=null and organismSieze!=''">
+                organismSieze,
+            </if>
+            <if test="netWeight!=null and netWeight!=''">
+                netWeight,
+            </if>
+            <if test="fullWeight!=null and fullWeight!=''">
+                fullWeight,
+            </if>
+            <if test="armoredStructure!=null and armoredStructure!=''">
+                armoredStructure,
+            </if>
+            <if test="output!=null and output!=''">
+                output,
+            </if>
+            <if test="propulsion!=null and propulsion!=''">
+                propulsion,
+            </if>
+            <if test="acceleration!=null and acceleration!=''">
+                acceleration,
+            </if>
+            <if test="sensorRadius!=null and sensorRadius!=''">
+                sensorRadius,
+            </if>
+            <if test="fixedArmed!=null and fixedArmed!=''">
+                fixedArmed,
+            </if>
+            <if test="dubut!=null and dubut!=''">
+                dubut,
+            </if>
+            <if test="cockpit!=null and cockpit!=''">
+                cockpit,
+            </if>
+            <if test="pilot!=null and pilot!=''">
+                pilot,
+            </if>
+            <if test="chooseWeapons!=null and chooseWeapons!=''">
+                chooseWeapons,
+            </if>
+            <if test="degreeTime!=null and degreeTime!=''">
+                degreeTime,
+            </if>
+            <if test="groundSpeed!=null and groundSpeed!=''">
+                groundSpeed,
+            </if>
+            <if test="waterSpeed!=null and waterSpeed!=''">
+                waterSpeed,
+            </if>
+            <if test="introduction!=null and introduction!=''">
+                introduction,
+            </if>
+            <if test="cover!=null and cover!=''">
+                cover,
+            </if>
+            <if test="state!=null and state!=''">
+                state,
+            </if>
+            <if test="opCode!=null and opCode!=''">
+                opCode,
+            </if>
+            <if test="createDate!=null and createDate!=''">
+                createDate,
+            </if>
+            <if test="extend0!=null and extend0!=''">
+                extend0,
+            </if>
+            <if test="extend1!=null and extend1!=''">
+                extend1,
+            </if>
+            <if test="extend2!=null and extend2!=''">
+                extend2,
+            </if>
+            <if test="extend3!=null and extend3!=''">
+                extend3,
+            </if>
+            <if test="extend4!=null and extend4!=''">
+                extend4,
+            </if>
+            <if test="extend5!=null and extend5!=''">
+                extend5,
+            </if>
+            <if test="extend6!=null and extend6!=''">
+                extend6,
+            </if>
+            <if test="extend7!=null and extend7!=''">
+                extend7,
+            </if>
+        </trim>
+    </sql>
+    <sql id="value">
+        <trim suffixOverrides=",">
+            <if test="orgamismId!=null and orgamismId!=''">
+                #{orgamismId},
+            </if>
+            <if test="organismNumber!=null and organismNumber!=''">
+                #{organismNumber},
+            </if>
+            <if test="organismCodeName!=null and organismCodeName!=''">
+                #{organismCodeName},
+            </if>
+            <if test="jpnName!=null and jpnName!=''">
+                #{jpnName},
+            </if>
+            <if test="enName!=null and enName!=''">
+                #{enName},
+            </if>
+            <if test="cnName!=null and cnName!=''">
+                #{cnName},
+            </if>
+            <if test="animation!=null and animation!=''">
+                #{animation},
+            </if>
+            <if test="organismType!=null and organismType!=''">
+                #{organismType},
+            </if>
+            <if test="belong!=null and belong!=''">
+                #{belong},
+            </if>
+            <if test="manufacturer!=null and manufacturer!=''">
+                #{manufacturer},
+            </if>
+            <if test="organismSieze!=null and organismSieze!=''">
+                #{organismSieze},
+            </if>
+            <if test="netWeight!=null and netWeight!=''">
+                #{netWeight},
+            </if>
+            <if test="fullWeight!=null and fullWeight!=''">
+                #{fullWeight},
+            </if>
+            <if test="armoredStructure!=null and armoredStructure!=''">
+                #{armoredStructure},
+            </if>
+            <if test="output!=null and output!=''">
+                #{output},
+            </if>
+            <if test="propulsion!=null and propulsion!=''">
+                #{propulsion},
+            </if>
+            <if test="acceleration!=null and acceleration!=''">
+                #{acceleration},
+            </if>
+            <if test="sensorRadius!=null and sensorRadius!=''">
+                #{sensorRadius},
+            </if>
+            <if test="fixedArmed!=null and fixedArmed!=''">
+                #{fixedArmed},
+            </if>
+            <if test="dubut!=null and dubut!=''">
+                #{dubut},
+            </if>
+            <if test="cockpit!=null and cockpit!=''">
+                #{cockpit},
+            </if>
+            <if test="pilot!=null and pilot!=''">
+                #{pilot},
+            </if>
+            <if test="chooseWeapons!=null and chooseWeapons!=''">
+                #{chooseWeapons},
+            </if>
+            <if test="degreeTime!=null and degreeTime!=''">
+                #{degreeTime},
+            </if>
+            <if test="groundSpeed!=null and groundSpeed!=''">
+                #{groundSpeed},
+            </if>
+            <if test="waterSpeed!=null and waterSpeed!=''">
+                #{waterSpeed},
+            </if>
+            <if test="introduction!=null and introduction!=''">
+                #{introduction},
+            </if>
+            <if test="cover!=null and cover!=''">
+                #{cover},
+            </if>
+            <if test="state!=null and state!=''">
+                #{state},
+            </if>
+            <if test="opCode!=null and opCode!=''">
+                #{opCode},
+            </if>
+            <if test="createDate!=null and createDate!=''">
+                #{createDate},
+            </if>
+            <if test="extend0!=null and extend0!=''">
+                #{extend0},
+            </if>
+            <if test="extend1!=null and extend1!=''">
+                #{extend1},
+            </if>
+            <if test="extend2!=null and extend2!=''">
+                #{extend2},
+            </if>
+            <if test="extend3!=null and extend3!=''">
+                #{extend3},
+            </if>
+            <if test="extend4!=null and extend4!=''">
+                #{extend4},
+            </if>
+            <if test="extend5!=null and extend5!=''">
+                #{extend5},
+            </if>
+            <if test="extend6!=null and extend6!=''">
+                #{extend6},
+            </if>
+            <if test="extend7!=null and extend7!=''">
+                #{extend7},
+            </if>
+        </trim>
+    </sql>
+</mapper>

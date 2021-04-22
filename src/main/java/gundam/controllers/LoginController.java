@@ -43,6 +43,7 @@ public class LoginController {
        if(jsonResult.isSuccess()){
            OperatorBean operatorBean= (OperatorBean) jsonResult.get(OPERATOR);
            OperatorInfo operatorInfo= new OperatorInfo();
+           operatorInfo.setId(operatorBean.getId());
            operatorInfo.setCode(operatorBean.getCode());
            operatorInfo.setIsAdmin(operatorBean.getIsAdmin());
            operatorInfo.setCreateDate(operatorBean.getCreateDate().toString());

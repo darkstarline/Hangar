@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="operator">
-    <sql id="operatorList"> id,code,name,password,email,plaintextPassword,isAdmin,tryTimes,lockFlag,notes,state,createDate,tel </sql>
+    <sql id="operatorList"> id,code,name,password,email,plaintext_password,is_admin,try_times,lock_flag,notes,state,create_date,tel </sql>
     <select id="getBean"  parameterType="OperatorBean" resultType="OperatorBean">
         SELECT <include refid="operatorList"/>
         FROM operator
@@ -24,16 +24,16 @@
                 and email = #{email}
             </if>
             <if test="plaintextPassword!=null and plaintextPassword!=''">
-                and plaintextPassword = #{plaintextPassword}
+                and plaintext_password = #{plaintextPassword}
             </if>
             <if test="isAdmin!=null and isAdmin!=''">
-                and isAdmin = #{isAdmin}
+                and is_admin = #{isAdmin}
             </if>
             <if test="tryTimes!=null and tryTimes!=''">
-                and tryTimes = #{tryTimes}
+                and try_times = #{tryTimes}
             </if>
             <if test="lockFlag!=null and lockFlag!=''">
-                and lockFlag = #{lockFlag}
+                and lock_flag = #{lockFlag}
             </if>
             <if test="notes!=null and notes!=''">
                 and notes = #{notes}
@@ -42,7 +42,7 @@
                 and state = #{state}
             </if>
             <if test="createDate!=null and createDate!=''">
-                and createDate = #{createDate}
+                and create_date = #{createDate}
             </if>
             <if test="tel!=null and tel!=''">
                 and tel = #{tel}

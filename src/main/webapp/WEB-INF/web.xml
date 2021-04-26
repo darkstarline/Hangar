@@ -33,7 +33,7 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>-->
 <!--    encoding-->
-    <!--<filter>
+    <filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
 		<init-param>
@@ -49,7 +49,7 @@
 	<filter-mapping>
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>-->
+	</filter-mapping>
     <!--  Paoding rose -->
     <listener>
         <listener-class>gundam.filter.RoseListener</listener-class>

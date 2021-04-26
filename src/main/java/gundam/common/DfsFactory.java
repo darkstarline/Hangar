@@ -46,7 +46,7 @@ public class DfsFactory {
         }
     }
 
-   /* public ICmsFileInfoValue doUpload(MultipartFile file, ICmsFileInfoValue fileInfo, String encryptType, String strDefaultKey) throws Exception{
+ /*public ICmsFileInfoValue doUpload(MultipartFile file, ICmsFileInfoValue fileInfo, String encryptType, String strDefaultKey) throws Exception{
         init();
         ICmsFileInfoValue attrInfo = this.prepareAttachmentInfo(file, fileInfo);
         TrackerServer trackerServer = null;
@@ -99,7 +99,9 @@ public class DfsFactory {
         return attrInfo;
     }*/
 
-    /*public String doUpload(byte[] data, ICmsFileInfoValue fileInfo, String encryptType, String strDefaultKey) throws Exception{
+
+/*
+public String doUpload(byte[] data, ICmsFileInfoValue fileInfo, String encryptType, String strDefaultKey) throws Exception{
 
         TrackerServer trackerServer = null;
 
@@ -140,9 +142,11 @@ public class DfsFactory {
                 log.error(" tracker server close error:", e);
             }
         }
-    }*/
+    }
+*/
 
-    /*public String doUpload(String encodeTassKey, String fileName)throws Exception{
+
+/*public String doUpload(String encodeTassKey, String fileName)throws Exception{
         init();
 //		TrackerClient tracker = new TrackerClient();
 //		TrackerServer trackerServer = tracker.getConnection();
@@ -153,9 +157,10 @@ public class DfsFactory {
         String[] results = client.upload_file(null, encodeTassKey.getBytes(), Files.getFileExtension(fileName), null);
         TrackerClientRouter.instance().releaseTrackerClientToPool(trackerServer);  //连接池回收
         return results[0] + "/" + results[1];
-    }*/
+    }
 
-    /*public byte[] doDownload(Long routerId, String dfsId, String encryptType, String strDefaultKey) throws Exception {
+
+public byte[] doDownload(Long routerId, String dfsId, String encryptType, String strDefaultKey) throws Exception {
         init();
         TrackerServer trackerServer = null;
 
@@ -199,7 +204,8 @@ public class DfsFactory {
         }
     }*/
 
-   /* public byte[] doDownload(String dfsId)throws Exception{
+
+ /*public byte[] doDownload(String dfsId)throws Exception{
         init();
 //		TrackerClient tracker = new TrackerClient();
 //		TrackerServer trackerServer = tracker.getConnection();
@@ -213,7 +219,8 @@ public class DfsFactory {
         return data;
     }*/
 
-   /* public ICmsFileInfoValue prepareAttachmentInfo(MultipartFile file, ICmsFileInfoValue fileInfo) throws Exception{
+
+ /*public ICmsFileInfoValue prepareAttachmentInfo(MultipartFile file, ICmsFileInfoValue fileInfo) throws Exception{
         String fullName = file.getOriginalFilename();
         fileInfo.setFileName(URLDecoder.decode(fullName, "UTF-8"));
         fileInfo.setContentType(file.getContentType());
@@ -221,6 +228,7 @@ public class DfsFactory {
         fileInfo.setSizeDesc(readableFileSize(file.getSize()));
         return fileInfo;
     }*/
+
 
     public static String readableFileSize(long size) {
         if(size <= 0) return "0";

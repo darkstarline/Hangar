@@ -34,8 +34,8 @@ public class TrackerClientRouter {
 
     private void init() {
         if(USE_New) {
-            /*// 初始化 默认集群
-            defaultTrackerGroup = ClientGlobal.getG_tracker_group();
+// 初始化 默认集群
+         /*   defaultTrackerGroup = ClientGlobal.getG_tracker_group();
 
             // 初始化 全部集群
             trackerGroupRouter = new HashMap<Long, TrackerGroup>();
@@ -63,6 +63,7 @@ public class TrackerClientRouter {
             } catch (Exception e) {
                 log.error("获取fastdfs 路由信息错误", e);
             }*/
+
         }else {
 //		初始化线程池
             try {

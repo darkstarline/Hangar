@@ -13,4 +13,8 @@ public final class ResourceConstans {
         public static final String ROLE_ADMIN_BS_STATIC_DATE_TYPE = "CMS_ROLE_ADMIN";
         public static final String ROLE_USER_BS_STATIC_DATE_TYPE = "CMS_ROLE_USER";
     }
+    public static final class STATE {
+        public static final String USED = "U";
+        public static final String EXPIRE = "E";
+    }
 }

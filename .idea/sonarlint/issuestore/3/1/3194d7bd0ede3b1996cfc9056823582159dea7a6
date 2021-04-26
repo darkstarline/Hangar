@@ -1,6 +1,9 @@
 
-`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ÑŸ“°úÿÿÿÿ
-
-java:S1130"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ÑŸ“°úÿÿÿÿ8’›ÂÕ/
+O
+java:S11359"2Complete the task associated to this TODO comment.(±ÿ£Ù8¥¦¢š/
 T
-java:S1135"2Complete the task associated to this TODO comment.(Ñï»şÿÿÿÿ8ÇôüÖ/
+java:S1135U"2Complete the task associated to this TODO comment.(«ëíùÿÿÿÿ8İòŞ›/
+O
+java:S1135"2Complete the task associated to this TODO comment.(Ùœäæ8ÁùŠœ/
+[
+java:S4973!"9Use the "equals" method if value comparison was intended.(ëßÏ¥ıÿÿÿÿ8š‘ü›/

@@ -1,7 +1,7 @@
 
-D
-java:S1481")Remove this unused "test" local variable.(±‚³şÿÿÿÿ
-A
-java:S1168"+Return an empty collection instead of null.(¥¹ï
 S
 java:S1854"8Remove this useless assignment to local variable "test".(±‚³şÿÿÿÿ
+A
+java:S1168"+Return an empty collection instead of null.(¥¹ï
+D
+java:S1481")Remove this unused "test" local variable.(±‚³şÿÿÿÿ

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gundamFileRel">
+    <insert id="save" parameterType="FileInfoBesn">
+        replace into file_Info (<include refid="key"/>) values (<include refid="value"/>)
+    </insert>
+    <sql id="gundamFileRelList"></sql>
+    <sql id="key">
+        <trim suffixOverrides=",">
+            <if test="fileId!=null and fileId!=''">
+                file_id,
+            </if>
+            <if test="dfsId!=null and dfsId!=''">
+                dfs_id,
+            </if>
+            <if test="organismNumber!=null and organismNumber!=''">
+                organism_number,
+            </if>
+            <if test="createDate!=null and createDate!=''">
+                create_date,
+            </if>
+            <if test="state!=null and state!=''">
+                state,
+            </if>
+        </trim>
+    </sql>
+    <sql id="value">
+        <trim suffixOverrides=",">
+            <if test="fileId!=null and fileId!=''">
+                #{fileId},
+            </if>
+            <if test="dfsId!=null and dfsId!=''">
+                #{dfsId},
+            </if>
+            <if test="organismNumber!=null and organismNumber!=''">
+                #{organismNumber},
+            </if>
+            <if test="createDate!=null and createDate!=''">
+                #{createDate},
+            </if>
+            <if test="state!=null and state!=''">
+                #{state},
+            </if>
+        </trim>
+    </sql>
+</mapper>

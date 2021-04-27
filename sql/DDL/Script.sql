@@ -113,12 +113,14 @@ CREATE  TABLE IF NOT EXISTS fstdfs_tracker_router(
 	router_id INT not null auto_increment primary key,
 	router_name VARCHAR(32),
 	tracker_server_url VARCHAR(64),
-	descrption VARCHAR(64),
+	description VARCHAR(64),
 	state VARCHAR(8),
 	create_date TIMESTAMP
 )
 select * from fstdfs_tracker_router;
-
+INSERT into fstdfs_tracker_router (router_name,tracker_server_url,
+	description,state,create_date) VALUES('笔记本VM虚拟机地址','192.168.79.213:22133',
+	'测试用的，之后另搭，只做记录','U',CURRENT_TIMESTAMP());
 
 DROP  table gundam_file_rel;
 CREATE  TABLE IF NOT EXISTS gundam_file_rel(

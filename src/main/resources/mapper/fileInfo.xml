@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="fileInfo">
+    <insert id="save" parameterType="FileInfoBesn">
+        replace into file_Info (<include refid="key"/>) values (<include refid="value"/>)
+    </insert>
+    <sql id="operatorList"> id,code,name,password,email,plaintext_password,is_admin,try_times,lock_flag,notes,state,create_date,tel </sql>
+    <select id="getBean"  parameterType="FileInfoBean" resultType="FileInfoBean">
+        SELECT <include refid="fileInfoList"/>
+        FROM file_info
+        <where>
+            <if test="fileId!=null and fileId!=''">
+                and file_id = #{fileId}
+            </if>
+            <if test="dfsId!=null and dfsId!=''">
+                and dfs_id = #{dfsId}
+            </if>
+            <if test="fileName!=null and fileName!=''">
+                and file_name = #{fileName}
+            </if>
+            <if test="fileStatus!=null and fileStatus!=''">
+                and file_status = #{fileStatus}
+            </if>
+            <if test="contentType!=null and contentType!=''">
+                and content_type = #{contentType}
+            </if>
+            <if test="fileSize!=null and fileSize!=''">
+                and file_size = #{fileSize}
+            </if>
+            <if test="sizeDesc!=null and sizeDesc!=''">
+                and size_desc = #{sizeDesc}
+            </if>
+            <if test="createDate!=null and createDate!=''">
+                and create_date = #{createDate}
+            </if>
+            <if test="opCode!=null and opCode!=''">
+                and op_code = #{opCode}
+            </if>
+            <if test="state!=null and state!=''">
+                and state = #{state}
+            </if>
+            <if test="routerId!=null and routerId!=''">
+                and router_id = #{routerId}
+            </if>
+        </where>
+    </select>
+    <sql id="fileInfoList"></sql>
+    <sql id="key">
+        <trim suffixOverrides=",">
+            <if test="fileId!=null and fileId!=''">
+                file_id,
+            </if>
+            <if test="dfsId!=null and dfsId!=''">
+                dfs_id,
+            </if>
+            <if test="fileName!=null and fileName!=''">
+                file_name,
+            </if>
+            <if test="fileStatus!=null and fileStatus!=''">
+                file_status,
+            </if>
+            <if test="contentType!=null and contentType!=''">
+                content_type,
+            </if>
+            <if test="fileSize!=null and fileSize!=''">
+                file_size,
+            </if>
+            <if test="sizeDesc!=null and sizeDesc!=''">
+                size_desc,
+            </if>
+            <if test="createDate!=null and createDate!=''">
+                create_date,
+            </if>
+            <if test="opCode!=null and opCode!=''">
+                op_code,
+            </if>
+            <if test="state!=null and state!=''">
+                state,
+            </if>
+            <if test="routerId!=null and routerId!=''">
+                router_id,
+            </if>
+        </trim>
+    </sql>
+    <sql id="value">
+        <trim suffixOverrides=",">
+            <if test="fileId!=null and fileId!=''">
+                #{fileId},
+            </if>
+            <if test="dfsId!=null and dfsId!=''">
+                #{dfsId},
+            </if>
+            <if test="fileName!=null and fileName!=''">
+                #{fileName},
+            </if>
+            <if test="fileStatus!=null and fileStatus!=''">
+                #{fileStatus},
+            </if>
+            <if test="contentType!=null and contentType!=''">
+                #{contentType},
+            </if>
+            <if test="fileSize!=null and fileSize!=''">
+                #{fileSize},
+            </if>
+            <if test="sizeDesc!=null and sizeDesc!=''">
+                #{sizeDesc},
+            </if>
+            <if test="createDate!=null and createDate!=''">
+                #{createSate},
+            </if>
+            <if test="opCode!=null and opCode!=''">
+                #{opCode},
+            </if>
+            <if test="state!=null and state!=''">
+                #{state},
+            </if>
+            <if test="routerId!=null and routerId!=''">
+                #{routerId},
+            </if>
+        </trim>
+    </sql>
+</mapper>

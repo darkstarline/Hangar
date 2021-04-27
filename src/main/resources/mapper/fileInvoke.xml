@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="fileInvoke">
+    <insert id="save" parameterType="FileInvokeBean">
+        replace into file_invoke (<include refid="key"/>) values (<include refid="value"/>)
+    </insert>
+    <sql id="fileInvokeList"></sql>
+    <sql id="key">
+        <trim suffixOverrides=",">
+            <if test="invokeId!=null and invokeId!=''">
+                invoke_id,
+            </if>
+            <if test="fileId!=null and fileId!=''">
+                file_id,
+            </if>
+            <if test="fileName!=null and fileName!=''">
+                file_name,
+            </if>
+            <if test="resultCode!=null and resultCode!=''">
+                result_code,
+            </if>
+            <if test="resultMsg!=null and resultMsg!=''">
+                result_msg,
+            </if>
+            <if test="opType!=null and opType!=''">
+                op_type,
+            </if>
+            <if test="createDate!=null and createDate!=''">
+                create_date,
+            </if>
+        </trim>
+    </sql>
+    <sql id="value">
+        <trim suffixOverrides=",">
+            <if test="invokeId!=null and invokeId!=''">
+                #{invokeId},
+            </if>
+            <if test="fileId!=null and fileId!=''">
+                #{fileId},
+            </if>
+            <if test="fileName!=null and fileName!=''">
+                #{fileName},
+            </if>
+            <if test="resultCode!=null and resultCode!=''">
+                #{resultCode},
+            </if>
+            <if test="resultMsg!=null and resultMsg!=''">
+                #{resultMsg},
+            </if>
+            <if test="opType!=null and opType!=''">
+                #{opType},
+            </if>
+            <if test="createDate!=null and createDate!=''">
+                #{createDate},
+            </if>
+        </trim>
+    </sql>
+</mapper>

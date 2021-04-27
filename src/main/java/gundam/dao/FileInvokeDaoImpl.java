@@ -1,23 +1,21 @@
 package gundam.dao;
 
-import gundam.pojo.OperatorBean;
+import gundam.pojo.FileInvokeBean;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
-public class OperatorDaoImpl implements IOperatorDao {
+public class FileInvokeDaoImpl implements IFileInvokeDao {
     private SqlSessionFactory factory;
-    public OperatorDaoImpl(SqlSessionFactory factory){
+    public FileInvokeDaoImpl(SqlSessionFactory factory){
         this.factory=factory;
     }
+
     @Override
-    public OperatorBean getBean(OperatorBean operator) throws Exception {
+    public void saveFileInvoke(FileInvokeBean fileInvokeBean) throws Exception {
         SqlSession session = factory.openSession();
-        List<OperatorBean> op= session.selectList("operator.getBean",operator);
+        session.insert("fileInvoke.save",fileInvokeBean);
         session.close();
-        return op.get(0);
     }
 }

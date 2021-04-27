@@ -1,11 +1,11 @@
 
-u
-java:S3008"SRename this field "PASSWORD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üÕ’úÿÿÿÿ8ÿƒ¿û/
-p
-java:S3008"SRename this field "OPERATOR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨ÇÍ¨8ˆº‡€/
 X
 java:S18545";Remove this useless assignment to local variable "session".(«Ïõ¿8ùÍ³€/
+u
+java:S3008"SRename this field "PASSWORD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üÕ’úÿÿÿÿ8ÿƒ¿û/
 l
 java:S3008"ORename this field "USER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬Îªş8ÿƒ¿û/
+p
+java:S3008"SRename this field "OPERATOR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨ÇÍ¨8ˆº‡€/
 I
 java:S14815",Remove this unused "session" local variable.(«Ïõ¿8ùÍ³€/

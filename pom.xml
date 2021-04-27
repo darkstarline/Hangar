@@ -37,6 +37,12 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+<!--    httpClient-->
+    <!--<dependency>
+      <groupId>at.bestsolution.efxclipse.eclipse</groupId>
+      <artifactId>org.apache.commons.httpclient</artifactId>
+      <version>3.1.0</version>
+    </dependency>-->
 <!--    commons-lang3-->
     <dependency>
       <groupId>org.apache.commons</groupId>

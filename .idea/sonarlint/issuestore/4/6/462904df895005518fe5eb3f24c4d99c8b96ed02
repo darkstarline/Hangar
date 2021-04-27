@@ -1,11 +1,11 @@
 
+\
+java:S1144U":Remove this unused private "structureTrackerGroup" method.(¼å€™ıÿÿÿÿ8¸ñ½Ñ/
+u
+java:S2293V"YReplace the type specification in this constructor call with the diamond operator ("<>").(–œÍV8††¼Ñ/
 n	java:S116"RRename this field "USE_New" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßœßĞ8††¼Ñ/
 X	java:S125&"<This block of commented-out lines of code should be removed.(É¦ª¢8¸ñ½Ñ/
 V
 java:S1854F"9Remove this useless assignment to local variable "props".(”¾³ª8††¼Ñ/
 U
 java:S2168k"9Remove this dangerous instance of double-checked locking.(ÂÎ‡8††¼Ñ/
-u
-java:S2293V"YReplace the type specification in this constructor call with the diamond operator ("<>").(–œÍV8††¼Ñ/
-\
-java:S1144U":Remove this unused private "structureTrackerGroup" method.(¼å€™ıÿÿÿÿ8¸ñ½Ñ/

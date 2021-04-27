@@ -49,7 +49,8 @@ define(function(require, exports, module) {
         init: function() {
             this.login();
         },
-        // 路径点击跳转事件
+        // 路径点击跳转事件rchrome
+
         login: function() {
             $("#loginForm").on("submit",function(event) {
                 var cmd = Utils.getObjectData($("#loginForm"));

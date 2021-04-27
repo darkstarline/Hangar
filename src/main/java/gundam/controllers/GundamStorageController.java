@@ -2,13 +2,18 @@ package gundam.controllers;
 
 
 import com.alibaba.fastjson.JSON;
+import gundam.common.DfsFactory;
 import gundam.common.JsonResult;
 import gundam.common.OperatorInfo;
 import gundam.common.UserSession;
 import gundam.constans.AppConstans;
 import gundam.constans.ResourceConstans;
+import gundam.pojo.FileInfoBean;
 import gundam.pojo.GundamBean;
+import gundam.services.IElasticsearchService;
+import gundam.services.IFileInfoService;
 import gundam.services.IGundamService;
+import gundam.utils.UploadUtils;
 import gundam.vo.GundamVo;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.rest.Post;
@@ -20,6 +25,10 @@ import java.sql.Timestamp;
 public class GundamStorageController {
     @Autowired
     IGundamService gundamService;
+    @Autowired
+    IFileInfoService fileInfoService;
+    @Autowired
+    IElasticsearchService elasticsearchService;
     @Post("save")
     public JSON saveInfo(Invocation inv, GundamVo gundamVo, MultipartFile file) throws Exception{
         JsonResult json=new JsonResult();
@@ -40,10 +49,69 @@ public class GundamStorageController {
 
         GundamBean gundamBean = new GundamBean();
         this.convertGundamVo2Entity(gundamVo,gundamBean);
-        gundamService.aircraftStorage(gundamBean);
+        this.gundamService.aircraftStorage(gundamBean);
 
         //TODO 一次上传多个图片先留着
         //TODO 上传的文件需要建立像CMS一样的文件表，不过是查询的时候需要去根据
+
+        //TODO 参数校验
+//        attrInfo--->对应gundambean
+        FileInfoBean attrInfo = UploadUtils.makeFileInfo(userInfo);
+        this.fileInfoService.saveFileInfo(attrInfo);
+        //从数据库中查询
+        try {
+            //TODO 先保存fileInfo，然后上传文件，上传成功后，回写gundam表，file表，rel表，最后上传完记录日志表
+
+            attrInfo = this.fileInfoService.getFileInfo(attrInfo);
+
+            FileInfoBean fileInfo = DfsFactory.getInstance().doUpload(file, attrInfo);
+
+            this.fileInfoService.completeUpload(fileInfo);
+
+            this.elasticsearchService.syncToElasticsearch(fileInfo);
+
+            //json中添加返回信息
+            json.setSuccess(true);
+
+        } catch (Exception e) {
+            /*log.error("file upload error.", e);
+            json.setSuccess(false);
+            json.setMessage("保存文件到服务器失败，请联系管理员.");
+            log.error("fileId=" + (fileId != null ? fileId : "") + " token=" + (tokenText != null ? tokenText : "") + "保存文件到服务器失败，请联系管理员.");*/
+        } finally {
+            /*if (attrInfo != null && StringUtils.isNotEmpty(attrInfo.toString()) && StringUtils.isNotEmpty(attrInfo.getFileId())) {
+                ICmsFileInvokeValue fileInvoke = new CmsFileInvokeBean();
+                fileInvoke.setFileId(attrInfo.getFileId());
+                fileInvoke.setOpType(OperateType.UPLOAD.getValue());
+//            没有通过file_path访问文件的,file_path不记录
+                fileInvoke.setSystemId(attrInfo.getSystemId());
+                fileInvoke.setResultCode(String.valueOf(json.isSuccess()));
+                fileInvoke.setResultMsg(json.getMessage());
+                Timestamp now = new Timestamp(System.currentTimeMillis());
+                fileInvoke.setCreateDate(now);
+                fileInvoke.setDoneDate(now);
+                ThreadUtils.newThread(fileInvoke, new Function<ICmsFileInvokeValue, Long>() {
+                    @Override
+                    public Long apply(ICmsFileInvokeValue arg0) {
+                        try {
+                            fileInvokeSV.saveFileInvoke(arg0);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        return null;
+                    }
+                });
+            }*/
+        }
+        // callback
+            /*String callback = inv.getRequest().getParameter("callback");
+            if (StringUtils.isNotEmpty(callback)) {
+                StringBuffer buffer = new StringBuffer();
+                buffer.append(callback).append("(").append(JSON.toJSONString(json)).append(");");
+                return buffer.toString();
+            }*/
+
+
         json.setSuccess(true);
         return json;
     }

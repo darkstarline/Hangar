@@ -1,11 +1,18 @@
 package gundam.common;
 
+import com.google.common.io.Files;
+import gundam.pojo.FileInfoBean;
 import org.csource.fastdfs.ClientGlobal;
+import org.csource.fastdfs.StorageClient;
+import org.csource.fastdfs.StorageServer;
+import org.csource.fastdfs.TrackerServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.net.URLDecoder;
 import java.text.DecimalFormat;
 
 public class DfsFactory {
@@ -46,19 +53,12 @@ public class DfsFactory {
         }
     }
 
- /*public ICmsFileInfoValue doUpload(MultipartFile file, ICmsFileInfoValue fileInfo, String encryptType, String strDefaultKey) throws Exception{
+ public FileInfoBean doUpload(MultipartFile file, FileInfoBean fileInfo) throws Exception{
         init();
-        ICmsFileInfoValue attrInfo = this.prepareAttachmentInfo(file, fileInfo);
+        FileInfoBean attrInfo = this.prepareAttachmentInfo(file,fileInfo);
         TrackerServer trackerServer = null;
-
-        //TrackerClient tracker = new TrackerClient();
-        //taoyf modify 业务隔离
-//		TrackerClient tracker = TrackerClientRouter.instance().getTrackerClient(fileInfo.getRouterId()); //改用连接池需要注释行
         try {
-//			trackerServer = tracker.getConnection();//改用连接池需要注释行
-
             trackerServer=TrackerClientRouter.instance().getTrackerClientFromPool(); //连接池获取trackerServer
-
 
             if(trackerServer == null){
                 throw new Exception("无法连接到fastdfs主机");
@@ -68,13 +68,14 @@ public class DfsFactory {
             StorageClient client = new StorageClient(trackerServer, storageServer);
 
             byte[] data = file.getBytes();
-            if(EncryptMethod.DES.getValue().equals(encryptType)){
+            //加密解密先空着
+            /*if(EncryptMethod.DES.getValue().equals(encryptType)){
 //				data = new DES().encrypt(data);
                 data = new DES(strDefaultKey).encrypt(data);
             } else if(EncryptMethod.AES.getValue().equals(encryptType)){
 //				data = new AES().encrypt(data);
                 data = new AES(strDefaultKey).encrypt(data);
-            }
+            }*/
             // results[0]: groupName, results[1]: remoteFilename.
             String[] results = client.upload_file(null, data, Files.getFileExtension(attrInfo.getFileName()), null);
             if(null == results || 2 != results.length){
@@ -97,11 +98,10 @@ public class DfsFactory {
             }
         }
         return attrInfo;
-    }*/
+    }
 
-
-/*
-public String doUpload(byte[] data, ICmsFileInfoValue fileInfo, String encryptType, String strDefaultKey) throws Exception{
+//TODO 一个是文件，一个字节数组，各取所需罢了
+/*public String doUpload(byte[] data, ICmsFileInfoValue fileInfo, String encryptType, String strDefaultKey) throws Exception{
 
         TrackerServer trackerServer = null;
 
@@ -142,8 +142,7 @@ public String doUpload(byte[] data, ICmsFileInfoValue fileInfo, String encryptTy
                 log.error(" tracker server close error:", e);
             }
         }
-    }
-*/
+    }*/
 
 
 /*public String doUpload(String encodeTassKey, String fileName)throws Exception{
@@ -157,10 +156,10 @@ public String doUpload(byte[] data, ICmsFileInfoValue fileInfo, String encryptTy
         String[] results = client.upload_file(null, encodeTassKey.getBytes(), Files.getFileExtension(fileName), null);
         TrackerClientRouter.instance().releaseTrackerClientToPool(trackerServer);  //连接池回收
         return results[0] + "/" + results[1];
-    }
+    }*/
 
 
-public byte[] doDownload(Long routerId, String dfsId, String encryptType, String strDefaultKey) throws Exception {
+/*public byte[] doDownload(Long routerId, String dfsId, String encryptType, String strDefaultKey) throws Exception {
         init();
         TrackerServer trackerServer = null;
 
@@ -204,8 +203,8 @@ public byte[] doDownload(Long routerId, String dfsId, String encryptType, String
         }
     }*/
 
-
- /*public byte[] doDownload(String dfsId)throws Exception{
+//TODO 这个方法也许有用
+/* public byte[] doDownload(String dfsId)throws Exception{
         init();
 //		TrackerClient tracker = new TrackerClient();
 //		TrackerServer trackerServer = tracker.getConnection();
@@ -220,14 +219,14 @@ public byte[] doDownload(Long routerId, String dfsId, String encryptType, String
     }*/
 
 
- /*public ICmsFileInfoValue prepareAttachmentInfo(MultipartFile file, ICmsFileInfoValue fileInfo) throws Exception{
+ public FileInfoBean prepareAttachmentInfo(MultipartFile file, FileInfoBean fileInfo) throws Exception{
         String fullName = file.getOriginalFilename();
         fileInfo.setFileName(URLDecoder.decode(fullName, "UTF-8"));
         fileInfo.setContentType(file.getContentType());
-        fileInfo.setFileSize(file.getSize());
+        fileInfo.setFileSize(String.valueOf(file.getSize()));
         fileInfo.setSizeDesc(readableFileSize(file.getSize()));
         return fileInfo;
-    }*/
+    }
 
 
     public static String readableFileSize(long size) {

@@ -3,18 +3,22 @@ package gundam.services;
 import gundam.constans.AppConstans;
 import gundam.pojo.FileInfoBean;
 import gundam.utils.HttpUtils;
+import org.springframework.stereotype.Service;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Timer;
 import java.util.TimerTask;
 
+@Service
 public class ElasticsearchServiceImpl implements IElasticsearchService{
     private static volatile boolean esEnable=false;
     private static volatile String esBaseUrl="";
     @Override
     public void syncToElasticsearch(FileInfoBean fileInfo) throws Exception {
         //TODO 静态参数表数据加载到redis缓存中。。。。。。。。
+        //TODO 初始化查表然后接入redis缓存
+        //TODO 连接池类在spring初始化时加载
         if(esEnable) {
             try {
 //                String esBaseUrl = this.dictSV.getDictValue(AppConstants.URL, "elasticsearch_url");

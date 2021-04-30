@@ -145,5 +145,17 @@ CREATE  TABLE IF NOT EXISTS file_invoke(
 )
 select * from file_invoke;
 
-
+DROP table bs_static_data;
+CREATE TABLE IF NOT EXISTS bs_static_data(
+	code_type VARCHAR(64),
+	code_value VARCHAR(64),
+	code_name VARCHAR(64),
+	code_desc VARCHAR(128),
+	code_type_alias VARCHAR(64),
+	state VARCHAR(8),
+	extern_code_type VARCHAR(256)
+)
+select * from bs_static_data;
+insert into bs_static_data(code_type,code_value,code_name) values ('testType','testValue','testName');
+insert into bs_static_data(code_type,code_value,code_name,state) values ('testType','testValue','testName','U');
 

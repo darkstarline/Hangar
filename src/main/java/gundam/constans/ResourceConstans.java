@@ -33,4 +33,7 @@ public final class ResourceConstans {
         /** 已删除，文件存储转移到磁带 */
         public static final String DELETED = "DELETED";
     }
+    public static final class CACHE {
+        public static final String HANGERBASE = "HANGERBASE";
+    }
 }

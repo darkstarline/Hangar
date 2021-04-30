@@ -15,6 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.http.HttpSession;
 
+;
+
 @Path("/")
 public class LoginController {
     @Autowired
@@ -47,7 +49,6 @@ public class LoginController {
            operatorInfo.setCode(operatorBean.getCode());
            operatorInfo.setIsAdmin(operatorBean.getIsAdmin());
            operatorInfo.setCreateDate(operatorBean.getCreateDate().toString());
-
            UserSession userSession = new UserSession();
            userSession.setOperatorInfo(operatorInfo);
            HttpSession session = inv.getRequest().getSession();

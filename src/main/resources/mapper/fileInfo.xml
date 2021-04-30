@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="fileInfo">
-    <insert id="save" parameterType="FileInfoBesn">
+    <insert id="save" parameterType="FileInfoBean">
         replace into file_Info (<include refid="key"/>) values (<include refid="value"/>)
     </insert>
     <sql id="operatorList"> id,code,name,password,email,plaintext_password,is_admin,try_times,lock_flag,notes,state,create_date,tel </sql>

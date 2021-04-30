@@ -18,12 +18,36 @@
 <!--    spring-session-->
 <!--    <bean id="redisHttpSessionConfiguration" class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration"/>-->
 <!--    redis单例-->
-    <!--<bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+    <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
         <property name="hostName" value="${redis.ip}"/>
         <property name="port" value="${redis.port}"/>
         <property name="password" value="${redis.password}"/>
-    </bean>&ndash;&gt;-->
-<!--    redis集群-->
+    </bean>
+<!--    redis template definition-->
+        <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+            <property name="connectionFactory" ref="jedisConnectionFactory" />
+            <property name="keySerializer">
+                <bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+            </property>
+            <!--<property name="valueSerializer">
+                <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer" />
+            </property>-->
+            <property name="valueSerializer">
+                <bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+            </property>
+            <property name="hashKeySerializer">
+                <bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+            </property>
+            <!--<property name="hashValueSerializer">
+                <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer" />
+            </property>-->
+            <property name="hashValueSerializer">
+                <bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+            </property>
+            <!--开启事务  -->
+            <property name="enableTransactionSupport" value="true"></property>
+        </bean>
+    <!--    redis集群-->
     <!--	<bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
             <constructor-arg index="0" ref="redisClusterConfig"/>
             <property name="password" value="zsb6263127" />

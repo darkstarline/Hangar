@@ -36,4 +36,10 @@ public final class ResourceConstans {
     public static final class CACHE {
         public static final String HANGERBASE = "HANGERBASE";
     }
+    public static final class GUMDAMFILEREL {
+        public static final String COVER = "cover";
+    }
+    public static final class OPTYPE {
+        public static final String UPLOAD = "upload";
+    }
 }

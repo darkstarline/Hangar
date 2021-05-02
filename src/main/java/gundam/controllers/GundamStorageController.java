@@ -2,6 +2,7 @@ package gundam.controllers;
 
 
 import com.alibaba.fastjson.JSON;
+import com.google.common.base.Function;
 import gundam.common.DfsFactory;
 import gundam.common.JsonResult;
 import gundam.common.OperatorInfo;
@@ -9,14 +10,18 @@ import gundam.common.UserSession;
 import gundam.constans.AppConstans;
 import gundam.constans.ResourceConstans;
 import gundam.pojo.FileInfoBean;
+import gundam.pojo.FileInvokeBean;
 import gundam.pojo.GundamBean;
-import gundam.services.IElasticsearchService;
-import gundam.services.IFileInfoService;
-import gundam.services.IGundamService;
+import gundam.pojo.GundamFileRelBean;
+import gundam.services.*;
+import gundam.utils.ThreadUtils;
 import gundam.utils.UploadUtils;
 import gundam.vo.GundamVo;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.rest.Post;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -29,6 +34,12 @@ public class GundamStorageController {
     IFileInfoService fileInfoService;
     @Autowired
     IElasticsearchService elasticsearchService;
+    @Autowired
+    IGundamFileRelService iGundamFileRelService;
+    @Autowired
+    IFileInvokeService fileInvokeService;
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
+
     @Post("save")
     public JSON saveInfo(Invocation inv, GundamVo gundamVo, MultipartFile file) throws Exception{
         JsonResult json=new JsonResult();
@@ -50,6 +61,17 @@ public class GundamStorageController {
         GundamBean gundamBean = new GundamBean();
         this.convertGundamVo2Entity(gundamVo,gundamBean);
         this.gundamService.aircraftStorage(gundamBean);
+        try {
+            //同步到ES
+            this.elasticsearchService.syncToElasticsearch(gundamBean);
+        }catch (Exception e){
+            log.error("sync to elasticsearch error.", e);
+            json.setSuccess(false);
+            json.setMessage("同步到ES失败，请联系管理员.");
+            //TODO 这种调用函数多的，之后需要优化掉
+            log.error("gundamNumber=" +(((gundamBean.getOrganismNumber()!=null&&!"".equals(gundamBean.getOrganismNumber())))?gundamBean.getOrganismNumber():"fileId都么得"));
+            return json;
+        }
 
         //TODO 一次上传多个图片先留着
         //TODO 上传的文件需要建立像CMS一样的文件表，不过是查询的时候需要去根据
@@ -61,47 +83,51 @@ public class GundamStorageController {
         //从数据库中查询
         try {
             //TODO 先保存fileInfo，然后上传文件，上传成功后，回写gundam表，file表，rel表，最后上传完记录日志表
-
+            //查询文件信息 之后可以直接用上面的fileInfo
             attrInfo = this.fileInfoService.getFileInfo(attrInfo);
 
+            //上传文件
             FileInfoBean fileInfo = DfsFactory.getInstance().doUpload(file, attrInfo);
 
+            //回写file表
             this.fileInfoService.completeUpload(fileInfo);
 
-            this.elasticsearchService.syncToElasticsearch(fileInfo);
+            //写rel表
+            GundamFileRelBean gundamFileRelBean = this.makeGundamFileRelInfo(gundamBean,fileInfo);
+            this.iGundamFileRelService.saveGundamFileRel(gundamFileRelBean);
 
             //json中添加返回信息
             json.setSuccess(true);
 
         } catch (Exception e) {
-            /*log.error("file upload error.", e);
+            log.error("file upload error.", e);
             json.setSuccess(false);
-            json.setMessage("保存文件到服务器失败，请联系管理员.");
-            log.error("fileId=" + (fileId != null ? fileId : "") + " token=" + (tokenText != null ? tokenText : "") + "保存文件到服务器失败，请联系管理员.");*/
+            json.setMessage("保存文件到服务器失败/回写信息失败，请联系管理员.");
+            log.error("fileId=" +(((attrInfo.getFileId()!=null&&!"".equals(attrInfo.getFileId())))?attrInfo.getFileId():"fileId都么得"));
+            return json;
         } finally {
-            /*if (attrInfo != null && StringUtils.isNotEmpty(attrInfo.toString()) && StringUtils.isNotEmpty(attrInfo.getFileId())) {
-                ICmsFileInvokeValue fileInvoke = new CmsFileInvokeBean();
-                fileInvoke.setFileId(attrInfo.getFileId());
-                fileInvoke.setOpType(OperateType.UPLOAD.getValue());
-//            没有通过file_path访问文件的,file_path不记录
-                fileInvoke.setSystemId(attrInfo.getSystemId());
-                fileInvoke.setResultCode(String.valueOf(json.isSuccess()));
-                fileInvoke.setResultMsg(json.getMessage());
+            if (attrInfo != null && StringUtils.isNotEmpty(attrInfo.toString()) && StringUtils.isNotEmpty(attrInfo.getFileId())) {
+                final FileInvokeBean fileInvokeBean = new FileInvokeBean();
+                fileInvokeBean.setFileId(attrInfo.getFileId());
+                fileInvokeBean.setFileName(attrInfo.getFileName());
+                fileInvokeBean.setResultCode(String.valueOf(json.isSuccess()));
+                fileInvokeBean.setResultMsg(json.getMessage());
+                fileInvokeBean.setOpType(ResourceConstans.OPTYPE.UPLOAD);
                 Timestamp now = new Timestamp(System.currentTimeMillis());
-                fileInvoke.setCreateDate(now);
-                fileInvoke.setDoneDate(now);
-                ThreadUtils.newThread(fileInvoke, new Function<ICmsFileInvokeValue, Long>() {
+                fileInvokeBean.setCreateDate(now);
+                ThreadUtils.newThread(fileInvokeBean, new Function<FileInvokeBean, Long>() {
                     @Override
-                    public Long apply(ICmsFileInvokeValue arg0) {
+                    public Long apply(FileInvokeBean arg0) {
                         try {
-                            fileInvokeSV.saveFileInvoke(arg0);
+//                            fileInvokeSV.saveFileInvoke(arg0);
+                            fileInvokeService.saveFileInvoke(fileInvokeBean);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
                         return null;
                     }
                 });
-            }*/
+            }
         }
         // callback
             /*String callback = inv.getRequest().getParameter("callback");
@@ -115,11 +141,19 @@ public class GundamStorageController {
         json.setSuccess(true);
         return json;
     }
-    @Post("cover")
-    public JSON saveCover(Invocation inv){
 
-        return null;
+    private GundamFileRelBean makeGundamFileRelInfo(GundamBean gundamBean, FileInfoBean fileInfo) {
+        GundamFileRelBean gundamFileRelBean = new GundamFileRelBean();
+        gundamFileRelBean.setFileId(fileInfo.getFileId());
+        gundamFileRelBean.setDfsId(fileInfo.getDfsId());
+        gundamFileRelBean.setOrganismNumber(gundamBean.getOrganismNumber());
+        gundamFileRelBean.setFileType(ResourceConstans.GUMDAMFILEREL.COVER);
+        gundamFileRelBean.setState(ResourceConstans.STATE.USED);
+        Timestamp now = new Timestamp(System.currentTimeMillis());
+        gundamFileRelBean.setCreateDate(now);
+        return gundamFileRelBean;
     }
+
     public void convertGundamVo2Entity(GundamVo gundamVo,GundamBean gundamBean){
         if(gundamVo.getOrganismId()!=null){
             gundamBean.setCreateDate(new Timestamp(System.currentTimeMillis()));

@@ -1,5 +1,6 @@
 package gundam.common;
 
+
 import com.google.common.io.Files;
 import gundam.pojo.FileInfoBean;
 import org.csource.fastdfs.ClientGlobal;

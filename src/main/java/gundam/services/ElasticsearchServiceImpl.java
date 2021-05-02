@@ -2,11 +2,15 @@ package gundam.services;
 
 import gundam.constans.AppConstans;
 import gundam.pojo.FileInfoBean;
+import gundam.pojo.GundamBean;
 import gundam.utils.HttpUtils;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -15,7 +19,7 @@ public class ElasticsearchServiceImpl implements IElasticsearchService{
     private static volatile boolean esEnable=false;
     private static volatile String esBaseUrl="";
     @Override
-    public void syncToElasticsearch(FileInfoBean fileInfo) throws Exception {
+    public void syncToElasticsearch(GundamBean gundamBean) throws Exception {
         //TODO 静态参数表数据加载到redis缓存中。。。。。。。。
         //TODO 初始化查表然后接入redis缓存
         //TODO 连接池类在spring初始化时加载
@@ -29,26 +33,44 @@ public class ElasticsearchServiceImpl implements IElasticsearchService{
 
                 StringBuilder sb = new StringBuilder();
                 sb.append("{");
-//                sb.append("\"fileName\" : \"").append(fileInfo.getFileName()).append("\",");
-//                sb.append("\"fileId\" : \"").append(fileInfo.getFileId()).append("\",");
-//                sb.append("\"systemId\" : \"").append(fileInfo.getSystemId()).append("\",");
-//                sb.append("\"catalogId\" : \"").append(fileInfo.getCatalogId()).append("\",");
-//                sb.append("\"busiType\" : \"").append(fileInfo.getBusiType()).append("\",");
-//                sb.append("\"contentType\" : \"").append(fileInfo.getContentType()).append("\",");
-//                sb.append("\"description\" : \"").append(fileInfo.getDescription()).append("\",");
-//                sb.append("\"sizeDesc\" : \"").append(fileInfo.getSizeDesc()).append("\",");
-                /*try {
-                    String createDate = df.format(fileInfo.getCreateDate());
-                    sb.append("\"createDate\" : \"").append(createDate).append("\",");
-                } catch (Exception e) {
-                    sb.append("\"createDate\" : \"").append(df.format(new Date())).append("\",");
-                }
+                sb.append("\"organismNumber\" : \"").append(gundamBean.getOrganismNumber()).append("\",");
+                sb.append("\"organismCodeName\" : \"").append(gundamBean.getOrganismCodeName()).append("\",");
+                sb.append("\"jpnName\" : \"").append(gundamBean.getJpnName()).append("\",");
+                sb.append("\"enName\" : \"").append(gundamBean.getEnName()).append("\",");
+                sb.append("\"cnName\" : \"").append(gundamBean.getCnName()).append("\",");
+                sb.append("\"animation\" : \"").append(gundamBean.getAnimation()).append("\",");
+                sb.append("\"organismType\" : \"").append(gundamBean.getOrganismType()).append("\",");
+                sb.append("\"belong\" : \"").append(gundamBean.getBelong()).append("\",");
+                sb.append("\"manufacturer\" : \"").append(gundamBean.getManufacturer()).append("\",");
+                sb.append("\"organismSieze\" : \"").append(gundamBean.getOrganismSieze()).append("\",");
+                sb.append("\"netWeight\" : \"").append(gundamBean.getNetWeight()).append("\",");
+                sb.append("\"fullWeight\" : \"").append(gundamBean.getFullWeight()).append("\",");
+                sb.append("\"armoredStructure\" : \"").append(gundamBean.getArmoredStructure()).append("\",");
+                sb.append("\"output\" : \"").append(gundamBean.getOutput()).append("\",");
+                sb.append("\"propulsion\" : \"").append(gundamBean.getPropulsion()).append("\",");
+                sb.append("\"acceleration\" : \"").append(gundamBean.getAcceleration()).append("\",");
+                sb.append("\"sensorRadius\" : \"").append(gundamBean.getSensorRadius()).append("\",");
+                sb.append("\"fixedArmed\" : \"").append(gundamBean.getFixedArmed()).append("\",");
+                sb.append("\"dubut\" : \"").append(gundamBean.getDubut()).append("\",");
+                sb.append("\"cockpit\" : \"").append(gundamBean.getCockpit()).append("\",");
+                sb.append("\"pilot\" : \"").append(gundamBean.getPilot()).append("\",");
+                sb.append("\"chooseWeapons\" : \"").append(gundamBean.getChooseWeapons()).append("\",");
+                sb.append("\"degreeTime\" : \"").append(gundamBean.getDegreeTime()).append("\",");
+                sb.append("\"groundSpeed\" : \"").append(gundamBean.getGroundSpeed()).append("\",");
+                sb.append("\"waterSpeed\" : \"").append(gundamBean.getWaterSpeed()).append("\",");
+                sb.append("\"introduction\" : \"").append(gundamBean.getIntroduction()).append("\",");
+                sb.append("\"cover\" : \"").append(gundamBean.getCover()).append("\",");
+                sb.append("\"state\" : \"").append(gundamBean.getState()).append("\",");
+                sb.append("\"opCode\" : \"").append(gundamBean.getOpCode()).append("\",");
+
                 try {
-                    String doneDate = df.format(fileInfo.getDoneDate());
-                    sb.append("\"doneDate\" : \"").append(doneDate).append("\"");
+                    String createDate = df.format(gundamBean.getCreateDate());
+//                    sb.append("\"createDate\" : \"").append(createDate).append("\",");
+                    sb.append("\"createDate\" : \"").append(createDate);
                 } catch (Exception e) {
-                    sb.append("\"doneDate\" : \"").append(df.format(new Date())).append("\"");
-                }*/
+//                    sb.append("\"createDate\" : \"").append(df.format(new Date())).append("\",");
+                    sb.append("\"createDate\" : \"").append(df.format(new Date()));
+                }
                 sb.append("}");
                 String result = HttpUtils.doJsonPost(url, sb.toString(), "UTF-8");
             } catch (Exception e) {
@@ -56,6 +78,13 @@ public class ElasticsearchServiceImpl implements IElasticsearchService{
             }
         }
     }
+
+    @Override
+    public Page<Map<String, Object>> searchFormElasticsearch(FileInfoBean fileInfo, Pagination pagination) throws Exception {
+        Page<Map<String, Object>> page = new
+        return null;
+    }
+
     static {
         try {
             new Timer().schedule(new TimerTask() {

@@ -92,7 +92,7 @@ define(function(require, exports, module) {
             var div6=$("<div class='news-grid-action'></div>");
             var p2=$("<p class='news-author author-name'></p>").text("夏亚");
             var p3=$("<p class='news-card-link'></p>");
-            var a3=$("<a href='../single-post/single-post-1.html?id=1'></a>").text("跳转到红色有角三倍速");
+            var a3=$("<a href='../single-post/single-post-1.html?MS=001'></a>").text("跳转到红色有角三倍速");
             var div7=$("<div class='divider divider-lg'></div>")
             h1.append(a2);
             div5.append(h1);

@@ -7,7 +7,7 @@ define(function(require, exports, module) {
     // 引入jQuery插件，用于信提示等;
     require('utils/jqPlugin');
     // 查询
-    API.add("getMessage", "single-post.json", "");
+    API.add("getMessage", "single-post.json", "gandamSearch/euro");
     // API.add("catalogList", "fileList.json", "upass/fileBrowse/getCatalogs");
     // API.add("fileList", "fileList.json", "upass/fileBrowse/getFiles");
     // API.add("viewerPic", "../assets/images/1900x1200_img_7.png", "upass/download/downloadNoToken");
@@ -30,10 +30,11 @@ define(function(require, exports, module) {
     Page.action = {
         // 查询所有列表接口
         query: function() {
-            $.getUrlParam('id');
+            var codeName = $.getUrlParam('MS');
+            console.log(codeName);
             Ajax.postJson(API.get('getMessage'), null, function (json, state) {
                 //异步生成json数据
-                Utils.justiceWatching(json);
+
             })
         },
     };

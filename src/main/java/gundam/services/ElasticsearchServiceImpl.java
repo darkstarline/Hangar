@@ -1,18 +1,19 @@
 package gundam.services;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import gundam.common.Page;
+import gundam.common.Pagenation;
 import gundam.constans.AppConstans;
-import gundam.pojo.FileInfoBean;
+import gundam.dto.ESResult;
 import gundam.pojo.GundamBean;
 import gundam.utils.HttpUtils;
-import org.springframework.data.domain.Page;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Map;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 
 @Service
 public class ElasticsearchServiceImpl implements IElasticsearchService{
@@ -59,9 +60,9 @@ public class ElasticsearchServiceImpl implements IElasticsearchService{
                 sb.append("\"groundSpeed\" : \"").append(gundamBean.getGroundSpeed()).append("\",");
                 sb.append("\"waterSpeed\" : \"").append(gundamBean.getWaterSpeed()).append("\",");
                 sb.append("\"introduction\" : \"").append(gundamBean.getIntroduction()).append("\",");
-                sb.append("\"cover\" : \"").append(gundamBean.getCover()).append("\",");
-                sb.append("\"state\" : \"").append(gundamBean.getState()).append("\",");
-                sb.append("\"opCode\" : \"").append(gundamBean.getOpCode()).append("\",");
+//                sb.append("\"cover\" : \"").append(gundamBean.getCover()).append("\",");
+//                sb.append("\"state\" : \"").append(gundamBean.getState()).append("\",");
+//                sb.append("\"opCode\" : \"").append(gundamBean.getOpCode()).append("\",");
 
                 try {
                     String createDate = df.format(gundamBean.getCreateDate());
@@ -80,11 +81,74 @@ public class ElasticsearchServiceImpl implements IElasticsearchService{
     }
 
     @Override
-    public Page<Map<String, Object>> searchFormElasticsearch(FileInfoBean fileInfo, Pagination pagination) throws Exception {
-        Page<Map<String, Object>> page = new
+    public Page<Map<String, Object>> searchFormElasticsearch(GundamBean gundamBean, Pagenation pagination) throws Exception {
+        //TODO 待改
+        //检索用
+        /*Page<Map<String, Object>> page = new Page<Map<String, Object>>();
+        if(pagination.getPageSize()==0){
+            pagination.setPageSize(100);
+        }
+        if(pagination.getCurPage()==0){
+            pagination.setCurPage(1);
+        }
+        if(esEnable){
+            String url = esBaseUrl + "/" + AppConstans.GUNDAM + "/_doc" + "?pretty";
+
+            StringBuilder sb = new StringBuilder();
+            sb.append("{");
+            sb.append("\"query\"").append(":").append("{");
+            sb.append("\"bool\"").append(":").append("{");
+            sb.append("\"must\"").append(":").append("[");
+            if(StringUtils.isNotEmpty(fileInfoValue.getSystemId())){
+                sb.append("{").append("\"term\"").append(":").append("{");
+                sb.append("\"systemId\"").append(":").append("\"").append(fileInfoValue.getSystemId()).append("\"");
+                sb.append("}").append("}");
+                sb.append(",");
+            }
+            sb.append("]").append(",");
+            sb.append("\"should\"").append(":").append("[");
+            if(StringUtils.isNotEmpty(fileInfoValue.getFileId())){
+                sb.append("{").append("\"wildcard\"").append(":").append("{").append("\"fileName\"").append(":").append("\"*").append(fileInfoValue.getFileName()).append("*\"").append("}").append("}");
+            }
+            sb.append("]").append(",");
+            //mininum_should_match默认就是1,设置成0没有意义
+//            sb.append("\"minimum_should_match\"").append(":").append(0).append(",");
+            sb.append("\"boost\"").append(":").append(1.0);
+            sb.append("}");
+//            sb.append(",");
+            sb.append("}").append(",");
+            sb.append("\"size\"").append(":").append(pagination.getPageSize()).append(",");
+        }*/
         return null;
     }
+    @Override
+    public Map<String, Object> searchFormElasticsearch(GundamBean gundamBean) throws Exception {
+        //自用
+        List<Map<String, Object>> resultMapList = new ArrayList<Map<String, Object>>();
+        if(esEnable){
+            String url = esBaseUrl + "/" + AppConstans.GUNDAM + "/_search" + "?pretty";
 
+            StringBuilder sb = new StringBuilder();
+            sb.append("{");
+            sb.append("\"query\"").append(":").append("{");
+            sb.append("\"bool\"").append(":").append("{");
+            sb.append("\"must\"").append(":").append("[");
+            if(StringUtils.isNotEmpty(gundamBean.getOrganismCodeName())){
+                sb.append("{").append("\"term\"").append(":").append("{");
+                sb.append("\"organismCodeName\"").append(":").append("\"").append(gundamBean.getOrganismCodeName()).append("\"");
+                sb.append("}").append("}").append(",");
+            }
+            //之后又需要再写
+            sb.append("]").append(",");
+            sb.append("\"boost\"").append(":").append(1.0);
+            sb.append("}").append("}").append("}");
+            String result = HttpUtils.doJsonPost(url, sb.toString(), "UTF-8");
+            JSONObject jsonResult = JSON.parseObject(result);
+            ESResult esResult=ESResult.originalParse(jsonResult);
+            resultMapList = esResult.getHits();
+        }
+        return resultMapList.get(0);
+    }
     static {
         try {
             new Timer().schedule(new TimerTask() {
@@ -104,6 +168,7 @@ public class ElasticsearchServiceImpl implements IElasticsearchService{
         }
     }
     public static String isEnable() throws Exception {
+        //TODO 从redis中获取参数
         /*IBaseSV objIBaseSV = (IBaseSV) ServiceFactory.getService(IBaseSV.class);
         IBOBsStaticDataValue[] objIBSStaticDataValue = objIBaseSV.getAllBsStaticData();
         HashMap codeTypeMap = new HashMap();

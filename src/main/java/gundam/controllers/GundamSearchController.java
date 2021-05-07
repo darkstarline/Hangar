@@ -1,38 +1,70 @@
 package gundam.controllers;
 
 import com.alibaba.fastjson.JSON;
-import com.google.common.base.Function;
-import gundam.common.DfsFactory;
 import gundam.common.JsonResult;
-import gundam.common.OperatorInfo;
-import gundam.common.UserSession;
-import gundam.constans.AppConstans;
+import gundam.common.Page;
+import gundam.common.Pagenation;
 import gundam.constans.ResourceConstans;
-import gundam.pojo.FileInfoBean;
-import gundam.pojo.FileInvokeBean;
 import gundam.pojo.GundamBean;
-import gundam.pojo.GundamFileRelBean;
 import gundam.services.IElasticsearchService;
-import gundam.utils.ThreadUtils;
-import gundam.utils.UploadUtils;
-import gundam.vo.GundamVo;
+import gundam.vo.SearchVo;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.rest.Post;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.sql.Timestamp;
+import java.util.Map;
 
 public class GundamSearchController {
+    //TODO 数据处理
     @Autowired
     IElasticsearchService elasticsearchService;
     @Post("search")
-    public JSON searchInfo(Invocation inv, String organismNumber) throws Exception{
+    public JSON searchInfo(Invocation inv, SearchVo searchVo, Pagenation pagenation) throws Exception{
         JsonResult json=new JsonResult();
         GundamBean gundamBean = new GundamBean();
-        List<GundamBean> list = this.elasticsearchService.searchFormElasticsearch()
+        this.convertSearchVo2Entity(searchVo,gundamBean);
+        Page<Map<String, Object>> page = this.elasticsearchService.searchFormElasticsearch(gundamBean,pagenation);
         json.setSuccess(true);
         return json;
+    }
+    @Post("euro")
+    public JSON searchInfo(Invocation inv,SearchVo searchVo) throws Exception{
+        JsonResult json=new JsonResult();
+        GundamBean gundamBean = new GundamBean();
+        this.convertSearchVo2Entity(searchVo,gundamBean);
+        Pagenation pagenation = new Pagenation();
+        Map<String, Object> data = this.elasticsearchService.searchFormElasticsearch(gundamBean);
+        json.setSuccess(true);
+        json.put("data",data);
+        return json;
+    }
+    private void convertSearchVo2Entity(SearchVo searchVo, GundamBean gundamBean) {
+        gundamBean.setOrganismCodeName(searchVo.getOrganismCodeName());
+        gundamBean.setOrganismNumber(searchVo.getOrganismNumber());
+        gundamBean.setJpnName(searchVo.getJpnName());
+        gundamBean.setEnName(searchVo.getEnName());
+        gundamBean.setCnName(searchVo.getCnName());
+        gundamBean.setAnimation(searchVo.getAnimation());
+        gundamBean.setOrganismType(searchVo.getOrganismType());
+        gundamBean.setBelong(searchVo.getBelong());
+        gundamBean.setManufacturer(searchVo.getManufacturer());
+        gundamBean.setOrganismSieze(searchVo.getOrganismSize());
+        gundamBean.setNetWeight(searchVo.getNetWeight());
+        gundamBean.setFullWeight(searchVo.getFullWeight());
+        gundamBean.setArmoredStructure(searchVo.getArmoredStructure());
+        gundamBean.setOutput(searchVo.getOutput());
+        gundamBean.setPropulsion(searchVo.getPropulsion());
+        gundamBean.setAcceleration(searchVo.getAcceleration());
+        gundamBean.setSensorRadius(searchVo.getSensorRadius());
+        gundamBean.setFixedArmed(searchVo.getFixedArmed());
+        gundamBean.setDubut(searchVo.getDebut());
+        gundamBean.setCockpit(searchVo.getCockpit());
+        gundamBean.setPilot(searchVo.getPilot());
+        gundamBean.setChooseWeapons(searchVo.getChooseWeapons());
+        gundamBean.setDegreeTime(searchVo.getDegreeTime());
+        gundamBean.setGroundSpeed(searchVo.getGroundSpeed());
+        gundamBean.setWaterSpeed(searchVo.getWaterSpeed());
+        gundamBean.setIntroduction(searchVo.getWaterSpeed());
+        gundamBean.setState(ResourceConstans.STATE.USED);
     }
 }

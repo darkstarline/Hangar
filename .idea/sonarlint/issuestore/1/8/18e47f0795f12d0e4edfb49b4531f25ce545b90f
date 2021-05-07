@@ -1,14 +1,13 @@
 
-l
-java:S3008"ORename this field "USER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬Îªş8ÿƒ¿û/
+X
+java:S18546";Remove this useless assignment to local variable "session".(«Ïõ¿8ùÍ³€/
+I
+java:S14816",Remove this unused "session" local variable.(«Ïõ¿8ùÍ³€/
 >
 java:S1116"Remove this empty statement.(Åñ­õşÿÿÿÿ8’½¬‘/
 p
 java:S3008"SRename this field "OPERATOR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨ÇÍ¨8ˆº‡€/
 u
 java:S3008"SRename this field "PASSWORD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üÕ’úÿÿÿÿ8ÿƒ¿û/
-X
-java:S18546";Remove this useless assignment to local variable "session".(«Ïõ¿8ùÍ³€/
-b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(‘êöâ8ªÍç«‘/
-I
-java:S14816",Remove this unused "session" local variable.(«Ïõ¿8ùÍ³€/
+l
+java:S3008"ORename this field "USER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬Îªş8ÿƒ¿û/

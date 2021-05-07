@@ -1,18 +1,18 @@
 
-R
-java:S10688"0Remove this unused "confFileName" private field.(²…’ÿşÿÿÿÿ8ÕÑ¸Ñ/
-}
-java:S14508"[Remove the "confFileName" field and declare it as a local variable in the relevant methods.(²…’ÿşÿÿÿÿ8ÕÑ¸Ñ/
-h	java:S112ş"FDefine and throw a dedicated exception instead of using a generic one.(ø»«ûÿÿÿÿ8ÕÑ¸Ñ/
-c
-java:S2142v"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ÕÑ¸Ñ/
-b	java:S112x"FDefine and throw a dedicated exception instead of using a generic one.(Ê¤¿8ÕÑ¸Ñ/
-M
-java:S1066‹"/Merge this if statement with the enclosing one.(¨¨Â˜8ÕÑ¸Ñ/
-V	java:S899‰":Do something with the "boolean" value returned by "offer".(×Õ<8ÕÑ¸Ñ/
 w
 java:S2293ô"YReplace the type specification in this constructor call with the diamond operator ("<>").(µˆÌ8ÕÑ¸Ñ/
+^	java:S125û"<This block of commented-out lines of code should be removed.(öéØóşÿÿÿÿ8ÕÑ¸Ñ/
+c
+java:S2142v"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ÕÑ¸Ñ/
+}
+java:S14508"[Remove the "confFileName" field and declare it as a local variable in the relevant methods.(²…’ÿşÿÿÿÿ8ÕÑ¸Ñ/
+R
+java:S10688"0Remove this unused "confFileName" private field.(²…’ÿşÿÿÿÿ8ÕÑ¸Ñ/
+b	java:S112x"FDefine and throw a dedicated exception instead of using a generic one.(Ê¤¿8ÕÑ¸Ñ/
+Y	java:S125„"<This block of commented-out lines of code should be removed.(Øšıë8ÕÑ¸Ñ/
+V	java:S899‰":Do something with the "boolean" value returned by "offer".(×Õ<8ÕÑ¸Ñ/
+h	java:S112ş"FDefine and throw a dedicated exception instead of using a generic one.(ø»«ûÿÿÿÿ8ÕÑ¸Ñ/
 [
 java:S1155p">Use isEmpty() to check whether the collection is empty or not.(«õ½—8ÕÑ¸Ñ/
-^	java:S125û"<This block of commented-out lines of code should be removed.(öéØóşÿÿÿÿ8ÕÑ¸Ñ/
-Y	java:S125„"<This block of commented-out lines of code should be removed.(Øšıë8ÕÑ¸Ñ/
+M
+java:S1066‹"/Merge this if statement with the enclosing one.(¨¨Â˜8ÕÑ¸Ñ/

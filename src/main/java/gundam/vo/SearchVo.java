@@ -31,6 +31,15 @@ public class SearchVo {
     private String opCode;
     private String from;
     private String size;
+    private String keyWord;
+
+    public String getKeyWord() {
+        return keyWord;
+    }
+
+    public void setKeyWord(String keyWord) {
+        this.keyWord = keyWord;
+    }
 
     public String getOrganismNumber() {
         return organismNumber;
@@ -305,6 +314,7 @@ public class SearchVo {
                 ", opCode='" + opCode + '\'' +
                 ", from='" + from + '\'' +
                 ", size='" + size + '\'' +
+                ", keyWord='" + keyWord + '\'' +
                 '}';
     }
 }

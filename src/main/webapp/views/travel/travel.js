@@ -7,7 +7,7 @@ define(function(require, exports, module) {
     // 引入jQuery插件，用于信提示等;
     require('utils/jqPlugin');
     // 查询
-    API.add("fileList", "travel.json", "");
+    API.add("fileList", "travel.json", "gundamSearch/search");
     // API.add("catalogList", "fileList.json", "upass/fileBrowse/getCatalogs");
     // API.add("fileList", "fileList.json", "upass/fileBrowse/getFiles");
     // API.add("viewerPic", "../assets/images/1900x1200_img_7.png", "upass/download/downloadNoToken");
@@ -30,8 +30,12 @@ define(function(require, exports, module) {
     Page.action = {
         // 查询所有列表接口
         queryList: function() {
-            Ajax.postJson(API.get('fileList'), null, function (json, state) {
-                var organismList=eval('json.'+"organismList");
+            var keyword = $.getUrlParam('gh');
+            var cmd ={
+                keyword : keyword
+            }
+            Ajax.postJson(API.get('fileList'), cmd, function (json, state) {
+                var organismList=eval('json.'+"dataList");
                 for(var i=0;i<organismList.length;i++){
                    Utils.justiceWatching(organismList[i]);
                 }
@@ -43,6 +47,7 @@ define(function(require, exports, module) {
     Page.operate = {
         init: function() {
             this.tt();
+            this.search();
         },
         // 路径点击跳转事件
         tt: function() {
@@ -50,6 +55,16 @@ define(function(require, exports, module) {
                 alert("tt click");
             });
         },
+        search : function () {
+            $('[name=gundamSearch]').bind('keypress',function(event){
+                if(event.keyCode == "13")
+                {
+                    var gh = $('[name=gundamSearch]').val();
+                    var searchUrl = "./travel.html?gh="+gh;
+                    $(window).attr('location',searchUrl);
+                }
+            });
+        }
     }
     var Utils = {
         justiceWatching: function (organism){
@@ -78,7 +93,7 @@ define(function(require, exports, module) {
             var div1=$("<div class='col-lg-5'></div>");
             var div2=$("<div class='news-card-grid-item-2'></div>")
             var a1=$("<a href='../single-post/single-post-1.html'></a>");
-            var div3=$("<div class='news-card-thumb news-thumb-bg-1'></div>").text("这里因该是背景图片");
+            var div3=$("<div class='news-card-thumb'></div>");
             a1.append(div3);
             div2.append(a1);
             div1.append(div2);
@@ -87,12 +102,13 @@ define(function(require, exports, module) {
             var div4=$("<div class='col-lg-7'></div>");
             var div5=$("<div class='news-card-grid-item-2 news-card-grid-dark'></div>");
             var h1=$("<h3></h3>");
-            var a2=$("<a href='../single-post/single-post-1.html'></a>").text("扎古一");
-            var p1=$("<p></p>").text("U.C.0075年5月，以MS-05所获得的数据为基础进行改良的MS-05B后期生产型扎古Ⅰ完工。从外观上看，本机与MS-05最大的区别是胸部装甲的形状。U.C.0077年10月，本机开始大规模量产，至大战结束为止，共生产了793架，绝大多数配给了教导机动大队使用，是一年战争初期的主力MS，通称为“旧扎古”。本机的最大缺陷，则是由于动力管内藏而导致出力不高。此机种比初期生产型的综合性能有了很大的提高。装备方面有105mm机关炮、280mm核弹头火箭筒、热能斧。还装备有用于接近战用的盾。因为此时联邦还没有机动战士，所以不考虑加强它在格斗战方面的实力。");
+            var a2href="../single-post/single-post-1.html?MS="+organism.organismNumber;
+            var a2=$("<a></a>").text(organism.organismNumber).attr("href",a2href);
+            var p1=$("<p></p>").text(organism.introduction);
             var div6=$("<div class='news-grid-action'></div>");
-            var p2=$("<p class='news-author author-name'></p>").text("夏亚");
+            var p2=$("<p class='news-author author-name'></p>").text(organism.pilot);
             var p3=$("<p class='news-card-link'></p>");
-            var a3=$("<a href='../single-post/single-post-1.html?MS=001'></a>").text("跳转到红色有角三倍速");
+            var a3=$("<a href='../single-post/single-post-1.html?MS=001'></a>").text(organism.organismCodeName);
             var div7=$("<div class='divider divider-lg'></div>")
             h1.append(a2);
             div5.append(h1);
@@ -104,6 +120,10 @@ define(function(require, exports, module) {
             div6.append(p3);
             div0.append(div4);
             div0.append(div7);
+            // $(".news-card-thumb").css("background-image","112.jpg");
+            // background-image: url(../imgs/travel/travel-lg-1.jpg)
+            div1.css("background-image","url(./112.jpg)");
+            p1.css("text-indent","2em");
         }
     }
     module.exports = Page;

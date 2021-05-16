@@ -14,28 +14,28 @@
     <sql id="key">
         <trim suffixOverrides=",">
             <if test="orgamismId!=null and orgamismId!=''">
-                orgamismId,
+                orgamism_id,
             </if>
             <if test="organismNumber!=null and organismNumber!=''">
-                organismNumber,
+                organism_number,
             </if>
             <if test="organismCodeName!=null and organismCodeName!=''">
-                organismCodeName,
+                organism_code_name,
             </if>
             <if test="jpnName!=null and jpnName!=''">
-                jpnName,
+                jpn_name,
             </if>
             <if test="enName!=null and enName!=''">
-                enName,
+                en_name,
             </if>
             <if test="cnName!=null and cnName!=''">
-                cnName,
+                cn_name,
             </if>
             <if test="animation!=null and animation!=''">
                 animation,
             </if>
             <if test="organismType!=null and organismType!=''">
-                organismType,
+                organism_type,
             </if>
             <if test="belong!=null and belong!=''">
                 belong,
@@ -44,16 +44,16 @@
                 manufacturer,
             </if>
             <if test="organismSieze!=null and organismSieze!=''">
-                organismSieze,
+                organism_size,
             </if>
             <if test="netWeight!=null and netWeight!=''">
-                netWeight,
+                net_weight,
             </if>
             <if test="fullWeight!=null and fullWeight!=''">
-                fullWeight,
+                full_weight,
             </if>
             <if test="armoredStructure!=null and armoredStructure!=''">
-                armoredStructure,
+                armored_structure,
             </if>
             <if test="output!=null and output!=''">
                 output,
@@ -65,10 +65,10 @@
                 acceleration,
             </if>
             <if test="sensorRadius!=null and sensorRadius!=''">
-                sensorRadius,
+                sensor_radius,
             </if>
             <if test="fixedArmed!=null and fixedArmed!=''">
-                fixedArmed,
+                fixed_armed,
             </if>
             <if test="dubut!=null and dubut!=''">
                 dubut,
@@ -80,16 +80,16 @@
                 pilot,
             </if>
             <if test="chooseWeapons!=null and chooseWeapons!=''">
-                chooseWeapons,
+                choose_weapons,
             </if>
             <if test="degreeTime!=null and degreeTime!=''">
-                degreeTime,
+                degree_time,
             </if>
             <if test="groundSpeed!=null and groundSpeed!=''">
-                groundSpeed,
+                ground_speed,
             </if>
             <if test="waterSpeed!=null and waterSpeed!=''">
-                waterSpeed,
+                water_speed,
             </if>
             <if test="introduction!=null and introduction!=''">
                 introduction,
@@ -101,10 +101,10 @@
                 state,
             </if>
             <if test="opCode!=null and opCode!=''">
-                opCode,
+                op_code,
             </if>
             <if test="createDate!=null and createDate!=''">
-                createDate,
+                create_date,
             </if>
             <if test="extend0!=null and extend0!=''">
                 extend0,

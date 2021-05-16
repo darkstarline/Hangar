@@ -1,25 +1,33 @@
 
+HWeb:BoldAndItalicTagsCheckN"Replace this <i> tag by <em>.(‰§ãĞúÿÿÿÿ
+PWeb:AvoidCommentedOutCodeCheckX"Remove this commented out code.(ŠûÂ²8ØÙµ¸—/
+VWeb:AvoidCommentedOutCodeCheckÇ"Remove this commented out code.(³õù´ùÿÿÿÿ8¸ú¹—/
+VWeb:AvoidCommentedOutCodeCheck¹"Remove this commented out code.(³õù´ùÿÿÿÿ8ìù€¹—/
+DWeb:BoldAndItalicTagsCheckï"Replace this <i> tag by <em>.(â¼÷ã
 Y	Web:S5255a"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(Üé÷
+VWeb:AvoidCommentedOutCodeCheck’"Remove this commented out code.(‘— üşÿÿÿÿ8½üÿ¸—/
+VWeb:AvoidCommentedOutCodeCheck¨"Remove this commented out code.(¨İÂ«ıÿÿÿÿ8ğŸÇ´—/
+HWeb:BoldAndItalicTagsCheck@"Replace this <i> tag by <em>.(‹¥ÿıÿÿÿÿ
+DWeb:BoldAndItalicTagsCheckñ"Replace this <i> tag by <em>.(•¯ïæ
+DWeb:BoldAndItalicTagsCheckã"Replace this <i> tag by <em>.(”ÄÑø
+OWeb:AvoidCommentedOutCodeCheckœ"Remove this commented out code.(–ù¿ûùÿÿÿÿ
 CWeb:BoldAndItalicTagsCheckD"Replace this <i> tag by <em>.(¥ÏÓˆ
-HWeb:BoldAndItalicTagsCheckU"Replace this <i> tag by <em>.(‰§ãĞúÿÿÿÿ
-IWeb:BoldAndItalicTagsCheckÎ"Replace this <i> tag by <em>.(¢Ø›àøÿÿÿÿ
-IWeb:BoldAndItalicTagsCheck°"Replace this <i> tag by <em>.(ë·‡ñıÿÿÿÿ
+UWeb:AvoidCommentedOutCodeCheckx"Remove this commented out code.(³õù´ùÿÿÿÿ8ƒÓı¸—/
 HWeb:BoldAndItalicTagsCheckF"Replace this <i> tag by <em>.(¢Ø›àøÿÿÿÿ
+DWeb:BoldAndItalicTagsCheckî"Replace this <i> tag by <em>.(¥ÏÓˆ
+HWeb:BoldAndItalicTagsCheckH"Replace this <i> tag by <em>.(ÿ¦·Èıÿÿÿÿ
+DWeb:BoldAndItalicTagsCheckÌ"Replace this <i> tag by <em>.(¥ÏÓˆ
+CWeb:BoldAndItalicTagsCheckE"Replace this <i> tag by <em>.(â¼÷ã
+IWeb:BoldAndItalicTagsCheckÎ"Replace this <i> tag by <em>.(¢Ø›àøÿÿÿÿ
+DWeb:BoldAndItalicTagsCheckÍ"Replace this <i> tag by <em>.(â¼÷ã
+HWeb:BoldAndItalicTagsCheckU"Replace this <i> tag by <em>.(‰§ãĞúÿÿÿÿ
+UWeb:AvoidCommentedOutCodeCheckg"Remove this commented out code.(³õù´ùÿÿÿÿ8×½ú¸—/
+UWeb:AvoidCommentedOutCodeCheckp"Remove this commented out code.(³õù´ùÿÿÿÿ8¶ƒı¸—/
+DWeb:BoldAndItalicTagsCheckÏ"Replace this <i> tag by <em>.(•¯ïæ
+IWeb:BoldAndItalicTagsCheckğ"Replace this <i> tag by <em>.(¢Ø›àøÿÿÿÿ
+VWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(³õù´ùÿÿÿÿ8ğçş¸—/
+CWeb:BoldAndItalicTagsCheckG"Replace this <i> tag by <em>.(•¯ïæ
 IWeb:BoldAndItalicTagsCheckĞ"Replace this <i> tag by <em>.(ÿ¦·Èıÿÿÿÿ
 IWeb:BoldAndItalicTagsCheckò"Replace this <i> tag by <em>.(ÿ¦·Èıÿÿÿÿ
-HWeb:BoldAndItalicTagsCheckH"Replace this <i> tag by <em>.(ÿ¦·Èıÿÿÿÿ
-DWeb:BoldAndItalicTagsCheckñ"Replace this <i> tag by <em>.(•¯ïæ
-DWeb:BoldAndItalicTagsCheckî"Replace this <i> tag by <em>.(¥ÏÓˆ
-IWeb:BoldAndItalicTagsCheckğ"Replace this <i> tag by <em>.(¢Ø›àøÿÿÿÿ
-HWeb:BoldAndItalicTagsCheckN"Replace this <i> tag by <em>.(‰§ãĞúÿÿÿÿ
-OWeb:AvoidCommentedOutCodeCheckœ"Remove this commented out code.(–ù¿ûùÿÿÿÿ
-DWeb:BoldAndItalicTagsCheckÍ"Replace this <i> tag by <em>.(â¼÷ã
 IWeb:BoldAndItalicTagsCheckå"Replace this <i> tag by <em>.(‰§ãĞúÿÿÿÿ
-DWeb:BoldAndItalicTagsCheckã"Replace this <i> tag by <em>.(”ÄÑø
-HWeb:BoldAndItalicTagsCheck@"Replace this <i> tag by <em>.(‹¥ÿıÿÿÿÿ
-DWeb:BoldAndItalicTagsCheckÌ"Replace this <i> tag by <em>.(¥ÏÓˆ
-CWeb:BoldAndItalicTagsCheckG"Replace this <i> tag by <em>.(•¯ïæ
-DWeb:BoldAndItalicTagsCheckï"Replace this <i> tag by <em>.(â¼÷ã
-CWeb:BoldAndItalicTagsCheckE"Replace this <i> tag by <em>.(â¼÷ã
-DWeb:BoldAndItalicTagsCheckÏ"Replace this <i> tag by <em>.(•¯ïæ
-IWeb:BoldAndItalicTagsCheckª"Replace this <i> tag by <em>.(…ÁÙêüÿÿÿÿ
+VWeb:AvoidCommentedOutCodeCheck„"Remove this commented out code.(³õù´ùÿÿÿÿ8’šÿ¸—/

@@ -1,34 +1,32 @@
 
-b	java:S112,"FDefine and throw a dedicated exception instead of using a generic one.(”£ıâ8Ãüæ’/
-^
-java:S3457j"AFormat specifiers should be used instead of string concatenation.(ë–òß8Ãüæ’/
-o
-java:S3776,"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(”£ıâ8Ãüæ’/
 O
-java:S1135O"2Complete the task associated to this TODO comment.(Ùœäæ8ÁùŠœ/
+java:S11350"2Complete the task associated to this TODO comment.(Ùœäæ8Ãú·—/
+^
+java:S3457H"AFormat specifiers should be used instead of string concatenation.(Ñ´±€8Ãú·—/
 >
-java:S1110j"!Remove these useless parentheses.(ë–òß8Ãüæ’/
-X	java:S125z"<This block of commented-out lines of code should be removed.(Û’ì8Ãüæ’/
-U
-java:S1135½"2Complete the task associated to this TODO comment.(«ëíùÿÿÿÿ8İòŞ›/
+java:S1110j"!Remove these useless parentheses.(ë–òß8Ãú·—/
+X	java:S125z"<This block of commented-out lines of code should be removed.(Û’ì8Ãú·—/
+b	java:S112,"FDefine and throw a dedicated exception instead of using a generic one.(”£ıâ8Ãú·—/
 [
-java:S49735"9Use the "equals" method if value comparison was intended.(ëßÏ¥ıÿÿÿÿ8š‘ü›/
+java:S49735"9Use the "equals" method if value comparison was intended.(ëßÏ¥ıÿÿÿÿ8Ãú·—/
 T
-java:S1135U"2Complete the task associated to this TODO comment.(òµø¶şÿÿÿÿ8‚€À¤‘/
-T
-java:S1135M"2Complete the task associated to this TODO comment.(¹´µ¸ıÿÿÿÿ8Ù‘Úò/
+java:S1135U"2Complete the task associated to this TODO comment.(òµø¶şÿÿÿÿ8Ãú·—/
 O
-java:S1135L"2Complete the task associated to this TODO comment.(…„‹Ô8©ÆÕò/
-O
-java:S11350"2Complete the task associated to this TODO comment.(Ùœäæ8ß…“¤‘/
->
-java:S1110H"!Remove these useless parentheses.(Ñ´±€8Ãüæ’/
-X	java:S125…"<This block of commented-out lines of code should be removed.(¦¯ÅF8ß…“¤‘/
+java:S1135L"2Complete the task associated to this TODO comment.(…„‹Ô8Ãú·—/
 ^
-java:S3457H"AFormat specifiers should be used instead of string concatenation.(Ñ´±€8Ãüæ’/
+java:S3457j"AFormat specifiers should be used instead of string concatenation.(ë–òß8Ãú·—/
+T
+java:S1135M"2Complete the task associated to this TODO comment.(¹´µ¸ıÿÿÿÿ8Ãú·—/
 P
-java:S1135¡"2Complete the task associated to this TODO comment.(±ÿ£Ù8¥¦¢š/
-E
-java:S1604v"(Make this anonymous inner class a lambda(Ú™8Û¹øà“/
+java:S1135¡"2Complete the task associated to this TODO comment.(±ÿ£Ù8Ãú·—/
+U
+java:S1135½"2Complete the task associated to this TODO comment.(«ëíùÿÿÿÿ8Ãú·—/
 O
-java:S1135G"2Complete the task associated to this TODO comment.(ŞúŞİ8Ãüæ’/
+java:S1135G"2Complete the task associated to this TODO comment.(ŞúŞİ8Ãú·—/
+>
+java:S1110H"!Remove these useless parentheses.(Ñ´±€8Ãú·—/
+o
+java:S3776,"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(”£ıâ8Ãú·—/
+O
+java:S1135O"2Complete the task associated to this TODO comment.(Ùœäæ8Ãú·—/
+X	java:S125…"<This block of commented-out lines of code should be removed.(¦¯ÅF8Ãú·—/

@@ -1,3 +1,4 @@
+/*
 package gundam.common;
 
 import org.apache.commons.httpclient.HttpHost;
@@ -7,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
+*/
 /**
  * _______________HHHHHHHHH_______________________
  * ______________HHHHHHHHHHHH_____________________
@@ -35,7 +37,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author: darkstarline
  * @date: 2021/5/10 14:23
  * @description:
- */
+ *//*
+
 public class ElasticsearchNodes {
     //参考Elasticsearch  RestHighLevel里获取连接的方式(超简易版本)
     private Logger log = LoggerFactory.getLogger(this.getClass());
@@ -112,3 +115,4 @@ public class ElasticsearchNodes {
     }
 
 }
+*/

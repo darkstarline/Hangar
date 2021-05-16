@@ -1,3 +1,13 @@
+/*/!*获取到Url里面的参数*!/
+(function () {
+    $('[name=gundamSearch]').bind('keypress',function(event){
+        if(event.keyCode == "13")
+        {
+            var keyword = $('[name=gundamSearch]').val();
+            $(window).attr('location','../travel/travel.html?keyword='+keyword);
+        }
+    });
+})(jQuery);*/
 /*获取到Url里面的参数*/
 (function ($) {
     $.getUrlParam = function (name) {

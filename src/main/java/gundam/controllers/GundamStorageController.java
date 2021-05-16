@@ -185,7 +185,7 @@ public class GundamStorageController {
         gundamBean.setDegreeTime(gundamVo.getDegreeTime());
         gundamBean.setGroundSpeed(gundamVo.getGroundSpeed());
         gundamBean.setWaterSpeed(gundamVo.getWaterSpeed());
-        gundamBean.setIntroduction(gundamVo.getWaterSpeed());
+        gundamBean.setIntroduction(gundamVo.getIntroduction());
         //TODO 提前获取塞到gundamVo里
         gundamBean.setOpCode(gundamVo.getOpCode());
 

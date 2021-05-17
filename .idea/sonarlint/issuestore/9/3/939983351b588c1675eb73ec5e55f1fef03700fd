@@ -1,42 +1,42 @@
 
-e	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¦“ßÿÿÿÿÿ8ó³éª‘/
+b	java:S112»"FDefine and throw a dedicated exception instead of using a generic one.(¥ïß8ó³éª‘/
+u
+java:S3008"SRename this field "BOUNDARY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•ôİ©ûÿÿÿÿ8ó³éª‘/
+h	java:S112Î"FDefine and throw a dedicated exception instead of using a generic one.(³´œùÿÿÿÿ8ó³éª‘/
+W
+java:S1118":Add a private constructor to hide the implicit public one.(„–Û8ó³éª‘/
+ˆ
+java:S3008"fRename this field "URL_CONNECTION_READ_TIMEOUT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰¸»ıÿÿÿÿ8ó³éª‘/
+u
+java:S2737ª"WAdd logic to this catch clause or eliminate it and rethrow the exception automatically.(ö™û8ó³éª‘/
+c
+java:S1192."FDefine a constant instead of duplicating this literal "UTF-8" 3 times.(±¨Š‚8ó³éª‘/
+h	java:S112›"FDefine and throw a dedicated exception instead of using a generic one.(¦“ßÿÿÿÿÿ8ó³éª‘/
+M
+java:S2093¹"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8ó³éª‘/
+V
+java:S4719J"9Replace charset name argument with StandardCharsets.UTF_8(Û²—8ó³éª‘/
+h	java:S112Â"FDefine and throw a dedicated exception instead of using a generic one.(¦“ßÿÿÿÿÿ8ó³éª‘/
+G
+java:S1481‘"*Remove this unused "retry" local variable.(½­Èb8ó³éª‘/
 m
-java:S1192"MDefine a constant instead of duplicating this literal "Content-Type" 4 times.(ø›ÚØşÿÿÿÿ8ó³éª‘/
-z
-java:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(™šªÚ8ó³éª‘/
-_	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¥ïß8ó³éª‘/
-V	java:S125"<This block of commented-out lines of code should be removed.(¶ì“æ8ó³éª‘/
-a
-java:S1192"FDefine a constant instead of duplicating this literal "UTF-8" 3 times.(±¨Š‚8ó³éª‘/
-‰
-java:S3008"iRename this field "URL_CONNECTION_CONNECT_TIMEOUT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢õÄ‰ıÿÿÿÿ8ó³éª‘/
-[	java:S125"<This block of commented-out lines of code should be removed.(æôî®ıÿÿÿÿ8ó³éª‘/
-r
-java:S2737"WAdd logic to this catch clause or eliminate it and rethrow the exception automatically.(ö™û8ó³éª‘/
-e	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¦“ßÿÿÿÿÿ8ó³éª‘/
-z
-java:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(™šªÚ8ó³éª‘/
-`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ı©˜¬8ó³éª‘/
-J
-java:S2093"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8ó³éª‘/
-e	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(³´œùÿÿÿÿ8ó³éª‘/
-[	java:S125"<This block of commented-out lines of code should be removed.(Ñ”úÿÿÿÿ8ó³éª‘/
-k
-java:S1192"KDefine a constant instead of duplicating this literal "keep-alive" 4 times.(Š°¹áüÿÿÿÿ8ó³éª‘/
-D
-java:S1481"*Remove this unused "retry" local variable.(½­Èb8ó³éª‘/
-U
-java:S1118":Add a private constructor to hide the implicit public one.(„–Û8ó³éª‘/
-s
-java:S3008"SRename this field "BOUNDARY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•ôİ©ûÿÿÿÿ8ó³éª‘/
-†
-java:S3008"fRename this field "URL_CONNECTION_READ_TIMEOUT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰¸»ıÿÿÿÿ8ó³éª‘/
-f
-java:S1192"KDefine a constant instead of duplicating this literal "Connection" 4 times.(€†êß8ó³éª‘/
-t
-java:S3008"TRename this field "DELIMITER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨øäˆøÿÿÿÿ8ó³éª‘/
-J
-java:S2093"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8ó³éª‘/
-T
-java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(Û²—8ó³éª‘/
-e	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¦“ßÿÿÿÿÿ8ó³éª‘/
+java:S1192c"KDefine a constant instead of duplicating this literal "keep-alive" 4 times.(Š°¹áüÿÿÿÿ8ó³éª‘/
+o
+java:S1192b"MDefine a constant instead of duplicating this literal "Content-Type" 4 times.(ø›ÚØşÿÿÿÿ8ó³éª‘/
+}
+java:S1149¯"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(™šªÚ8ó³éª‘/
+Y	java:S125ä"<This block of commented-out lines of code should be removed.(¶ì“æ8ó³éª‘/
+v
+java:S3008"TRename this field "DELIMITER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨øäˆøÿÿÿÿ8ó³éª‘/
+h
+java:S1192'"KDefine a constant instead of duplicating this literal "Connection" 4 times.(€†êß8ó³éª‘/
+‹
+java:S3008"iRename this field "URL_CONNECTION_CONNECT_TIMEOUT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢õÄ‰ıÿÿÿÿ8ó³éª‘/
+b	java:S112?"FDefine and throw a dedicated exception instead of using a generic one.(ı©˜¬8ó³éª‘/
+h	java:S112¸"FDefine and throw a dedicated exception instead of using a generic one.(¦“ßÿÿÿÿÿ8ó³éª‘/
+^	java:S125—"<This block of commented-out lines of code should be removed.(Ñ”úÿÿÿÿ8ó³éª‘/
+^	java:S125ë"<This block of commented-out lines of code should be removed.(æôî®ıÿÿÿÿ8ó³éª‘/
+L
+java:S2093"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8ó³éª‘/
+}
+java:S1149İ"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(™šªÚ8ó³éª‘/

@@ -35,7 +35,7 @@ define(function(require, exports, module) {
             Ajax.postJson(API.get('login'), cmd, function (json, state) {
                 console.log(json);
                 if(state){
-                    $(window).attr('location','../../index.html');
+                    $(window).attr('location','../../gundam.html');
                 }else{
                     //TODO 失败信息提示
                     // Page.operate.showLogginErro(json.message);

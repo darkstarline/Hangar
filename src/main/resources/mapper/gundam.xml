@@ -103,7 +103,7 @@
             <if test="opCode!=null and opCode!=''">
                 op_code,
             </if>
-            <if test="createDate!=null and createDate!=''">
+            <if test="createDate!=null">
                 create_date,
             </if>
             <if test="extend0!=null and extend0!=''">
@@ -224,7 +224,7 @@
             <if test="opCode!=null and opCode!=''">
                 #{opCode},
             </if>
-            <if test="createDate!=null and createDate!=''">
+            <if test="createDate!=null">
                 #{createDate},
             </if>
             <if test="extend0!=null and extend0!=''">

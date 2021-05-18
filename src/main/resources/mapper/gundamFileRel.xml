@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="gundamFileRel">
     <insert id="save" parameterType="FileInfoBean">
-        replace into file_Info (<include refid="key"/>) values (<include refid="value"/>)
+        replace into gundam_file_rel (<include refid="key"/>) values (<include refid="value"/>)
     </insert>
     <sql id="gundamFileRelList"></sql>
     <sql id="key">
@@ -18,7 +18,7 @@
             <if test="organismNumber!=null and organismNumber!=''">
                 organism_number,
             </if>
-            <if test="createDate!=null and createDate!=''">
+            <if test="createDate!=null">
                 create_date,
             </if>
             <if test="state!=null and state!=''">
@@ -37,7 +37,7 @@
             <if test="organismNumber!=null and organismNumber!=''">
                 #{organismNumber},
             </if>
-            <if test="createDate!=null and createDate!=''">
+            <if test="createDate!=null">
                 #{createDate},
             </if>
             <if test="state!=null and state!=''">

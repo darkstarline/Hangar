@@ -74,7 +74,7 @@ class HeartBeat {
         //org.apache.commons.lang3.concurrent.BasicThreadFactory
         ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1,
                 new BasicThreadFactory.Builder().namingPattern("example-schedule-pool-%d").daemon(true).build());
-        executorService.scheduleAtFixedRate(new HeartBeatTask(), 0L, 0, TimeUnit.MINUTES);
+        executorService.scheduleAtFixedRate(new HeartBeatTask(), 0L, 60L, TimeUnit.MINUTES);
     }
 
 }

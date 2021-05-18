@@ -195,8 +195,6 @@ Y
 )src/main/java/gundam/utils/HttpUtils.java,9/3/939983351b588c1675eb73ec5e55f1fef03700fd
 k
 ;src/main/java/gundam/services/ElasticsearchServiceImpl.java,f/2/f271c7da0fd554ad403799321e314261d31ad9c6
-X
-(src/main/resources/mapper/fileInvoke.xml,d/a/da7f342d41f48703a3a05b618fdc72c9331103aa
 N
 .idea/libraries/guava_15_0.xml,a/3/a35da98b1870696a9d8c88aaab05ca69e56e66ec
 [
@@ -215,10 +213,6 @@ h
 8src/main/java/gundam/common/cache/BsStaticDataCache.java,3/f/3f3a41cfe02b16f5484bc52a30f04838e012a440
 ]
 -src/main/resources/fastDFSConnPool.properties,b/5/b5e0f6c78b25bd8ec2b156b3cecd19decfac6e18
-V
-&src/main/resources/mapper/fileInfo.xml,c/0/c068847e7bac5d635ef4c9af04fbfd0278c57c40
-[
-+src/main/resources/mapper/gundamFileRel.xml,e/a/ea4154a028082db84caaf9a6e78c1a5614cd3226
 X
 (src/main/resources/spring/spring-dao.xml,f/e/fe316c858e29e14c1208cd4f9042c3e02061c7cf
 U
@@ -251,5 +245,3 @@ M
 src/main/webapp/css/style.css,2/c/2c1f525046eaa5ad3e39cc3d3b2f4c4fab4ff318
 S
 #src/main/webapp/js/json/travel.json,1/1/1100c525c7f7df314580730786805132273d06df
-T
-$src/main/resources/mapper/gundam.xml,7/7/77fd126af479bf2c8de4571d50a8cec12d47cff7

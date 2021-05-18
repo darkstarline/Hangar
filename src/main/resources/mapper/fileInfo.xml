@@ -4,9 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="fileInfo">
     <insert id="save" parameterType="FileInfoBean">
-        replace into file_Info (<include refid="key"/>) values (<include refid="value"/>)
+        replace into file_info (<include refid="key"/>) values (<include refid="value"/>)
     </insert>
-    <sql id="operatorList"> id,code,name,password,email,plaintext_password,is_admin,try_times,lock_flag,notes,state,create_date,tel </sql>
+    <sql id="fileInfoList"> file_id,dfs_id,file_name,file_status,content_type,file_size,size_desc,create_date,op_code,state,router_id </sql>
     <select id="getBean"  parameterType="FileInfoBean" resultType="FileInfoBean">
         SELECT <include refid="fileInfoList"/>
         FROM file_info
@@ -32,7 +32,7 @@
             <if test="sizeDesc!=null and sizeDesc!=''">
                 and size_desc = #{sizeDesc}
             </if>
-            <if test="createDate!=null and createDate!=''">
+            <if test="createDate!=null">
                 and create_date = #{createDate}
             </if>
             <if test="opCode!=null and opCode!=''">
@@ -46,7 +46,6 @@
             </if>
         </where>
     </select>
-    <sql id="fileInfoList"></sql>
     <sql id="key">
         <trim suffixOverrides=",">
             <if test="fileId!=null and fileId!=''">
@@ -70,7 +69,7 @@
             <if test="sizeDesc!=null and sizeDesc!=''">
                 size_desc,
             </if>
-            <if test="createDate!=null and createDate!=''">
+            <if test="createDate!=null">
                 create_date,
             </if>
             <if test="opCode!=null and opCode!=''">
@@ -107,8 +106,8 @@
             <if test="sizeDesc!=null and sizeDesc!=''">
                 #{sizeDesc},
             </if>
-            <if test="createDate!=null and createDate!=''">
-                #{createSate},
+            <if test="createDate!=null">
+                #{createDate},
             </if>
             <if test="opCode!=null and opCode!=''">
                 #{opCode},

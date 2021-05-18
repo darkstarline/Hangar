@@ -63,7 +63,7 @@ public class GundamStorageController {
         this.gundamService.aircraftStorage(gundamBean);
         try {
             //同步到ES
-            this.elasticsearchService.syncToElasticsearch(gundamBean);
+//            this.elasticsearchService.syncToElasticsearch(gundamBean);
         }catch (Exception e){
             log.error("sync to elasticsearch error.", e);
             json.setSuccess(false);
@@ -78,6 +78,10 @@ public class GundamStorageController {
 
         //TODO 参数校验
 //        attrInfo--->对应gundambean
+        if(file==null){
+            json.setSuccess(true);
+            return json;
+        }
         FileInfoBean attrInfo = UploadUtils.makeFileInfo(userInfo);
         this.fileInfoService.saveFileInfo(attrInfo);
         //从数据库中查询

@@ -41,7 +41,7 @@
             <if test="state!=null and state!=''">
                 and state = #{state}
             </if>
-            <if test="createDate!=null and createDate!=''">
+            <if test="createDate!=null">
                 and create_date = #{createDate}
             </if>
             <if test="tel!=null and tel!=''">

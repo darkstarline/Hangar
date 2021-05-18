@@ -15,7 +15,7 @@ public class GundanFileRelDaoImpl implements IGundamFileRelDao {
     @Override
     public void saveGundamFileRel(GundamFileRelBean gundamFileRelBean) throws Exception {
         SqlSession session = factory.openSession();
-        session.insert("gundamFileInvoke.save",gundamFileRelBean);
+        session.insert("gundamFileRel.save",gundamFileRelBean);
         session.close();
     }
 }

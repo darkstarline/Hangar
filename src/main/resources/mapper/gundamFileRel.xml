@@ -4,9 +4,33 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="gundamFileRel">
     <insert id="save" parameterType="FileInfoBean">
-        replace into gundam_file_rel (<include refid="key"/>) values (<include refid="value"/>)
+        insert into gundam_file_rel (<include refid="key"/>) values (<include refid="value"/>)
     </insert>
-    <sql id="gundamFileRelList"></sql>
+    <sql id="gundamFileRelList">file_id,dfs_id,organism_number,file_type,create_date,state</sql>
+    <select id="getBeans"  parameterType="GundamFileRelBean" resultType="GundamFileRelBean">
+        SELECT <include refid="gundamFileRelList"/>
+        FROM gundam_file_rel
+        <where>
+            <if test="fileId!=null and fileId!=''">
+                and file_id = #{fileId}
+            </if>
+            <if test="dfsId!=null and dfsId!=''">
+                and dfs_id = #{dfsId}
+            </if>
+            <if test="organismNumber!=null and organismNumber!=''">
+                and organism_number = #{organismNumber}
+            </if>
+            <if test="fileType!=null and fileType!=''">
+                and file_type = #{fileType}
+            </if>
+            <if test="createDate!=null">
+                and create_date = #{createDate}
+            </if>
+            <if test="state!=null and state!=''">
+                and state = #{state}
+            </if>
+        </where>
+    </select>
     <sql id="key">
         <trim suffixOverrides=",">
             <if test="fileId!=null and fileId!=''">
@@ -17,6 +41,9 @@
             </if>
             <if test="organismNumber!=null and organismNumber!=''">
                 organism_number,
+            </if>
+            <if test="fileType!=null and fileType!=''">
+                file_type,
             </if>
             <if test="createDate!=null">
                 create_date,
@@ -36,6 +63,9 @@
             </if>
             <if test="organismNumber!=null and organismNumber!=''">
                 #{organismNumber},
+            </if>
+            <if test="fileType!=null and fileType!=''">
+                #{fileType},
             </if>
             <if test="createDate!=null">
                 #{createDate},

@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="gundam">
     <insert id="save" parameterType="GundamBean">
-        replace into gundam (
+        insert into gundam (
         <include refid="key"/>
         ) values (
         <include refid="value"/>

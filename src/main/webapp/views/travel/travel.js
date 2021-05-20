@@ -32,7 +32,8 @@ define(function(require, exports, module) {
         queryList: function() {
             var keyword = $.getUrlParam('gh');
             var cmd ={
-                keyword : keyword
+                keyword : keyword,
+                curPage : 100,
             }
             Ajax.postJson(API.get('fileList'), cmd, function (json, state) {
                 var organismList=eval('json.'+"dataList");
@@ -122,7 +123,10 @@ define(function(require, exports, module) {
             div0.append(div7);
             // $(".news-card-thumb").css("background-image","112.jpg");
             // background-image: url(../imgs/travel/travel-lg-1.jpg)
-            div1.css("background-image","url(./112.jpg)");
+            // div1.css("background-image","url(/Hanger/test/t1) ");
+            //TODO 修正图片调用地址
+            div1.css("background","url(/Hanger/test/t1?MS=0079&TP=C)  no-repeat");
+            div1.css("background-size","100% auto");
             p1.css("text-indent","2em");
         }
     }

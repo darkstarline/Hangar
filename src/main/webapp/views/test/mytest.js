@@ -27,7 +27,7 @@ define(function(require, exports, module) {
         }
     }
     Page.data = {
-        "asdf":"adsfa"
+        imgurl : "/Hanger/gundamFileDownload/download"
     }
 
     Page.action = {
@@ -57,6 +57,7 @@ define(function(require, exports, module) {
     Page.operate = {
         init: function() {
             this.tt();
+            // this.test();
         },
         // 路径点击跳转事件
         tt: function() {
@@ -66,6 +67,27 @@ define(function(require, exports, module) {
                 Page.action.testService();
             });
         },
+        test:function(){
+            // $("#test").css("background-color","yellow");
+            // $("#test").width(400);
+            // $("#test").height(800);
+            // $("#sss").css("width","100%");
+            // $("#sss").css("hight","auto");
+
+            var newsCategory=$("#test");
+            var div0=$("<div class='row'></div>");
+            var div1=$("<div class='col-lg-5'></div>");
+            var div2=$("<div class='news-card-grid-item-2'></div>")
+            var a1=$("<a href='../single-post/single-post-1.html'></a>");
+            var div3=$("<div class='news-card-thumb'></div>");
+            a1.append(div3);
+            div2.append(a1);
+            div1.append(div2);
+            div0.append(div1);
+            newsCategory.append(div0);
+            div1.css("background-image","url(/Hanger/test/t1)");
+        }
+
     }
     var Utils = {
 

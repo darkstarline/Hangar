@@ -1,5 +1,8 @@
 
-‡
-java:S1130"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(º æûùÿÿÿÿ
-S	java:S106"9Replace this use of System.out or System.err by a logger.(§»‘Àıÿÿÿÿ
-`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(º æûùÿÿÿÿ
+U	java:S106%"9Replace this use of System.out or System.err by a logger.(”†ÑÇ8´£¼˜/
+c
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(Ş°òıÿÿÿÿ8ß¬±¼˜/
+[	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ñì¸‰
+U	java:S106"9Replace this use of System.out or System.err by a logger.(¹¬Í’8ì›º¾˜/
+X	java:S125*"<This block of commented-out lines of code should be removed.(½’†Ó8×«ƒ¼˜/
+]	java:S125"<This block of commented-out lines of code should be removed.(®Êˆ—ıÿÿÿÿ8£¨¼¾˜/

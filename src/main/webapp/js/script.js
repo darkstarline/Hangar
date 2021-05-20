@@ -1,3 +1,4 @@
+
 /*/!*获取到Url里面的参数*!/
 (function () {
     $('[name=gundamSearch]').bind('keypress',function(event){

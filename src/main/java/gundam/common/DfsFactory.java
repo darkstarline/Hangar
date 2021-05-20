@@ -205,7 +205,7 @@ public class DfsFactory {
     }*/
 
 //TODO 这个方法也许有用
-/* public byte[] doDownload(String dfsId)throws Exception{
+ public byte[] doDownload(String dfsId)throws Exception{
         init();
 //		TrackerClient tracker = new TrackerClient();
 //		TrackerServer trackerServer = tracker.getConnection();
@@ -217,7 +217,7 @@ public class DfsFactory {
         byte[] data = client.download_file(groupName, dfsId.substring(groupName.length()+1));
         TrackerClientRouter.instance().releaseTrackerClientToPool(trackerServer);  //连接池回收
         return data;
-    }*/
+    }
 
 
  public FileInfoBean prepareAttachmentInfo(MultipartFile file, FileInfoBean fileInfo) throws Exception{

@@ -49,7 +49,7 @@ CREATE  TABLE IF NOT EXISTS gundam(
 	full_weight VARCHAR(8),
 	armored_structure VARCHAR(32),
 	output VARCHAR(32),
-	propulsion VARCHAR(32),
+	propulsion VARCHAR(128),
 	acceleration VARCHAR(8),
 	sensor_radius VARCHAR(8),
 	fixed_armed VARCHAR(32),
@@ -132,6 +132,7 @@ CREATE  TABLE IF NOT EXISTS gundam_file_rel(
 	state VARCHAR(8)
 )
 select * from gundam_file_rel;
+commit;
 
 DROP  table file_invoke;
 CREATE  TABLE IF NOT EXISTS file_invoke(
@@ -185,3 +186,9 @@ insert into bs_static_data(code_type,code_value,code_name,state) values ('testTy
                 sb.append("\"groundSpeed\" : \"").append(gundamBean.getGroundSpeed()).append("\",");
                 sb.append("\"waterSpeed\" : \"").append(gundamBean.getWaterSpeed()).append("\",");
                 sb.append("\"introduction\" : \"").append(gundamBean.getIntroduction()).append("\",");
+               
+               
+               
+
+ SELECT   id,code,name,password,email,plaintext_password,is_admin,try_times,lock_flag,notes,state,create_date,tel           FROM file_info          WHERE  file_id = 123;                                                                     and file_status = ?                                                                                  and create_date = ?                                           and op_code = ?                                           and state = ?
+

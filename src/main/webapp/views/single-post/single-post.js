@@ -62,6 +62,7 @@ define(function(require, exports, module) {
                 if(event.keyCode == "13")
                 {
                     var keyword = $('[name=gundamSearch]').val();
+                    keyword = $.trim(keyword);
                     var searchUrl = "../travel/travel.html?gh="+keyword;
                     $(window).attr('location',searchUrl);
                     // $(window).attr('location','../../index.html');

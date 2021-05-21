@@ -24,12 +24,15 @@ public class GundamSearchController {
         JsonResult json=new JsonResult();
         GundamBean gundamBean = new GundamBean();
         this.convertSearchVo2Entity(searchVo,gundamBean);
+        pagenation.setCurPage(Integer.parseInt(searchVo.getCurPage()));
+        pagenation.setPageSize(Integer.parseInt(searchVo.getPageSize()));
         if(StringUtils.isNotEmpty(searchVo.getKeyWord())){
             this.convertKeyWord2Entity(searchVo.getKeyWord(),gundamBean);
         }
         Page<Map<String, Object>> page = this.elasticsearchService.searchFormElasticsearch(gundamBean,pagenation);
         json.setSuccess(true);
         json.put("dataList",page.getDataList());
+        json.put("totalSize",page.getPagination().getTotalSize());
         return json;
     }
 

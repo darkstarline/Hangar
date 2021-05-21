@@ -253,3 +253,11 @@ r
 Bsrc/main/java/gundam/controllers/GundamFileDownloadController.java,0/d/0d490d08de7567865399b15a8c05d70a5f94764c
 V
 &src/main/webapp/views/test/mytest.html,2/9/29f90fcceb32c83862214f9e219465b1ad728b4e
+V
+&src/main/resources/mapper/fileInfo.xml,c/0/c068847e7bac5d635ef4c9af04fbfd0278c57c40
+X
+(src/main/resources/mapper/fileInvoke.xml,d/a/da7f342d41f48703a3a05b618fdc72c9331103aa
+T
+$src/main/resources/mapper/gundam.xml,7/7/77fd126af479bf2c8de4571d50a8cec12d47cff7
+[
++src/main/resources/mapper/gundamFileRel.xml,e/a/ea4154a028082db84caaf9a6e78c1a5614cd3226

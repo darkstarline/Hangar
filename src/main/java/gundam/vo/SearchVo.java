@@ -32,6 +32,24 @@ public class SearchVo {
     private String from;
     private String size;
     private String keyWord;
+    private String pageSize;
+    private String curPage;
+
+    public String getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(String pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public String getCurPage() {
+        return curPage;
+    }
+
+    public void setCurPage(String curPage) {
+        this.curPage = curPage;
+    }
 
     public String getKeyWord() {
         return keyWord;

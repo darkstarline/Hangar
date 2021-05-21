@@ -24,22 +24,25 @@ define(function(require, exports, module) {
         }
     }
     Page.data = {
-
+        curPage: "1",
+        pageSize: "1"
     }
-
     Page.action = {
         // 查询所有列表接口
         queryList: function() {
             var keyword = $.getUrlParam('gh');
-            var cmd ={
+            var cmd = {
                 keyword : keyword,
-                curPage : 100,
+                curPage : Page.data.curPage,
+                pageSize :Page.data.pageSize
             }
+            cmd = Utils.jsonToStr(cmd);
             Ajax.postJson(API.get('fileList'), cmd, function (json, state) {
                 var organismList=eval('json.'+"dataList");
                 for(var i=0;i<organismList.length;i++){
                    Utils.justiceWatching(organismList[i]);
                 }
+                Utils.justiceWatchingPage(json.totalSize);
             })
         },
     };
@@ -49,6 +52,7 @@ define(function(require, exports, module) {
         init: function() {
             this.tt();
             this.search();
+            // this.pageChange();
         },
         // 路径点击跳转事件
         tt: function() {
@@ -60,10 +64,21 @@ define(function(require, exports, module) {
             $('[name=gundamSearch]').bind('keypress',function(event){
                 if(event.keyCode == "13")
                 {
-                    var gh = $('[name=gundamSearch]').val();
-                    var searchUrl = "./travel.html?gh="+gh;
+                    var keyword = $('[name=gundamSearch]').val();
+                    keyword = $.trim(keyword);
+                    var searchUrl = "../travel/travel.html?gh="+keyword;
                     $(window).attr('location',searchUrl);
+                    // $(window).attr('location','../../index.html');
+                    return false;
                 }
+            });
+        },
+        pageChange: function(){
+            $('[name=next]').bind('click',function(event){
+                // var page = $(this).html();
+                // Page.data.curPage = page;
+                Page.data.curPage++;
+                Page.action.queryList();
             });
         }
     }
@@ -128,7 +143,51 @@ define(function(require, exports, module) {
             div1.css("background","url(/Hanger/test/t1?MS=0079&TP=C)  no-repeat");
             div1.css("background-size","100% auto");
             p1.css("text-indent","2em");
-        }
+        },
+        justiceWatchingPage: function (totalSize){
+
+            var nav=$("#pageNav");
+            nav.empty();
+            var x="<ul class=\"pagination\">\n" +
+                "<!--     <li class=\"page-item disabled\"><a class=\"page-link\" href=\"#\"><i class=\"flaticon-back\"></i></a></li>-->\n" +
+                "     <li class=\"page-item active\" aria-current=\"page\"><a class=\"page-link\"  name=\"pageChange\">1</a></li>\n" +
+                "     <li class=\"page-item\"><a class=\"page-link\"  name=\"pageChange\">2</a></li>\n" +
+                "     <li class=\"page-item\"><a class=\"page-link\"  name=\"pageChange\">3</a></li>\n" +
+                "     <li class=\"page-item\"><a class=\"page-link\"  name=\"pageChange\"><i class=\"flaticon-next\"></i></a></li>\n" +
+                "    </ul>";
+            var ul=$("<ul class='pagination'></ul>");
+            var i = Math.ceil(parseInt(totalSize)/parseInt(Page.data.pageSize));
+            for(var j=0;j<i;j++){
+                var li;
+                var a;
+                if(parseInt(Page.data.curPage)==j+1){
+                    li = $("<li class='page-item active' aria-current='page'></li>");
+                }else{
+                    li = $("<li class='page-item' ></li>");
+                }
+                a = $("<a class='page-link' name='pageChange'></a>").html(j+1);
+                li.append(a);
+                ul.append(li);
+            }
+            var li1 = $("<li class='page-item' aria-current='page'></li>");
+            var a1 = $("<a class='page-link' name='next'></a>");
+            var i1 = $("<i class='flaticon-next' ></i>");
+            a1.append(i1);
+            li1.append(a1);
+            ul.append(li1);
+            nav.append(ul);
+            Page.operate.pageChange();
+        },
+        // json转string
+        jsonToStr: function(json) {
+            var str = "";
+            for (var key in json) {
+                if (typeof(json[key]) == "object") {} else {
+                    str += "&" + key + "=" + json[key];
+                }
+            }
+            return str.substring(1);
+        },
     }
     module.exports = Page;
 });

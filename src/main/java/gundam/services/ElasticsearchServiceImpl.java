@@ -251,8 +251,11 @@ public class ElasticsearchServiceImpl implements IElasticsearchService{
             sb.append("\"boost\"").append(":").append(1.0);
             sb.append("}");
 //            sb.append(",");
-            sb.append("}").append("}");
-//            sb.append("\"size\"").append(":").append(pagination.getPageSize()).append(",");
+            sb.append("}").append(",");
+            sb.append("\"from\"").append(":").append(pagination.getPageSize()*(pagination.getCurPage()-1)).append(",");
+            sb.append("\"size\"").append(":").append(pagination.getPageSize());
+            sb.append("}");
+
             String result = HttpUtils.doJsonPost(url, sb.toString(), "UTF-8");
             System.out.println(result);
             JSONObject jsonResult = JSON.parseObject(result);
@@ -260,7 +263,8 @@ public class ElasticsearchServiceImpl implements IElasticsearchService{
             List<Map<String, Object>> resultMapList = new ArrayList<Map<String, Object>>();
             resultMapList = esResult.getHits();
             page.setDataList(resultMapList);
-//            page.setPagination(pagination);
+            pagination.setTotalSize(Integer.parseInt(esResult.getTotal()));
+            page.setPagination(pagination);
         }
         return page;
     }

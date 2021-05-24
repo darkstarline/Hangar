@@ -8,6 +8,7 @@ define(function(require, exports, module) {
     require('utils/jqPlugin');
     // 查询
     API.add("fileList", "travel.json", "gundamSearch/search");
+    API.add("img","","gundamFileDownload/download");
     // API.add("catalogList", "fileList.json", "upass/fileBrowse/getCatalogs");
     // API.add("fileList", "fileList.json", "upass/fileBrowse/getFiles");
     // API.add("viewerPic", "../assets/images/1900x1200_img_7.png", "upass/download/downloadNoToken");
@@ -124,7 +125,8 @@ define(function(require, exports, module) {
             var div6=$("<div class='news-grid-action'></div>");
             var p2=$("<p class='news-author author-name'></p>").text(organism.pilot);
             var p3=$("<p class='news-card-link'></p>");
-            var a3=$("<a href='../single-post/single-post-1.html?MS=001'></a>").text(organism.organismCodeName);
+            var a3href="../single-post/single-post-1.html?MS="+organism.organismNumber;
+            var a3=$("<a></a>").text(organism.organismCodeName).attr("href",a3href);
             var div7=$("<div class='divider divider-lg'></div>")
             h1.append(a2);
             div5.append(h1);
@@ -140,7 +142,8 @@ define(function(require, exports, module) {
             // background-image: url(../imgs/travel/travel-lg-1.jpg)
             // div1.css("background-image","url(/Hanger/test/t1) ");
             //TODO 修正图片调用地址
-            div1.css("background","url(/Hanger/test/t1?MS=0079&TP=C)  no-repeat");
+            var bgurl = "url("+API.get("img")+"?MS="+organism.organismNumber+"&TP=cover) no-repeat";
+            div1.css("background",bgurl);
             div1.css("background-size","100% auto");
             p1.css("text-indent","2em");
         },

@@ -105,7 +105,7 @@ CREATE  TABLE IF NOT EXISTS file_info(
 	state VARCHAR(8),
 	router_id VARCHAR(16)
 )
-select * from file_info;
+select * from file_info a where a.file_id = '20210518e7fd6b9a198f454a8abbb9dc3fa28cb9';
 
 
 DROP  table fstdfs_tracker_router;

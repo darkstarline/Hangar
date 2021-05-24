@@ -8,6 +8,7 @@ define(function(require, exports, module) {
     require('utils/jqPlugin');
     // 查询
     API.add("getMessage", "single-post.json", "gundamSearch/euro");
+    API.add("img","","gundamFileDownload/download");
     // API.add("catalogList", "fileList.json", "upass/fileBrowse/getCatalogs");
     // API.add("fileList", "fileList.json", "upass/fileBrowse/getFiles");
     // API.add("viewerPic", "../assets/images/1900x1200_img_7.png", "upass/download/downloadNoToken");
@@ -33,8 +34,9 @@ define(function(require, exports, module) {
             var codeName = $.getUrlParam('MS');
             console.log(codeName);
             var cmd = {
-                organismCodeName : codeName
+                organismNumber : codeName
             }
+            cmd = Utils.jsonToStr(cmd);
             Ajax.postJson(API.get('getMessage'), cmd, function (json, state) {
                 //异步生成json数据
                 /*if(json.state){
@@ -73,6 +75,15 @@ define(function(require, exports, module) {
     }
     var Utils = {
         justiceWatching: function (organism){
+            var gundamCover = $("#imgCover");
+            var coverSrc=API.get("img")+"?MS="+organism.organismNumber+"&TP=cover";
+            gundamCover.attr("src",coverSrc);
+            $("#leftTitle").text(organism.cnName);
+            $("#leftTime").text(organism.createDate);
+            $("#leftAuthor").text("Darkstarline");
+            var div1 = $("#left");
+            var bgurl = "url(./bg1.jpeg) no-repeat";
+            div1.css("background",bgurl);
             var gundamInfo=$("#organism");
             var introduction=$("#introduction");
             var p0=$("<p></p>").text(organism.introduction);
@@ -152,7 +163,17 @@ define(function(require, exports, module) {
             ul.append(li23);
             ul.append(li24);
             gundamInfo.append(ul);
-        }
+        },
+        // json转string
+        jsonToStr: function(json) {
+            var str = "";
+            for (var key in json) {
+                if (typeof(json[key]) == "object") {} else {
+                    str += "&" + key + "=" + json[key];
+                }
+            }
+            return str.substring(1);
+        },
     }
     module.exports = Page;
 });

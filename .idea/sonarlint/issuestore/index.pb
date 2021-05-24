@@ -261,3 +261,5 @@ T
 $src/main/resources/mapper/gundam.xml,7/7/77fd126af479bf2c8de4571d50a8cec12d47cff7
 [
 +src/main/resources/mapper/gundamFileRel.xml,e/a/ea4154a028082db84caaf9a6e78c1a5614cd3226
+P
+ src/main/webapp/js/utils/ajax.js,4/b/4b8affa1b4ec76c8d5ac1ea02edefa6c36c1ccd5

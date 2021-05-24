@@ -1,53 +1,51 @@
 
-O
-java:S1135"2Complete the task associated to this TODO comment.(ÚæÈ£8 ÎÉ¶—/
-e
-java:S1192 "HDefine a constant instead of duplicating this literal "?pretty" 3 times.(Ù‹ù‚8 ÎÉ¶—/
-Z	java:S106L"9Replace this use of System.out or System.err by a logger.(åö¡½úÿÿÿÿ8 ÎÉ¶—/
-{
-java:S2293Z"YReplace the type specification in this constructor call with the diamond operator ("<>").(ë–×›ùÿÿÿÿ8 ÎÉ¶—/
-]	java:S125["<This block of commented-out lines of code should be removed.(İİâÌúÿÿÿÿ8 ÎÉ¶—/
-W
-java:S3400Æ"9Remove this method and declare a constant for this value.(ó°±¨8 ÎÉ¶—/
-h	java:S112º"FDefine and throw a dedicated exception instead of using a generic one.(¾šá°ûÿÿÿÿ8 ÎÉ¶—/
-i
-java:S2184µ"FCast one of the operands of this multiplication operation to a "long".(¡Š™–üÿÿÿÿ8 ÎÉ¶—/
-[	java:S106"9Replace this use of System.out or System.err by a logger.(®ıáëûÿÿÿÿ8Úßä¶—/
-P
-java:S1135»"2Complete the task associated to this TODO comment.(°„¾à8 ÎÉ¶—/
 W
 java:S1141C"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8 ÎÉ¶—/
-]	java:S125E"<This block of commented-out lines of code should be removed.(õË¶‘şÿÿÿÿ8 ÎÉ¶—/
-w
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ˆö«Ä8 ÎÉ¶—/
-V	java:S106·"9Replace this use of System.out or System.err by a logger.(Ú ±“8 ÎÉ¶—/
-^	java:S125‡"<This block of commented-out lines of code should be removed.(õŞÈÕÿÿÿÿÿ8 ÎÉ¶—/
-E	java:S108O")Either remove or fill this block of code.(”ı¾8 ÎÉ¶—/
-X	java:S125X"<This block of commented-out lines of code should be removed.(ÊÆæÙ8 ÎÉ¶—/
-p
-java:S3776V"SRefactor this method to reduce its Cognitive Complexity from 130 to the 15 allowed.(äÜÓ8 ÎÉ¶—/
-W	java:S125?"<This block of commented-out lines of code should be removed.(ì»úw8 ÎÉ¶—/
-Y	java:S125Å"<This block of commented-out lines of code should be removed.(„§ñ£8 ÎÉ¶—/
 W	java:S125H"<This block of commented-out lines of code should be removed.(¯İ‘T8 ÎÉ¶—/
-c
-java:S1192M"FDefine a constant instead of duplicating this literal "UTF-8" 3 times.(ê§èĞ8 ÎÉ¶—/
-X	java:S125"<This block of commented-out lines of code should be removed.(šÿòç8 ÎÉ¶—/
-^	java:S125ı"<This block of commented-out lines of code should be removed.(å·´šşÿÿÿÿ8 ÎÉ¶—/
-T
-java:S1135W"2Complete the task associated to this TODO comment.(¹©õĞşÿÿÿÿ8 ÎÉ¶—/
-w
-java:S2293„"YReplace the type specification in this constructor call with the diamond operator ("<>").(ˆö«Ä8 ÎÉ¶—/
+X	java:S125ö"<This block of commented-out lines of code should be removed.(©Î²P8‚óì¶—/
+[	java:S106„"9Replace this use of System.out or System.err by a logger.(®ıáëûÿÿÿÿ8Úßä¶—/
+Y	java:S125É"<This block of commented-out lines of code should be removed.(„§ñ£8ÒÏ†ò˜/
 N
 java:S1135"2Complete the task associated to this TODO comment.(×Å¸e8 ÎÉ¶—/
-Z	java:S106N"9Replace this use of System.out or System.err by a logger.(®ıáëûÿÿÿÿ8 ÎÉ¶—/
-_
-java:S1854„"ARemove this useless assignment to local variable "resultMapList".(ˆö«Ä8 ÎÉ¶—/
+W	java:S125?"<This block of commented-out lines of code should be removed.(ì»úw8 ÎÉ¶—/
+X	java:S125X"<This block of commented-out lines of code should be removed.(ÊÆæÙ8 ÎÉ¶—/
+T
+java:S1135W"2Complete the task associated to this TODO comment.(¹©õĞşÿÿÿÿ8 ÎÉ¶—/
 T
 java:S1135"2Complete the task associated to this TODO comment.(ÛÖÖ¢úÿÿÿÿ8 ÎÉ¶—/
-Y	java:S125ÿ"<This block of commented-out lines of code should be removed.(óï…›8 ÎÉ¶—/
-[	java:S106¡"9Replace this use of System.out or System.err by a logger.(®ıáëûÿÿÿÿ8ı£á¶—/
-Y	java:S125¼"<This block of commented-out lines of code should be removed.(ÒÊåÇ8 ÎÉ¶—/
+X	java:S125k"<This block of commented-out lines of code should be removed.(ÈÀÔŒ8 ÎÉ¶—/
+Y	java:S125À"<This block of commented-out lines of code should be removed.(ÒÊåÇ8ÒÏ†ò˜/
+_
+java:S1854‡"ARemove this useless assignment to local variable "resultMapList".(ˆö«Ä8 ÎÉ¶—/
+[	java:S106¥"9Replace this use of System.out or System.err by a logger.(®ıáëûÿÿÿÿ8ÒÏ†ò˜/
+h	java:S112¾"FDefine and throw a dedicated exception instead of using a generic one.(¾šá°ûÿÿÿÿ8ÒÏ†ò˜/
+w
+java:S2293’"YReplace the type specification in this constructor call with the diamond operator ("<>").(ˆö«Ä8ÒÏ†ò˜/
+]	java:S125E"<This block of commented-out lines of code should be removed.(õË¶‘şÿÿÿÿ8 ÎÉ¶—/
 p
 java:S1192u"NDefine a constant instead of duplicating this literal "\"wildcard\"" 26 times.(ÖÖºúÿÿÿÿ8 ÎÉ¶—/
-X	java:S125k"<This block of commented-out lines of code should be removed.(ÈÀÔŒ8 ÎÉ¶—/
-X	java:S125ö"<This block of commented-out lines of code should be removed.(©Î²P8‚óì¶—/
+Z	java:S106L"9Replace this use of System.out or System.err by a logger.(åö¡½úÿÿÿÿ8 ÎÉ¶—/
+E	java:S108O")Either remove or fill this block of code.(”ı¾8 ÎÉ¶—/
+]	java:S125["<This block of commented-out lines of code should be removed.(İİâÌúÿÿÿÿ8 ÎÉ¶—/
+i
+java:S2184¹"FCast one of the operands of this multiplication operation to a "long".(¡Š™–üÿÿÿÿ8ÒÏ†ò˜/
+X	java:S125"<This block of commented-out lines of code should be removed.(šÿòç8 ÎÉ¶—/
+w
+java:S2293‡"YReplace the type specification in this constructor call with the diamond operator ("<>").(ˆö«Ä8 ÎÉ¶—/
+p
+java:S3776V"SRefactor this method to reduce its Cognitive Complexity from 130 to the 15 allowed.(äÜÓ8 ÎÉ¶—/
+{
+java:S2293Z"YReplace the type specification in this constructor call with the diamond operator ("<>").(ë–×›ùÿÿÿÿ8 ÎÉ¶—/
+c
+java:S1192M"FDefine a constant instead of duplicating this literal "UTF-8" 3 times.(ê§èĞ8 ÎÉ¶—/
+e
+java:S1192 "HDefine a constant instead of duplicating this literal "?pretty" 3 times.(Ù‹ù‚8 ÎÉ¶—/
+O
+java:S1135"2Complete the task associated to this TODO comment.(ÚæÈ£8 ÎÉ¶—/
+Z	java:S106N"9Replace this use of System.out or System.err by a logger.(®ıáëûÿÿÿÿ8 ÎÉ¶—/
+^	java:S125ı"<This block of commented-out lines of code should be removed.(å·´šşÿÿÿÿ8 ÎÉ¶—/
+V	java:S106»"9Replace this use of System.out or System.err by a logger.(Ú ±“8ÒÏ†ò˜/
+W
+java:S3400Ê"9Remove this method and declare a constant for this value.(ó°±¨8ÒÏ†ò˜/
+P
+java:S1135¿"2Complete the task associated to this TODO comment.(°„¾à8ÒÏ†ò˜/

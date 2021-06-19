@@ -63,7 +63,7 @@ public class GundamStorageController {
         this.gundamService.aircraftStorage(gundamBean);
         try {
             //同步到ES
-//            this.elasticsearchService.syncToElasticsearch(gundamBean);
+            this.elasticsearchService.syncToElasticsearch(gundamBean);
         }catch (Exception e){
             log.error("sync to elasticsearch error.", e);
             json.setSuccess(false);

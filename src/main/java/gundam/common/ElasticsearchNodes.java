@@ -1,14 +1,14 @@
-/*
 package gundam.common;
 
-import org.apache.commons.httpclient.HttpHost;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.http.HttpHost;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-*/
 /**
  * _______________HHHHHHHHH_______________________
  * ______________HHHHHHHHHHHH_____________________
@@ -37,7 +37,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author: darkstarline
  * @date: 2021/5/10 14:23
  * @description:
- *//*
+ */
 
 public class ElasticsearchNodes {
     //参考Elasticsearch  RestHighLevel里获取连接的方式(超简易版本)
@@ -49,7 +49,7 @@ public class ElasticsearchNodes {
     private final AtomicInteger lastNodeIndex = new AtomicInteger(0);
 
     private boolean bInit = false;
-    private IDictSV dictSV = (IDictSV) ServiceFactory.getService(IDictSV.class);
+//    private IDictSV dictSV = (IDictSV) ServiceFactory.getService(IDictSV.class);
     static{
         instance = new ElasticsearchNodes();
     }
@@ -67,7 +67,8 @@ public class ElasticsearchNodes {
 
     public void init(){
         if(!bInit){
-            String esBaseUrl = this.dictSV.getDictValue(AppConstants.URL, "elasticsearch_url");
+//            String esBaseUrl = this.dictSV.getDictValue(AppConstants.URL, "elasticsearch_url");
+            String esBaseUrl = "192.168.79.213:9200";
             //无增删该需求,Arrays.asList可行
             List<String> esUrls = Arrays.asList(esBaseUrl.split(","));
             for(String url : esUrls){
@@ -115,4 +116,3 @@ public class ElasticsearchNodes {
     }
 
 }
-*/

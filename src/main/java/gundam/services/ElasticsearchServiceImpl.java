@@ -280,10 +280,10 @@ public class ElasticsearchServiceImpl implements IElasticsearchService{
             sb.append("\"query\"").append(":").append("{");
             sb.append("\"bool\"").append(":").append("{");
             sb.append("\"must\"").append(":").append("[");
-            if(StringUtils.isNotEmpty(gundamBean.getOrganismCodeName())){
+            if(StringUtils.isNotEmpty(gundamBean.getOrganismNumber())){
                 sb.append("{").append("\"term\"").append(":").append("{");
-                sb.append("\"organismCodeName\"").append(":").append("\"").append(gundamBean.getOrganismCodeName()).append("\"");
-                sb.append("}").append("}").append(",");
+                sb.append("\"organismNumber\"").append(":").append("\"").append(gundamBean.getOrganismNumber()).append("\"");
+                sb.append("}").append("}");
             }
             //之后又需要再写
             sb.append("]").append(",");

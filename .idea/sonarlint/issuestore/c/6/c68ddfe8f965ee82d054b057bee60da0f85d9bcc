@@ -1,44 +1,0 @@
-
-DWeb:BoldAndItalicTagsCheckí"Replace this <i> tag by <em>.(â¼÷ã
-UWeb:AvoidCommentedOutCodeChecks"Remove this commented out code.(³õù´ùÿÿÿÿ8„öŠ¹—/
-DWeb:BoldAndItalicTagsCheckó"Replace this <i> tag by <em>.(ıÍ Ò
-UWeb:AvoidCommentedOutCodeCheckY"Remove this commented out code.(³õù´ùÿÿÿÿ8„öŠ¹—/
-VWeb:AvoidCommentedOutCodeCheck—"Remove this commented out code.(ƒàú“úÿÿÿÿ8»âÛ’“/
-VWeb:AvoidCommentedOutCodeCheck«"Remove this commented out code.(³õù´ùÿÿÿÿ8„öŠ¹—/
-VWeb:AvoidCommentedOutCodeCheck˜"Remove this commented out code.(â…ıûÿÿÿÿ8¹Àµ—/
-PWeb:AvoidCommentedOutCodeCheck´"Remove this commented out code.(æÏÅe8‘Ü’“/
-VWeb:AvoidCommentedOutCodeCheck‹"Remove this commented out code.(»„ƒíıÿÿÿÿ8ê•Ô’“/
-HWeb:BoldAndItalicTagsCheck@"Replace this <i> tag by <em>.(‰§ãĞúÿÿÿÿ
-DWeb:BoldAndItalicTagsCheckï"Replace this <i> tag by <em>.(•¯ïæ
-IWeb:BoldAndItalicTagsCheckğ"Replace this <i> tag by <em>.(ÿ¦·Èıÿÿÿÿ
-QWeb:AvoidCommentedOutCodeCheckÎ"Remove this commented out code.(š¾ê8«ª˜¹—/
-PWeb:AvoidCommentedOutCodeCheck”"Remove this commented out code.(æÏÅe8¨ø‡““/
-QWeb:AvoidCommentedOutCodeCheck‹"Remove this commented out code.(Îá¸½8©¨µ—/
-DWeb:BoldAndItalicTagsCheckü"Replace this <i> tag by <em>.(â¼÷ã
-DWeb:BoldAndItalicTagsCheckà"Replace this <i> tag by <em>.(·óòÎ
-QWeb:AvoidCommentedOutCodeCheck°"Remove this commented out code.(‡±¯œ8Æµ“à™/
-QWeb:AvoidCommentedOutCodeCheckµ"Remove this commented out code.(ùÏáî8‘Ü’“/
-DWeb:BoldAndItalicTagsCheckì"Replace this <i> tag by <em>.(¥ÏÓˆ
-DWeb:BoldAndItalicTagsCheckş"Replace this <i> tag by <em>.(•¯ïæ
-VWeb:AvoidCommentedOutCodeCheck„"Remove this commented out code.(‘— üşÿÿÿÿ8„öŠ¹—/
-UWeb:AvoidCommentedOutCodeCheckj"Remove this commented out code.(³õù´ùÿÿÿÿ8„öŠ¹—/
-QWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(Îòä¡8¶âÔ’“/
-KWeb:BoldAndItalicTagsCheck“"Replace this <i> tag by <em>.(”ÄÑø8©¨µ—/
-UWeb:AvoidCommentedOutCodeCheckv"Remove this commented out code.(³õù´ùÿÿÿÿ8„öŠ¹—/
-QWeb:AvoidCommentedOutCodeCheck¶"Remove this commented out code.(¹Ç€š8¡ÈÜ’“/
-QWeb:AvoidCommentedOutCodeCheckÆ"Remove this commented out code.(ùÏáî8©¨µ—/
-PWeb:BoldAndItalicTagsCheckÿ"Replace this <i> tag by <em>.(ÿ¦·Èıÿÿÿÿ8©¨µ—/
-DWeb:BoldAndItalicTagsCheckû"Replace this <i> tag by <em>.(¥ÏÓˆ
-UWeb:AvoidCommentedOutCodeCheckb"Remove this commented out code.(³õù´ùÿÿÿÿ8„öŠ¹—/
-UWeb:AvoidCommentedOutCodeCheckJ"Remove this commented out code.(ÅĞ¸ˆÿÿÿÿÿ8¬ı“¸—/
-IWeb:BoldAndItalicTagsCheckı"Replace this <i> tag by <em>.(¢Ø›àøÿÿÿÿ
-QWeb:AvoidCommentedOutCodeCheckÁ"Remove this commented out code.(²€…õ8òƒ§µ—/
-VWeb:AvoidCommentedOutCodeCheck¹"Remove this commented out code.(³õù´ùÿÿÿÿ8„öŠ¹—/
-HWeb:BoldAndItalicTagsCheckG"Replace this <i> tag by <em>.(‰§ãĞúÿÿÿÿ
-IWeb:BoldAndItalicTagsCheckî"Replace this <i> tag by <em>.(¢Ø›àøÿÿÿÿ
-IWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(‰§ãĞúÿÿÿÿ
-VWeb:AvoidCommentedOutCodeCheckõ"Remove this commented out code.(İÍœøÿÿÿÿ8©¨µ—/
-PWeb:AvoidCommentedOutCodeCheckÙ"Remove this commented out code.(Ä«ß8ğĞ˜¹—/
-VWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(­ïµ¶ùÿÿÿÿ8Ò¯¢µ—/
-Y	Web:S5255S"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(Üé÷
-E	Web:S1827±"(Remove this deprecated "name" attribute.(ßå‡ñ8ÀÃ”à™/

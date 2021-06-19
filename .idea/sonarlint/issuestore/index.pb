@@ -1,16 +1,10 @@
 
 V
 &src/main/java/gundam/dao/TestImpl.java,f/8/f851f74c36c77aa49d11362e7a6d08b021092af3
-m
-=src/main/java/gundam/controllers/GundamStorageController.java,3/1/3194d7bd0ede3b1996cfc9056823582159dea7a6
 Y
 )src/main/webapp/views/checkin/checkout.js,1/7/171ddb1d08f93c7faf213643e44dd241ef47fc27
-X
-(src/main/webapp/views/travel/travel.html,5/6/56cea98da33b48e38227e4482d2df5b56dfbf239
 L
 src/main/webapp/js/script.js,a/4/a48403258fe4818219eb066d53485a1f30081afd
-V
-&src/main/webapp/views/login/login.html,f/5/f5acd4ca5f7e2efceaaeef07ba69a51896290e92
 T
 $src/main/webapp/views/login/login.js,b/c/bc1fa4d9725a658eaf9fc3f0162995f8c0c7def3
 N
@@ -21,8 +15,6 @@ O
 src/main/webapp/views/cart.html,7/5/75faff1cded42b054ebb00d1de365a62063af92e
 S
 #src/main/webapp/views/category.html,e/6/e6bbd9878dec40352706eb77957dfd602c7ed3bb
-[
-+src/main/webapp/views/checkin/checkout.html,f/d/fd2a88838877cc505fc4cc538d930a9d6270a248
 R
 "src/main/webapp/views/contact.html,5/c/5cac6c15f43fdc3fcd6a6cb9b546cda9366b6996
 R
@@ -63,8 +55,6 @@ V
 &src/main/webapp/views/search-page.html,7/b/7b20e0bb003895084592124d3d6821c51994c1ee
 Q
 !src/main/webapp/views/signup.html,a/8/a8120769e4c0bb88bc334748a04c853b8ec92356
-d
-4src/main/webapp/views/single-post/single-post-1.html,c/6/c68ddfe8f965ee82d054b057bee60da0f85d9bcc
 X
 (src/main/webapp/views/single-post-2.html,4/7/4718406b9880b169abfaa247813ee08efc21ad30
 [
@@ -121,8 +111,6 @@ T
 $.idea/libraries/paoding_rose_1_2.xml,f/1/f12e6024944561aaeda66075468d5898bc05958f
 d
 4src/main/java/gundam/common/TrackerClientRouter.java,4/6/462904df895005518fe5eb3f24c4d99c8b96ed02
-[
-+src/main/java/gundam/common/DfsFactory.java,9/9/99a8fbb4eaaf7038ad70592de2e578cc21f1e75d
 Y
 )src/main/java/gundam/pojo/GundamBean.java,6/5/65d089c9722a6d42364d84e72421dc7f7e438abd
 [
@@ -141,8 +129,6 @@ L
 src/main/webapp/js/search.js,f/c/fc5816be42cdcb6300ceafc88d3f0fc447afcb51
 W
 '.idea/libraries/fastdfs_client_1_24.xml,9/8/980b82993ff8fb220cde12877a1b2d4eabf105e0
-B
-sql/DDL/Script.sql,3/2/32b80d77138ce49e069f06971a63f6852c8496c1
 `
 0src/main/java/gundam/pojo/GundamFileRelBean.java,8/e/8ec1b7b1bbef712973dd3d979792a38483dce3c1
 ]
@@ -189,12 +175,8 @@ f
 6src/main/java/gundam/services/FileInfoServiceImpl.java,b/4/b46de84faed40aee60a9f5b15ae13e36c0d3d251
 c
 3src/main/java/gundam/services/IFileInfoService.java,6/e/6edf4dd89218b4e74cd9867565d670f7f8df786f
-h
-8src/main/java/gundam/services/IElasticsearchService.java,6/3/63062bdc3f95ea3872b3a244278a173a6613db5c
 Y
 )src/main/java/gundam/utils/HttpUtils.java,9/3/939983351b588c1675eb73ec5e55f1fef03700fd
-k
-;src/main/java/gundam/services/ElasticsearchServiceImpl.java,f/2/f271c7da0fd554ad403799321e314261d31ad9c6
 N
 .idea/libraries/guava_15_0.xml,a/3/a35da98b1870696a9d8c88aaab05ca69e56e66ec
 [
@@ -215,20 +197,12 @@ h
 -src/main/resources/fastDFSConnPool.properties,b/5/b5e0f6c78b25bd8ec2b156b3cecd19decfac6e18
 X
 (src/main/resources/spring/spring-dao.xml,f/e/fe316c858e29e14c1208cd4f9042c3e02061c7cf
-U
-%src/main/java/gundam/common/Page.java,6/e/6e761deb2fe1cbea2c22e23463a8b5a6b4917af3
 [
 +src/main/java/gundam/common/Pagenation.java,c/4/c4d40a940d4412ed70fc898297aace91f9e47650
 U
 %src/main/java/gundam/vo/SearchVo.java,5/f/5fbd9e3530d451e358ecf8fb0244a3fb2666b0b2
-l
-<src/main/java/gundam/controllers/GundamSearchController.java,9/4/9426599c334d5ee6eaffcc4bfdc1ebfcc4281cd4
 V
 &src/main/java/gundam/dto/ESResult.java,5/4/54a4b7ff13e3e4b1c5dff237746ce1fa973861b7
-V
-&src/main/webapp/views/travel/travel.js,8/b/8bcf65054056765c67c300bc1e8f901aa518087f
-`
-0src/main/webapp/views/single-post/single-post.js,1/4/1491efff711785ce1b3e6c8574a5bb64a198a654
 X
 (src/main/webapp/js/json/single-post.json,c/4/c454401c576341b14a0228f4bf53db7e276a2edf
 ]
@@ -237,10 +211,6 @@ R
 "src/main/webapp/js/utils/router.js,2/9/29c30a9aee45a24c306d676878b0d83f06d78f0e
 O
 src/main/webapp/js/utils/api.js,b/4/b4e3c637ee7d1e62fa6027f28f75b3915916cbeb
-Z
-*.idea/libraries/commons_httpclient_3_1.xml,7/6/761c8ce78e66e8bf1e226d095504df16776e48fb
-c
-3src/main/java/gundam/common/ElasticsearchNodes.java,4/1/41892fbdc1da088031fca87fe9556dc2490f3a04
 M
 src/main/webapp/css/style.css,2/c/2c1f525046eaa5ad3e39cc3d3b2f4c4fab4ff318
 S
@@ -249,17 +219,13 @@ R
 "src/main/webapp/js/admin/config.js,2/0/2079681587d2b959a5ac22d9835b52e4497bfdbd
 W
 'src/main/java/gundam/vo/DownloadVo.java,4/3/438c98037b24874109b0b0682c73bf86eef75342
+V
+&src/main/webapp/views/test/mytest.html,2/9/29f90fcceb32c83862214f9e219465b1ad728b4e
+P
+ src/main/webapp/js/utils/ajax.js,4/b/4b8affa1b4ec76c8d5ac1ea02edefa6c36c1ccd5
 r
 Bsrc/main/java/gundam/controllers/GundamFileDownloadController.java,0/d/0d490d08de7567865399b15a8c05d70a5f94764c
 V
-&src/main/webapp/views/test/mytest.html,2/9/29f90fcceb32c83862214f9e219465b1ad728b4e
-V
-&src/main/resources/mapper/fileInfo.xml,c/0/c068847e7bac5d635ef4c9af04fbfd0278c57c40
-X
-(src/main/resources/mapper/fileInvoke.xml,d/a/da7f342d41f48703a3a05b618fdc72c9331103aa
-T
-$src/main/resources/mapper/gundam.xml,7/7/77fd126af479bf2c8de4571d50a8cec12d47cff7
-[
-+src/main/resources/mapper/gundamFileRel.xml,e/a/ea4154a028082db84caaf9a6e78c1a5614cd3226
-P
- src/main/webapp/js/utils/ajax.js,4/b/4b8affa1b4ec76c8d5ac1ea02edefa6c36c1ccd5
+&src/main/webapp/views/travel/travel.js,8/b/8bcf65054056765c67c300bc1e8f901aa518087f
+U
+%src/main/java/gundam/common/Page.java,6/e/6e761deb2fe1cbea2c22e23463a8b5a6b4917af3

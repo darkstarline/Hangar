@@ -82,7 +82,7 @@ select count(*)
 from information_schema.COLUMNS 
 where TABLE_SCHEMA='test' and table_name='gundam' ;
 
-
+delete from gundam  where orgamism_id =20;
 
 show variables like '%character%';
 
